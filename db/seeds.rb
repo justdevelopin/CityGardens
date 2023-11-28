@@ -8,9 +8,9 @@ User.create(
   email: 'user1@example.com',
   password: 'password1',
   password_confirmation: 'password1',
-  # first_name: 'John',
-  # last_name: 'Doe',
-  # bio: 'Enthusiast of urban gardening and sustainable living.',
+  first_name: 'John',
+  last_name: 'Doe',
+  bio: 'Enthusiast of urban gardening and sustainable living.',
   is_admin: true
 )
 
@@ -19,9 +19,9 @@ User.create(
   email: 'user2@example.com',
   password: 'password2',
   password_confirmation: 'password2',
-  # first_name: 'Jane',
-  # last_name: 'Smith',
-  # bio: 'Passionate about community building and green spaces.',
+  first_name: 'Jane',
+  last_name: 'Smith',
+  bio: 'Passionate about community building and green spaces.',
   is_admin: true
 )
 
@@ -30,9 +30,9 @@ User.create(
   email: 'user3@example.com',
   password: 'password3',
   password_confirmation: 'password3',
-  # first_name: 'Emily',
-  # last_name: 'Taylor',
-  # bio: 'Dedicated to nurturing community connections through gardening.',
+  first_name: 'Emily',
+  last_name: 'Taylor',
+  bio: 'Dedicated to nurturing community connections through gardening.',
   is_admin: true
 )
 
@@ -41,9 +41,9 @@ User.create(
   email: 'user4@example.com',
   password: 'password4',
   password_confirmation: 'password4',
-  # first_name: 'Michael',
-  # last_name: 'Brown',
-  # bio: 'Exploring the intersection of art and nature in urban spaces.',
+  first_name: 'Michael',
+  last_name: 'Brown',
+  bio: 'Exploring the intersection of art and nature in urban spaces.',
   is_admin: true
 )
 
@@ -52,9 +52,9 @@ User.create(
   email: 'user5@example.com',
   password: 'password5',
   password_confirmation: 'password5',
-  # first_name: 'Sarah',
-  # last_name: 'Wilson',
-  # bio: 'Advocate for sustainable living and organic food cultures.',
+  first_name: 'Sarah',
+  last_name: 'Wilson',
+  bio: 'Advocate for sustainable living and organic food cultures.',
   is_admin: true
 )
 
@@ -63,9 +63,9 @@ User.create(
   email: 'user6@example.com',
   password: 'password6',
   password_confirmation: 'password6',
-  # first_name: 'Daniel',
-  # last_name: 'Moore',
-  # bio: 'Gardening enthusiast and community volunteer coordinator.',
+  first_name: 'Daniel',
+  last_name: 'Moore',
+  bio: 'Gardening enthusiast and community volunteer coordinator.',
   is_admin: true
 )
 
@@ -74,9 +74,9 @@ User.create(
   email: 'user7@example.com',
   password: 'password7',
   password_confirmation: 'password7',
-  # first_name: 'Jessica',
-  # last_name: 'Davis',
-  # bio: 'Focused on creating educational programs in urban gardening.',
+  first_name: 'Jessica',
+  last_name: 'Davis',
+  bio: 'Focused on creating educational programs in urban gardening.',
   is_admin: true
 )
 
@@ -85,9 +85,9 @@ User.create(
   email: 'user8@example.com',
   password: 'password8',
   password_confirmation: 'password8',
-  # first_name: 'Chris',
-  # last_name: 'Miller',
-  # bio: 'Passionate about permaculture and biodiversity in city landscapes.',
+  first_name: 'Chris',
+  last_name: 'Miller',
+  bio: 'Passionate about permaculture and biodiversity in city landscapes.',
   is_admin: true
 )
 
@@ -96,9 +96,9 @@ User.create(
   email: 'user9@example.com',
   password: 'password9',
   password_confirmation: 'password9',
-  # first_name: 'Laura',
-  # last_name: 'Martinez',
-  # bio: 'Engaged in community outreach and green urban development.',
+  first_name: 'Laura',
+  last_name: 'Martinez',
+  bio: 'Engaged in community outreach and green urban development.',
   is_admin: true
 )
 
@@ -107,9 +107,9 @@ User.create(
   email: 'user10@example.com',
   password: 'password10',
   password_confirmation: 'password10',
-  # first_name: 'Alex',
-  # last_name: 'Johnson',
-  # bio: 'Lover of nature and advocate for environmental education.',
+  first_name: 'Alex',
+  last_name: 'Johnson',
+  bio: 'Lover of nature and advocate for environmental education.',
   is_admin: true
 )
 
