@@ -4,7 +4,7 @@ class CreateReviews < ActiveRecord::Migration[7.1]
       t.references :user, null: false, foreign_key: true
       t.text :content
       t.integer :rating
-      t.string :reviewable_type, polymorphic: true
+      t.references :reviewable, polymorphic: true
 
       t.timestamps
     end
