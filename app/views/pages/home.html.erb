@@ -1,6 +1,5 @@
 <div class="root">
   <div class="root-gradient">
-
   </div>
 
   <div class="carousel-wrapper">
@@ -13,7 +12,7 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
             <h1 class="root-header">CityGardens</h1>
-            <p class="root-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque ipsam eaque sint repellat iste qui, dolorem quo nulla unde? Dolorem, amet voluptate hic repellendus laboriosam iure minus accusantium obcaecati repellat?</p>
+            <p class="root-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque ipsam eaque sint repellat iste qui, dolorem quo nulla unde? Dolorem.</p>
         </div>
         <div class="carousel-item">
           <%= image_tag "root.jpg", class:"d-block w-100" %>
@@ -40,5 +39,8 @@
       </button>
     </div>
   </div>
-  <%= link_to "LOGIN", root_path %>
+  <div class="root-links">
+    <%= link_to "Login", root_path , id: "root-btn" ,class: "action-button" %>
+    <%= link_to "Browse events", root_path , id: "root-btn" ,class: "action-button" %>
+  </div>
 </div>

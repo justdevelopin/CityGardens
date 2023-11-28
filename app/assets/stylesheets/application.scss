@@ -11,9 +11,5 @@
 @import "components/index";
 @import "pages/index";
 
-// General stuff
 
-* {
-  font-family: 'Montserrat', sans-serif;
-  font-family: 'Ubuntu', sans-serif;
-}
+@import "components/action_button"
