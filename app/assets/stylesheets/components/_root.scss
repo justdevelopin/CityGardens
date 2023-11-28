@@ -5,8 +5,8 @@
   position: relative;
 }
 
-.root-gradient {
-  background-image: linear-gradient(to top, #344620a0 20%, #1a2310e7 60%), asset-url("root.jpg");
+.root-background {
+  // background-image: linear-gradient(to top, #344620a0 20%, #1a2310e7 60%), asset-url("root.jpg");
   background-size: cover;
   height: 100%;
   width: 100%;
@@ -14,12 +14,26 @@
   top: 0;
   left: 0;
   z-index: -1;
+}
 
+.root-gradient {
+  background-image: linear-gradient(to top, #344620a0 20%, #1a2310d3 60%);
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
 }
 
 .root-img {
   height: 100%;
 
+}
+
+#background {
+  z-index: -2;
 }
 
 .root-header {
@@ -62,8 +76,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 20px;
 }
 
 #root-btn {
-width: 350px;
+  width: 350px;
+  z-index: 1;
+  letter-spacing: 2px;
+  font-weight: 700;
 }
