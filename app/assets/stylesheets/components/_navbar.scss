@@ -1,6 +1,16 @@
 .navbar-lewagon {
+
+  height: 80px;
+  background-color: #F0EAD6;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  background: white;
+  box-shadow: 0 0 8px 0 #00000072;
+  z-index: 100;
+  padding: 12px 24px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +19,13 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+
+.logo {
+  max-height: 120px;
+  height: 100%;
+  transform: scale(3.5);
+  padding-top: 14px;
+  padding-left: 15px;
 }
