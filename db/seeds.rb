@@ -113,22 +113,14 @@ User.create(
   is_admin: true
 )
 
-
-
-
-
-
-
-
-
-
-
 # Garden 1
 Garden.create(
   user_id: User.find_by(email: 'user1@example.com').id,
   name: 'Urban Oasis',
   description: 'A small yet vibrant garden in the heart of the city, perfect for urban dwellers.',
-  location: 'Parc de la Ciutadella, Barcelona'
+  location: 'Parc de la Ciutadella, Barcelona',
+  latitude: 41.403629,
+  longitude: 2.174355
 )
 
 # Garden 2
@@ -136,7 +128,9 @@ Garden.create(
   user_id: User.find_by(email: 'user2@example.com').id,
   name: 'Riverside Retreat',
   description: 'A peaceful garden by the river, offering a serene escape from the urban hustle.',
-  location: 'Parc de Joan Miró, Barcelona'
+  location: 'Parc de Joan Miró, Barcelona',
+  latitude: 41.414495,
+  longitude: 2.152695
 )
 
 # Garden 3
@@ -144,7 +138,9 @@ Garden.create(
   user_id: User.find_by(email: 'user3@example.com').id,
   name: 'Parc de la Ciutadella Haven',
   description: 'A lush green space within the famous Parc de la Ciutadella, promoting urban biodiversity.',
-  location: 'Parc de la Ciutadella, Barcelona'
+  location: 'Parc de la Ciutadella, Barcelona',
+  latitude: 41.395382,
+  longitude: 2.161949
 )
 
 # Garden 4
@@ -152,7 +148,9 @@ Garden.create(
   user_id: User.find_by(email: 'user4@example.com').id,
   name: 'Montjuïc Hillside Garden',
   description: 'Located on the scenic Montjuïc hill, this garden offers breathtaking views of the city and sea.',
-  location: 'Montjuïc, Barcelona'
+  location: 'Montjuïc, Barcelona',
+  latitude: 41.380218,
+  longitude: 2.173236
 )
 
 # Garden 5
@@ -160,7 +158,9 @@ Garden.create(
   user_id: User.find_by(email: 'user5@example.com').id,
   name: 'Park Güell Community Garden',
   description: 'A vibrant garden nestled in the artistic surroundings of Park Güell, inspired by Gaudí’s work.',
-  location: 'Park Güell, Barcelona'
+  location: 'Park Güell, Barcelona',
+  latitude: 41.383333,
+  longitude: 2.176944
 )
 
 # Garden 6
@@ -168,7 +168,9 @@ Garden.create(
   user_id: User.find_by(email: 'user6@example.com').id,
   name: 'Labyrinth Park of Horta',
   description: 'A historic garden featuring a labyrinth, perfect for those who enjoy a touch of mystery.',
-  location: 'Labyrinth Park of Horta, Barcelona'
+  location: 'Labyrinth Park of Horta, Barcelona',
+  latitude: 41.380896,
+  longitude: 2.122820
 )
 
 # Garden 7
@@ -176,7 +178,9 @@ Garden.create(
   user_id: User.find_by(email: 'user7@example.com').id,
   name: 'Jardins de Joan Brossa',
   description: 'A tranquil garden offering a variety of flora and artistic sculptures.',
-  location: 'Jardins de Joan Brossa, Barcelona'
+  location: 'Jardins de Joan Brossa, Barcelona',
+  latitude: 41.378135,
+  longitude: 2.192494
 )
 
 # Garden 8
@@ -184,7 +188,9 @@ Garden.create(
   user_id: User.find_by(email: 'user8@example.com').id,
   name: 'Jardins del Palau Robert',
   description: 'A small but elegant garden known for its peaceful ambiance and beautiful plant arrangements.',
-  location: 'Jardins del Palau Robert, Barcelona'
+  location: 'Jardins del Palau Robert, Barcelona',
+  latitude: 41.370906,
+  longitude: 2.151847
 )
 
 # Garden 9
@@ -192,7 +198,9 @@ Garden.create(
   user_id: User.find_by(email: 'user9@example.com').id,
   name: 'Jardins de Mossèn Costa i Llobera',
   description: 'Specializing in cacti and succulents, this garden offers a unique botanical experience.',
-  location: 'Jardins de Mossèn Costa i Llobera, Barcelona'
+  location: 'Jardins de Mossèn Costa i Llobera, Barcelona',
+  latitude: 41.385053,
+  longitude: 2.180658
 )
 
 # Garden 10
@@ -200,17 +208,10 @@ Garden.create(
   user_id: User.find_by(email: 'user10@example.com').id,
   name: 'Green Haven',
   description: 'A large community-focused garden promoting environmental education and sustainability.',
-  location: 'Parc de Montjuïc, Barcelona'
+  location: 'Parc de Montjuïc, Barcelona',
+  latitude: 41.391841,
+  longitude: 2.164867
 )
-
-
-
-
-
-
-
-
-
 
 # Gardening Workshops at Garden 1 (Urban Oasis)
 Event.create(
