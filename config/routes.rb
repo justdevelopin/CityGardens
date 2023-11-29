@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:destory, :create ]
     resources :bookmarks, only: [:create, :destroy]
   end
-  
+
   resources :gardens do
     resources :events, only: [:new, :create]
     resources :reviews, only: [:destory, :create ]
