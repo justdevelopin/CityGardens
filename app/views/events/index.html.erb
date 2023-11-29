@@ -25,7 +25,6 @@
             <% end %>
             <p>Date: <%= event.date.strftime('%B %d, %Y') %></p>
             <p><%= truncate(event.description, length: 100) %></p>
-            <%= link_to 'View Details', event_path(event), class: 'view-details-button' %>
           </div>
           <% end %>
       </div>

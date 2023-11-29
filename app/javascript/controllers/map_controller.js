@@ -23,13 +23,11 @@ export default class extends Controller {
 
   addMarkersToMap() {
     this.markersValue.forEach((marker) => {
-      const markerElement = new mapboxgl.Marker()
-        .setLngLat([marker.lng, marker.lat])
-        .addTo(this.map);
-
-      markerElement.getElement().addEventListener('click', (e) => {
-        this.showInfoPanel(marker);
-      });
+      const popup = new mapboxgl.Popup({ className: "fixed-popup", maxWidth: "none", anchor: "bottom" }).setHTML(marker.infoWindow)
+      new mapboxgl.Marker()
+        .setLngLat([ marker.lng, marker.lat ])
+        .setPopup(popup)
+        .addTo(this.map)
     });
   }
 
@@ -44,6 +42,7 @@ export default class extends Controller {
 
     this.infoPanelTarget.innerHTML = infoPanelHtml;
     this.infoPanelTarget.classList.remove('hidden');
+    this.infoPanelTarget.classList.add('open');
   }
 
   closeInfoPanel() {

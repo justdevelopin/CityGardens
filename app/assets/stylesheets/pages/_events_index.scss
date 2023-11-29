@@ -1,7 +1,7 @@
 .events-container {
   position: absolute;
   height: 100vh;
-  top: 0;
+  top: 137px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
@@ -9,7 +9,7 @@
 
   &.slide-down {
     background-color: #e0e0e0;
-    top: 100vh;
+    top: 90vh;
   }
 }
 
@@ -27,7 +27,8 @@
   padding: 20px;
   border-radius: 10px;
   background: white;
-  box-shadow: #57585a ;
+  box-shadow: #57585a;
+  margin-bottom: -20px;
 }
 
 .event-card h2 {
@@ -53,9 +54,6 @@
   background-color: red;
 }
 
-.events-dynamic-container {
-  }
-
 .info-panel {
   position: fixed;
   bottom: 0;
@@ -68,6 +66,37 @@
   transform: translateY(100%);
 }
 
+.hidden {
+  display: none;
+}
+
 .info-panel.open {
   transform: translateY(0);
+}
+
+.info-panel.hidden {
+  transform: translateY(100%);
+  // Alternatively, you could use display: none; if you prefer not to use transform.
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
+
+.fixed-popup {
+  transform: none !important;
+  top: auto !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100vw;
+}
+
+.mapboxgl-ctrl-logo {
+  background-image: none !important;
+}
+
+.mapboxgl-ctrl-attrib-button {
+  background-image: none !important;
 }
