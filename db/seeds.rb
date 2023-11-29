@@ -1,7 +1,14 @@
 # Clear existing users to avoid duplication
+require "open-uri"
+
 User.destroy_all
 Event.destroy_all
 Garden.destroy_all
+
+file = URI.open("")
+event = Event.new(title: "image", body: "A great image")
+event.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+event.save
 
 # User 1
 User.create(

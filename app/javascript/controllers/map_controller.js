@@ -7,9 +7,10 @@ export default class extends Controller {
     markers: Array
   }
 
-  static targets = ["infoPanel", "eventsList"]
+  static targets = ["infoPanel"]
 
   connect() {
+    console.log(this.apiKeyValue)
     mapboxgl.accessToken = this.apiKeyValue
     this.map = new mapboxgl.Map({
       container: this.element,
@@ -55,13 +56,4 @@ export default class extends Controller {
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
   }
 
-  toggleEventsList() {
-    const list = this.eventsListTarget;
-    if (list.style.display === "none") {
-      list.style.display = "block";
-      this.map.resize();
-    } else {
-      list.style.display = "none";
-    }
-  }
 }

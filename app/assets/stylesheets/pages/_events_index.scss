@@ -15,7 +15,6 @@
 
 .event-list {
   background: #e0e0e0;
-  display: none;
   transition: transform 0.6s ease-in-out;
 }
 
@@ -50,13 +49,12 @@
 }
 
 #events-map {
-  height: 100vh;
+  height: 80vh;
   background-color: red;
 }
 
 .events-dynamic-container {
-  position: relative;
-}
+  }
 
 .info-panel {
   position: fixed;
