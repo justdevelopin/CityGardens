@@ -7,11 +7,11 @@ Rails.application.routes.draw do
     resources :reviews, only: [:destory, :create ]
     resources :bookmarks, only: [:create, :destroy]
   end
-
-  resources :gardens, except: [:new] do
+  
+  resources :gardens do
+    resources :events, only: [:new, :create]
     resources :reviews, only: [:destory, :create ]
   end
-
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
