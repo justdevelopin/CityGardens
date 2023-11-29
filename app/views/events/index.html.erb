@@ -1,0 +1,33 @@
+<h1>Upcoming Events</h1>
+<div data-controller="toggle">
+  <div class="toggle-button-container">
+    <%= button_tag 'Map', type: 'button', class: 'toggle-button', data: { action: "click->toggle#toggleEventsList" } %>
+  </div>
+
+  <div data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+
+    <div id="events-map" style="width: 100%; height: 80vh;" data-toggle-target="map">
+    </div>
+    <div id="info-panel" class="info-panel hidden" data-map-target="infoPanel">
+      <button type="button" data-action="click->map#closeInfoPanel">Close</button>
+    </div>
+  </div>
+  <div class="events-dynamic-container">
+    <div class="event-list d-none" data-toggle-target="list">
+      <div class="events-container">
+        <% @events.each do |event| %>
+          <div class="event-card">
+            <h2><%= event.name %></h2>
+            <% if event.garden %>
+              <p>Location: <%= event.garden.name %></p>
+            <% end %>
+            <p>Date: <%= event.date.strftime('%B %d, %Y') %></p>
+            <p><%= truncate(event.description, length: 100) %></p>
+          </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+  </div>
