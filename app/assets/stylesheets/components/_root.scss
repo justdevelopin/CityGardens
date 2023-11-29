@@ -71,6 +71,10 @@
 
 }
 
+.slide-img {
+  margin-bottom: 20px;
+}
+
 .root-links {
   display: flex;
   flex-direction: column;
@@ -83,5 +87,5 @@
   width: 350px;
   z-index: 1;
   letter-spacing: 2px;
-  font-weight: 700;
+  font-weight: bold;
 }

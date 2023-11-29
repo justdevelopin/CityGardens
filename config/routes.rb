@@ -8,7 +8,8 @@ Rails.application.routes.draw do
     resources :bookmarks, only: [:create, :destroy]
   end
 
-  resources :gardens, except: [:new] do
+  resources :gardens do
+    resources :events, only: [:new, :create]
     resources :reviews, only: [:destory, :create ]
   end
 
