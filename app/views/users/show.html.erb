@@ -1,0 +1,67 @@
+  <div class="profile-banner">
+      <%= video_tag( 'animatedprofile.mp4', id: 'profile-background', autoplay: true, loop: true, muted: true )%>
+  </div>
+
+<div class="container">
+  <div class="profile-card">
+
+    <div class="user-info">
+      <div class="user-image-container">
+      </div>
+      <div class="user-name-container">
+        <p class="user-fname"><%= @user.first_name %></p>
+        <p class="user-lname"><%= @user.last_name %></p>
+      </div>
+      <% if current_user.is_admin %>
+        <p class="user-type">Garden administrator</p>
+      <% else %>
+        <p class="user-type">Plant enthusiast</p>
+      <% end %>
+    </div>
+
+    <div class="user-info-bottom">
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Bookings
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Favourite gardens
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Account details
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <% if current_user.is_admin %>
+        <%= link_to "Add a new garden", new_garden_path, class: "action-button" %>
+      <% end %>
+    <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete }, class: "action-button" %>
+
+
+
+  </div>
+</div>
