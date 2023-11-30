@@ -5,7 +5,6 @@ class CreateGardens < ActiveRecord::Migration[7.1]
       t.string :name
       t.text :description
       t.string :location
-
       t.timestamps
     end
   end

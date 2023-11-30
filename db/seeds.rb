@@ -1,4 +1,6 @@
 # Clear existing users to avoid duplication
+require "open-uri"
+
 User.destroy_all
 Event.destroy_all
 Garden.destroy_all
@@ -113,22 +115,13 @@ User.create(
   is_admin: true
 )
 
-
-
-
-
-
-
-
-
-
-
 # Garden 1
 Garden.create(
   user_id: User.find_by(email: 'user1@example.com').id,
   name: 'Urban Oasis',
   description: 'A small yet vibrant garden in the heart of the city, perfect for urban dwellers.',
   location: 'Parc de la Ciutadella, Barcelona'
+
 )
 
 # Garden 2
@@ -145,6 +138,7 @@ Garden.create(
   name: 'Parc de la Ciutadella Haven',
   description: 'A lush green space within the famous Parc de la Ciutadella, promoting urban biodiversity.',
   location: 'Parc de la Ciutadella, Barcelona'
+
 )
 
 # Garden 4
@@ -200,20 +194,11 @@ Garden.create(
   user_id: User.find_by(email: 'user10@example.com').id,
   name: 'Green Haven',
   description: 'A large community-focused garden promoting environmental education and sustainability.',
-  location: 'Parc de Montjuïc, Barcelona'
+  location: 'Parc de Montjuïc, Barcelona',
 )
 
-
-
-
-
-
-
-
-
-
 # Gardening Workshops at Garden 1 (Urban Oasis)
-Event.create(
+Event.create!(
   garden_id: Garden.find_by(name: 'Urban Oasis').id,
   name: 'Gardening Workshops',
   description: 'Educational sessions on organic gardening, composting, or sustainable practices.',

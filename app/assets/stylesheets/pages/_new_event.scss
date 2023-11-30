@@ -1,0 +1,41 @@
+// Next time the general styling should be all in one place
+
+.tirtuary-h {
+  color: #485936;
+  margin-block: 50px;
+}
+
+.action-button {
+  color: #485936 !important;
+}
+
+.form-container {
+  padding: 50px;
+  background-color: #ebede9;
+  border-radius: 10px;
+  // box-shadow: 0 5px 10px 0 rgba(5, 7, 3, 0.206);
+  border: 2px solid #717e635f;
+
+  form {
+    color: #2F3F1D;
+    font-weight: 700;
+
+    input, textarea {
+      border-radius: 5px;
+      color: #2F3F1D;
+      border: 2px solid #717e634a;
+
+    }
+
+    .btn {
+      color: #ebede9;
+      background-color: #5d6b4d;
+      transition: 0.2s;
+      width: 100%;
+      margin-top: 5px;
+      &:hover {
+        background-color: #485936;
+      }
+    }
+  }
+}
