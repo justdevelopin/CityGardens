@@ -8,9 +8,7 @@ export default class extends Controller {
   }
 
   toggleEventsList() {
-    console.log(this.listTarget, this.mapTarget)
     const list = this.listTarget;
-    console.log()
     if (list.classList.contains("d-none")) {
     list.classList.remove("d-none")
     } else {
