@@ -4,12 +4,14 @@
 
   <div class="form-container">
     <%= simple_form_for @event do |f| %>
-      <%= f.input :name, wrapper_html: {class: "f-input"} %>
+      <%= f.input :name, wrapper_html: {class: "f-input"}, label: "Event title"  %>
       <%= f.input :description, wrapper_html: {class: "f-input"} %>
       <%= f.input :date,
                   as: :string,
                   input_html: { data: { controller: "datepicker" } } %>
       <%= f.input :max_attendees, wrapper_html: {class: "f-input"} %>
+      <%= f.input :photo, as: :file, input_html: { multiple: false }, label: "Upload event photo" %>
+
       <%= f.button :submit, wrapper_html: {class: "action-button"} %>
     <% end %>
   </div>
