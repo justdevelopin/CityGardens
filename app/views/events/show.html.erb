@@ -1,0 +1,23 @@
+<div class="event-container">
+  <div class="event-card">
+    <% if @event.photo.attached? %>
+      <%= cl_image_tag @event.photo.key %>
+    <% else %>
+      <%= image_tag "photo1.jpg" %>
+    <% end %>
+  </div>
+
+
+    <h1><%= @event.name %></h1>
+    <h4><%= @event.description %></h4>
+
+    <% if @already_booked %>
+      <p>You have already signed up for this event!</p>
+    <% else %>
+      <%= simple_form_for [@event, @booking] do |f| %>
+        <%= f.input :attendees %>
+        <%= f.submit "Finalize booking", class: "btn btn-primary" %>
+      <% end %>
+    <% end %>
+
+</div>

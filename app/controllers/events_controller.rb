@@ -26,10 +26,10 @@ class EventsController < ApplicationController
       @events = Event.all.includes(:garden).where.not(gardens: { latitude: nil, longitude: nil })
     end
   end
- 
 
   def show
     @event = Event.find(params[:id])
+    @already_booked = current_user.bookings.where(event: @event).any?
     @booking = Booking.new
   end
 
@@ -47,4 +47,3 @@ class EventsController < ApplicationController
     params.require(:event).permit(:name, :description, :date, :max_attendees, :photo)
   end
 end
-
