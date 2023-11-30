@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get '/profile', to: 'users#show', as: :user_profile
 
+  get 'users/:id' => 'users#show'
   resources :events, only: [:index, :show] do
     resources :bookings, only: [:show, :create, :destroy]
     resources :reviews, only: [:destory, :create ]

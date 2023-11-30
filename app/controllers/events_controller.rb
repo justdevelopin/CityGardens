@@ -3,6 +3,7 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all.includes(:garden).where.not(gardens: { latitude: nil, longitude: nil })
+    @show_list = params[:query].present?
     @markers = @events.map do |event|
       {
         lat: event.garden.latitude,
@@ -11,11 +12,24 @@ class EventsController < ApplicationController
         id: event.id
       }
     end
+
+    if params[:query].present?
+      sql_subquery = <<~SQL
+        events.name ILIKE :query
+        OR events.description ILIKE :query
+        OR gardens.name ILIKE :query
+        OR gardens.location ILIKE :query
+        OR gardens.description ILIKE :query
+      SQL
+      @events = @events.joins(:garden).where(sql_subquery, query: "%#{params[:query]}%")
+    else
+      @events = Event.all.includes(:garden).where.not(gardens: { latitude: nil, longitude: nil })
+    end
   end
- 
 
   def show
     @event = Event.find(params[:id])
+    @already_booked = current_user.bookings.where(event: @event).any?
     @booking = Booking.new
   end
 
@@ -33,4 +47,3 @@ class EventsController < ApplicationController
     params.require(:event).permit(:name, :description, :date, :max_attendees, :photo)
   end
 end
-
