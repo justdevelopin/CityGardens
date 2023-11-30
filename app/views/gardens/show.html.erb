@@ -1,24 +1,34 @@
 
-  <div class="container">
-    <section class="section-show">
-        <div class="show-container">
-          <div class="show-photo-column">
-            <%= image_tag "garden1.jpg", class:"show-photo"%>
-          </div>
-          <div class="show-description-column">
-            <h3 class="show-garden-title"><%= @garden.name %></h3>
-            <p class="show-description"><%= @garden.description %></p>
-            </div>
-          </div>
-      </section>
+<section class="section-show">
+  <div class="show-container">
+    <div class="show-photo-column">
+      <%= image_tag "garden1.jpg", class:"show-photo"%>
+    </div>
+    <div class="show-description-column">
+      <h3 class="show-garden-title"><%= @garden.name %></h3>
+      <p class="show-description"><%= @garden.description %></p>
+    </div>
   </div>
+</section>
 
-  <div class="event-card">
-    <div class="event-card-info">
-    <p class="text-center">Upcoming events</p>
+<section class="event-card">
+  <div class="event-card-info">
+    <h3 class="text-center">Upcoming events</h3>
   </div>
+</section>
 
-  <div class="event-details-card">
-    <div class="event-card-details">
-    <p class="text-center">Event name</p>
+<section class="event-card-details">
+  <div>
+    <p class="text-left">Event name:</p>
+    <p class="text-left">Event Description:</p>
+    <p class="text-left">Date and time:</p>
   </div>
+  <button>Book</button>
+</section>
+
+<div class="navbar">
+  <a href="#search" class="active">Seach</a>
+  <a href="#favourites">Favorites<a>
+  <a href="#My upcoming events" class="active">My upcoming events</a>
+  <a href="#profile">Profile</a>
+</div>
