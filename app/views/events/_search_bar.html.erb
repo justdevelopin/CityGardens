@@ -1,5 +1,5 @@
-<div class="row justify-content-center search-row">
-  <div class="col-sm-8 my-3">
+<div class="search-container">
+  <div class="search-container-inner">
     <%= form_with url: events_path, method: :get, class: "d-flex search-input-group" do %>
       <%= text_field_tag :query,
             params[:query],

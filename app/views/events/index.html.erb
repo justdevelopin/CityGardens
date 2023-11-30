@@ -1,9 +1,9 @@
 <div class="title-index">
   <div class="title-inner">
-      <%= render 'search_bar' %>
     <h1>Upcoming Events</h1>
   </div>
 </div>
+<%= render 'search_bar' %>
 <div data-controller="toggle">
   <div class="toggle-button-container" data-action="click->toggle#toggleEventsList">
     <%= button_tag 'Map', type: 'button', class: 'toggle-button' %>
