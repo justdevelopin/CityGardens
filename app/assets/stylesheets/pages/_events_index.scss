@@ -2,7 +2,7 @@
   position: fixed;
   scroll-behavior: smooth;
   background: #F7F8F5;
-  padding-top: 20px;
+  padding-top: 67px;
   padding-left: 15px;
   padding-right: 15px;
   overflow: scroll;
@@ -48,19 +48,22 @@
   align-content: center;
   align-items: center;
 }
+
+.title-index {
+  height: 112px;
+  border-radius: 12px;
+}
+
 .title-inner {
   text-align: center;
-  display: inline-flex;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
   width: 100%;
 }
+
 .title-inner h1 {
   font-size: 24px;
   font-weight: 100;
-  padding: 16px 0 16px 0;
-  margin: 0px;
+  padding: 5px 0 5px 0;
+  margin: -63px;
 }
 .toggle-button-container button {
   border: none;
@@ -84,7 +87,7 @@
   margin-bottom: -20px;
   margin: 0px;
   margin-bottom: 10px;
-  
+
 }
 
 .view-details-button {
@@ -223,4 +226,10 @@ button.mapboxgl-popup-close-button {
   margin: 0; /* Reset default margins */
   border-top-left-radius: 8px; /* Top left corner */
   border-top-right-radius: 8px; /* Top right corner */
+}
+
+
+.mapboxgl-canvas {
+  position: absolute;
+  top: 104px;
 }
