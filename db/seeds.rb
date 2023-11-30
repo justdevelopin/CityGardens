@@ -5,11 +5,6 @@ User.destroy_all
 Event.destroy_all
 Garden.destroy_all
 
-file = URI.open("")
-event = Event.new(title: "image", body: "A great image")
-event.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-event.save
-
 # User 1
 User.create(
   email: 'user1@example.com',
@@ -125,9 +120,8 @@ Garden.create(
   user_id: User.find_by(email: 'user1@example.com').id,
   name: 'Urban Oasis',
   description: 'A small yet vibrant garden in the heart of the city, perfect for urban dwellers.',
-  location: 'Parc de la Ciutadella, Barcelona',
-  latitude: 41.403629,
-  longitude: 2.174355
+  location: 'Parc de la Ciutadella, Barcelona'
+
 )
 
 # Garden 2
@@ -135,9 +129,7 @@ Garden.create(
   user_id: User.find_by(email: 'user2@example.com').id,
   name: 'Riverside Retreat',
   description: 'A peaceful garden by the river, offering a serene escape from the urban hustle.',
-  location: 'Parc de Joan Miró, Barcelona',
-  latitude: 41.414495,
-  longitude: 2.152695
+  location: 'Parc de Joan Miró, Barcelona'
 )
 
 # Garden 3
@@ -145,9 +137,8 @@ Garden.create(
   user_id: User.find_by(email: 'user3@example.com').id,
   name: 'Parc de la Ciutadella Haven',
   description: 'A lush green space within the famous Parc de la Ciutadella, promoting urban biodiversity.',
-  location: 'Parc de la Ciutadella, Barcelona',
-  latitude: 41.395382,
-  longitude: 2.161949
+  location: 'Parc de la Ciutadella, Barcelona'
+
 )
 
 # Garden 4
@@ -155,9 +146,7 @@ Garden.create(
   user_id: User.find_by(email: 'user4@example.com').id,
   name: 'Montjuïc Hillside Garden',
   description: 'Located on the scenic Montjuïc hill, this garden offers breathtaking views of the city and sea.',
-  location: 'Montjuïc, Barcelona',
-  latitude: 41.380218,
-  longitude: 2.173236
+  location: 'Montjuïc, Barcelona'
 )
 
 # Garden 5
@@ -165,9 +154,7 @@ Garden.create(
   user_id: User.find_by(email: 'user5@example.com').id,
   name: 'Park Güell Community Garden',
   description: 'A vibrant garden nestled in the artistic surroundings of Park Güell, inspired by Gaudí’s work.',
-  location: 'Park Güell, Barcelona',
-  latitude: 41.383333,
-  longitude: 2.176944
+  location: 'Park Güell, Barcelona'
 )
 
 # Garden 6
@@ -175,9 +162,7 @@ Garden.create(
   user_id: User.find_by(email: 'user6@example.com').id,
   name: 'Labyrinth Park of Horta',
   description: 'A historic garden featuring a labyrinth, perfect for those who enjoy a touch of mystery.',
-  location: 'Labyrinth Park of Horta, Barcelona',
-  latitude: 41.380896,
-  longitude: 2.122820
+  location: 'Labyrinth Park of Horta, Barcelona'
 )
 
 # Garden 7
@@ -185,9 +170,7 @@ Garden.create(
   user_id: User.find_by(email: 'user7@example.com').id,
   name: 'Jardins de Joan Brossa',
   description: 'A tranquil garden offering a variety of flora and artistic sculptures.',
-  location: 'Jardins de Joan Brossa, Barcelona',
-  latitude: 41.378135,
-  longitude: 2.192494
+  location: 'Jardins de Joan Brossa, Barcelona'
 )
 
 # Garden 8
@@ -195,9 +178,7 @@ Garden.create(
   user_id: User.find_by(email: 'user8@example.com').id,
   name: 'Jardins del Palau Robert',
   description: 'A small but elegant garden known for its peaceful ambiance and beautiful plant arrangements.',
-  location: 'Jardins del Palau Robert, Barcelona',
-  latitude: 41.370906,
-  longitude: 2.151847
+  location: 'Jardins del Palau Robert, Barcelona'
 )
 
 # Garden 9
@@ -205,9 +186,7 @@ Garden.create(
   user_id: User.find_by(email: 'user9@example.com').id,
   name: 'Jardins de Mossèn Costa i Llobera',
   description: 'Specializing in cacti and succulents, this garden offers a unique botanical experience.',
-  location: 'Jardins de Mossèn Costa i Llobera, Barcelona',
-  latitude: 41.385053,
-  longitude: 2.180658
+  location: 'Jardins de Mossèn Costa i Llobera, Barcelona'
 )
 
 # Garden 10
@@ -216,12 +195,10 @@ Garden.create(
   name: 'Green Haven',
   description: 'A large community-focused garden promoting environmental education and sustainability.',
   location: 'Parc de Montjuïc, Barcelona',
-  latitude: 41.391841,
-  longitude: 2.164867
 )
 
 # Gardening Workshops at Garden 1 (Urban Oasis)
-Event.create(
+Event.create!(
   garden_id: Garden.find_by(name: 'Urban Oasis').id,
   name: 'Gardening Workshops',
   description: 'Educational sessions on organic gardening, composting, or sustainable practices.',
