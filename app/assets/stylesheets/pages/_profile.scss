@@ -110,6 +110,15 @@
 
     .accordion-item {
       border: none;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      background-color: white;
+
+      .no-events {
+        margin-bottom: 20px;
+        color: #859079;
+        letter-spacing: 1.2px;
+      }
     }
 
   }

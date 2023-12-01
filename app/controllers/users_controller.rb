@@ -5,5 +5,10 @@ class UsersController < ApplicationController
     else
       @user = current_user
     end
+
+    @gardens = @user.gardens
+    @attending_events = @user.attending_events
+    @events = @user.events
+    # @events = Event.joins(:garden).where()
   end
 end

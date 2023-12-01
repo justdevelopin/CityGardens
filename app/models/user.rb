@@ -3,7 +3,11 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :gardens, dependent: :destroy
   has_many :bookings
-  has_many :events
+  has_many :events, through: :gardens
+
+  has_many :attending_events, through: :bookings, source: :event
+
+  # has_many :events, through: :gardens
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
   has_one_attached :photo
 
