@@ -1,7 +1,14 @@
 class UsersController < ApplicationController
   def show
-    @user = current_user
+    if params[:id]
+      @user = User.find(params[:id])
+    else
+      @user = current_user
+    end
 
-    @user = User.find(params[:id])
+    @gardens = @user.gardens
+    @attending_events = @user.attending_events
+    @events = @user.events
+    # @events = Event.joins(:garden).where()
   end
 end
