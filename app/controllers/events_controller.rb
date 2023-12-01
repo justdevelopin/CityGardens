@@ -28,7 +28,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:garden_id])
+    @event = Event.find(params[:id])
     @already_booked = current_user.bookings.where(event: @event).any?
     @booking = Booking.new
   end
