@@ -13,4 +13,18 @@ class GardensController < ApplicationController
       }
     end
   end
+
+  def new
+    @garden = Garden.new
+  end
+
+  def create
+    @garden = Garden.new(garden_params)
+  end
+
+  private
+
+  def garden_params
+    params.require(:garden).permit(:name, :description, :location)
+  end
 end
