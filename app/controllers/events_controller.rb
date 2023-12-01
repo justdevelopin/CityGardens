@@ -28,17 +28,30 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
+    @event = Event.find(params[:garden_id])
     @already_booked = current_user.bookings.where(event: @event).any?
     @booking = Booking.new
   end
 
   def new
-    @event = Event.new
+    @garden = Garden.find(params[:garden_id])
+    @event = @garden.events.new
   end
 
   def create
-    @event = Event.new(event_params)
+    @garden = Garden.find(params[:garden_id])
+    @event = @garden.events.new(event_params)
+    if @event.save
+      respond_to do |format|
+        format.json { render json: { status: :created, event: @event } }
+        format.html { redirect_to events_path, notice: "Booking was successfully created." }
+      end
+    else
+      respond_to do |format|
+        format.json { render json: @event.errors, status: :unprocessable_entity }
+        format.html { render :new }
+      end
+    end
   end
 
   private

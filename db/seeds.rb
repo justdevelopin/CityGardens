@@ -202,7 +202,8 @@ Event.create!(
   garden_id: Garden.find_by(name: 'Urban Oasis').id,
   name: 'Gardening Workshops',
   description: 'Educational sessions on organic gardening, composting, or sustainable practices.',
-  date: Date.new(2024, 3, 15)
+  date: Date.new(2024, 3, 15),
+  max_attendees: 15
 )
 
 # Plant Swap Meet at Garden 2 (Riverside Retreat)
@@ -210,7 +211,8 @@ Event.create(
   garden_id: Garden.find_by(name: 'Riverside Retreat').id,
   name: 'Plant Swap Meet',
   description: 'A gathering where community members can exchange plants or seeds.',
-  date: Date.new(2024, 4, 10)
+  date: Date.new(2024, 4, 10),
+  max_attendees: 15
 )
 
 # Garden Yoga Classes at Garden 3 (Parc de la Ciutadella Haven)
@@ -218,7 +220,8 @@ Event.create(
   garden_id: Garden.find_by(name: 'Parc de la Ciutadella Haven').id,
   name: 'Garden Yoga Classes',
   description: 'Offering yoga sessions amidst the tranquility of the garden.',
-  date: Date.new(2024, 5, 20)
+  date: Date.new(2024, 5, 20),
+  max_attendees: 15
 )
 
 # Schools Gardening Day at Garden 4 (Montjuïc Hillside Garden)
@@ -226,7 +229,8 @@ Event.create(
   garden_id: Garden.find_by(name: 'Montjuïc Hillside Garden').id,
   name: 'Schools Gardening Day',
   description: 'Activities and learning experiences designed for young gardeners.',
-  date: Date.new(2024, 6, 17)
+  date: Date.new(2024, 6, 17),
+  max_attendees: 15
 )
 
 # Garden Art Day at Garden 5 (Park Güell Community Garden)
@@ -234,7 +238,8 @@ Event.create(
   garden_id: Garden.find_by(name: 'Park Güell Community Garden').id,
   name: 'Garden Art Day',
   description: 'Encouraging artistic expression in the garden, such as painting or sculpture.',
-  date: Date.new(2024, 7, 22)
+  date: Date.new(2024, 7, 22),
+  max_attendees: 15
 )
 
 # Community Dinners at Garden 6 (Labyrinth Park of Horta)
@@ -242,7 +247,8 @@ Event.create(
   garden_id: Garden.find_by(name: 'Labyrinth Park of Horta').id,
   name: 'Community Dinners',
   description: 'Everyone brings a dish to share, preferably made with garden produce.',
-  date: Date.new(2024, 8, 12)
+  date: Date.new(2024, 8, 12),
+  max_attendees: 15
 )
 
 # Garden Book Club at Garden 7 (Jardins de Joan Brossa)
@@ -250,7 +256,8 @@ Event.create(
   garden_id: Garden.find_by(name: 'Jardins de Joan Brossa').id,
   name: 'Garden Book Club',
   description: 'Discussing books related to gardening, nature, or sustainability.',
-  date: Date.new(2024, 9, 15)
+  date: Date.new(2024, 9, 15),
+  max_attendees: 15
 )
 
 # Garden Volunteer Days at Garden 8 (Jardins del Palau Robert)
@@ -258,7 +265,8 @@ Event.create(
   garden_id: Garden.find_by(name: 'Jardins del Palau Robert').id,
   name: 'Garden Volunteer Days',
   description: 'Organizing community work days for garden maintenance and improvement.',
-  date: Date.new(2024, 10, 18)
+  date: Date.new(2024, 10, 18),
+  max_attendees: 15
 )
 
 # Garden-Themed Movie Nights at Garden 9 (Jardins de Mossèn Costa i Llobera)
@@ -266,7 +274,8 @@ Event.create(
   garden_id: Garden.find_by(name: 'Jardins de Mossèn Costa i Llobera').id,
   name: 'Garden-Themed Movie Nights',
   description: 'Outdoor screenings of films related to gardening or nature.',
-  date: Date.new(2024, 11, 5)
+  date: Date.new(2024, 11, 5),
+  max_attendees: 15
 )
 
 # Nature Photography Workshop at Garden 10 (Green Haven)
@@ -274,5 +283,6 @@ Event.create(
   garden_id: Garden.find_by(name: 'Green Haven').id,
   name: 'Nature Photography Workshop',
   description: 'A workshop focusing on capturing the beauty of the garden and its natural surroundings through photography.',
-  date: Date.new(2024, 12, 10)
+  date: Date.new(2024, 12, 10),
+  max_attendees: 15
 )
