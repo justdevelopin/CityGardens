@@ -1,0 +1,77 @@
+.event-address {
+  font-size: 14px;
+  font-family: 'Montserrat';
+  opacity: 0.6;
+  margin-left: 10px;
+  margin-top: -06px;
+}
+
+.show-event-title {
+  margin-bottom: 2px;
+  font-weight: bold;
+  font-family: 'Montserrat';
+}
+
+.show-description {
+  font-size: 16px;
+  margin-left: 10px;
+  margin-top: 12px;
+  margin-bottom: 30px;
+  font-family: 'Montserrat';
+}
+
+.form-label {
+  font-family: 'Montserrat';
+  font-weight: bold;
+  margin-left: 10px;
+  margin-top: -06px;
+}
+
+.btn-primary {
+  font-family: 'Montserrat';
+  color: #ebede9;
+  background-color: #5d6b4d;
+  transition: 0.2s;
+  width: 100%;
+  &:hover {
+    background-color: #485936;
+}
+}
+
+.section-show {
+  img {
+    width: 100%;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    padding: 10px;
+  }
+  }
+
+.show-container
+{
+  background-color: #F7F8F5;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+
+}
+
+.events-show {
+  background-color: #F7F8F5;
+}
+
+.event-container {
+  background-color: #F7F8F5;
+}
+
+.form-control {
+  background-color: white;
+}
+
+.event-booking-form {
+
+  p {
+    font-family: 'Montserrat';
+    font-weight: bolder;
+    font-size: 20px;
+  }
+}
