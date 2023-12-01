@@ -3,7 +3,7 @@ class GardensController < ApplicationController
   def show
     @garden = Garden.find(params[:id])
   end
-  
+
   def index
     @gardens = Garden.all
     # The `geocoded` scope filters only flats with coordinates
@@ -13,5 +13,19 @@ class GardensController < ApplicationController
         lng: garden.longitude
       }
     end
+  end
+
+  def new
+    @garden = Garden.new
+  end
+
+  def create
+    @garden = Garden.new(garden_params)
+  end
+
+  private
+
+  def garden_params
+    params.require(:garden).permit(:name, :description, :location)
   end
 end
