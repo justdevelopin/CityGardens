@@ -7,18 +7,6 @@
   display: flex;
 }
 
-.search-query-input {
-  flex-grow: 1;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  margin-left: 50px;
-  margin-right: -26px;
-  margin-top: -25px;
-  margin-bottom: 25px;
-  background: #F7F8F5;
-  border-color: #b3b1b1;
-}
-
 .search-submit-button {
   border-radius: 63px;
   background: #344620;
@@ -42,4 +30,181 @@
   margin-top: -10px;
   color: #ffffff;
   font-size: large;
+}
+
+.search-imput-form {
+  position: relative;
+}
+
+.search-imput-form input {
+  width: 60px;
+}
+
+form.search-imput-form {
+  display: inline-flex;
+  align-content: center;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+  height: 40px;
+}
+form.search-imput-form {
+  border-radius: 40px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.05);
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  width: calc(100% - 3rem);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  border: 1px solid #dddddd;
+}
+input.search-imput-submit-button {
+  height: 40px;
+}
+.search-imput-form .search-query-input-new {
+  width: 100%;
+  border: none;
+  padding: 0.3rem;
+  font-size: 14px;
+  padding-left: 1.5rem;
+}
+.button-search-form-css {
+  position: relative;
+}
+input.search-imput-submit-button {
+  height: 33px;
+  margin-bottom: -0.4rem;
+  border: none;
+  background: #344620;
+}
+span.svg-icon-search {
+  position: absolute;
+  z-index: 9999;
+  left: calc(50% - 6px);
+  top: calc(50% - 6px);
+}
+.img-container {
+  width: 100%;
+  height: 380px;
+  position: relative;
+  overflow: hidden;
+}
+
+.img-container img {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover; /* Resize and crop the image to cover the area */
+}
+.search-imput-form:focus {
+  /* Overwrite styles here; for example, remove a border */
+  border: none;
+  /* Alternatively, revert to default */
+  all: revert;
+}
+
+/* Or to completely remove all styles */
+.search-imput-form:focus {
+  all: unset;
+}
+.event-card-index h2 {
+  font-size: 16px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.8rem;
+}
+
+.event-card-index p {
+  padding-left: 0.8rem;
+}
+
+.event-card-index h2, .event-card-index .h2 {
+  margin: 0px;
+}
+
+.svg-icons-events-attribute svg {
+  width: 18px;
+  height: 18px;
+  opacity: .6;
+}
+
+
+.events-atribute-list {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: stretch;
+  width: calc(100% - 1.6rem);
+  margin-left: 0.8rem;
+}
+
+
+span.event-atribute {
+  display: flex;
+}
+span.event-atribute {
+  font-size: 12px;
+  color: #2a2c2c;
+  font-weight: 600;
+}
+.card-description {
+  margin-top: 0.8rem;
+  font-size: 14px;
+  margin-bottom: 1.5rem;
+  padding-right: 0.8rem;
+  border-top: solid 1px #ccc;
+  padding-top: 0.8rem;
+}
+
+.event-card-index h2 {
+  position: absolute;
+  bottom: 7.8rem;
+  background: #fffc;
+  padding-right: 0.8rem;
+  width: 100%;
+  background-color: #4859366e;
+  backdrop-filter: blur(10px);
+  color: #eef2ec;
+  font-weight: 100;
+
+}
+
+.events-atribute-list {
+  margin-top: 0.8rem;
+}
+.event-card-index {
+  position: relative;
+}
+.event-card-index {
+  min-height: 507px;
+}
+
+
+
+input.search-imput-submit-button {
+  height: 39px;
+}
+span.svg-icon-search svg {
+  color: #fff;
+}
+
+.title-index {
+  background-color: #fefefee6;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  font-weight: 100;
+}
+
+.title-inner {
+  padding-top: 0.4rem;
+}
+
+div#info-panel {
+  display: none;
 }
