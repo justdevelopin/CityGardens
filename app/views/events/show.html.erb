@@ -1,16 +1,26 @@
-<div class="event-container">
-  <div class="event-card">
-    <% if @event.photo.attached? %>
-      <%= cl_image_tag @event.photo.key %>
-    <% else %>
-      <%= image_tag "photo1.jpg" %>
-    <% end %>
-  </div>
+<div class="events-show">
+
+  <section class="section-show">
+    <div class="show-container">
+      <div class="show-photo-column">
+        <% if @event.photo.attached? %>
+            <%= cl_image_tag @event.photo.key, class: "show-photo" %>
+          <% else %>
+            <%= image_tag "photo1.jpg", class: "show-photo" %>
+          <% end %>
+      </div>
+      <div class="show-description-column mx-3 mt-3">
+        <h3 class="show-event-title"><strong><%= @event.name %></strong></h3>
+        <p class="event-address"><%= @event.garden.location %></p>
+        <p class="show-description"><%= @event.description %></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="event-container">
 
 
-    <h1><%= @event.name %></h1>
-    <h4><%= @event.description %></h4>
-
+  <div class="event-booking-form mx-3">
     <% if @already_booked %>
       <p>You have already signed up for this event!</p>
     <% else %>
@@ -19,5 +29,7 @@
         <%= f.submit "Finalize booking", class: "btn btn-primary" %>
       <% end %>
     <% end %>
+  </div>
 
+  </div>
 </div>
