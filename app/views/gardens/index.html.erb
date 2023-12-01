@@ -1,0 +1,10 @@
+<ul>
+  <% @gardens.each do |garden| %>
+  <li>
+    <div class="show-description-column">
+      <h3 class="show-garden-title"><%= garden.name %></h3>
+      <p class="show-description"><%= garden.description %></p>
+    </div>
+  </li>
+  <%end%>
+</ul>
