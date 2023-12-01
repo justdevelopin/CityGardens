@@ -13,6 +13,7 @@
         <h3 class="show-event-title"><strong><%= @event.name %></strong></h3>
         <p class="event-address"><%= @event.garden.location %></p>
         <p class="show-description"><%= @event.description %></p>
+        <p class="show-description"><%= @event.date.strftime("%d %B") %></p>
       </div>
     </div>
   </section>
