@@ -1,18 +1,20 @@
 import { Controller } from "@hotwired/stimulus"
 
-// Connects to data-controller="toggle"
 export default class extends Controller {
-  static targets = ["list", "map"]
+  static targets = ["list", "map", "toggleButton"]
 
   connect() {
+    this.updateToggleButtonLabel();
   }
 
   toggleEventsList() {
-    const list = this.listTarget;
-    if (list.classList.contains("d-none")) {
-    list.classList.remove("d-none")
-    } else {
-      list.classList.add("d-none")
-    }
+    this.mapTarget.classList.toggle("hidden");
+    this.listTarget.classList.toggle("d-none");
+    this.updateToggleButtonLabel();
+  }
+
+  updateToggleButtonLabel() {
+    const listIsVisible = !this.listTarget.classList.contains('d-none');
+    this.toggleButtonTarget.textContent = listIsVisible ? 'Map' : 'List';
   }
 }
