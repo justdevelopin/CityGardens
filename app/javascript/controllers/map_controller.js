@@ -22,6 +22,7 @@ export default class extends Controller {
   }
 
   addMarkersToMap() {
+
     this.currentMarkers.forEach(marker => marker.remove())
     this.currentMarkers = []
 

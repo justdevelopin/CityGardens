@@ -1,17 +1,17 @@
-  <div class="form-container">
-    <div class="container-logo">
-      <%= image_tag "logo.png" %>
-    </div>
-    <div class="new-container">
-    <div class="new-container-head">
-  <h3 class="tirtuary-h">Please fill in the information about the garden</h3>
+<div class="form-container">
+  <div class="container-logo">
+    <%= image_tag 'logo.png', alt: 'Website Logo', class: 'logo-image' %>
   </div>
-    <%= simple_form_for @garden do |f| %>
-      <%= f.input :name, wrapper_html: {class: "f-input"}, label: "Garden title"  %>
-      <%= f.input :description, wrapper_html: {class: "f-input"} %>
-      <%= f.input :location, wrapper_html: {class: "f-input"}, label: "Garden location"  %>
-      <%= f.input :photo, as: :file, input_html: { multiple: false }, label: "Upload garden photo" %>
-      <%= f.button :submit, wrapper_html: {class: "action-button"} %>
-    <% end %>
+  <div class="new-container">
+    <div class="new-container-head">
+      <h3 class="tirtuary-h">Please fill in the information about the garden</h3>
+    </div>
+      <%= simple_form_for @garden do |f| %>
+        <%= f.input :name, wrapper_html: {class: "f-input"}, label: "Garden title"  %>
+        <%= f.input :description, wrapper_html: {class: "f-input"} %>
+        <%= f.input :location, wrapper_html: {class: "f-input"}, label: "Garden location"  %>
+        <%= f.input :photo, as: :file, input_html: { multiple: false }, label: "Upload garden photo" %>
+        <%= f.button :submit, wrapper_html: {class: "action-button"} %>
+      <% end %>
   </div>
 </div>
