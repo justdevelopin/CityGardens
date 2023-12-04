@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   get '/profile', to: 'users#show', as: :user_profile
+  get 'gardens/search', to: 'gardens#search', as: 'search_gardens'
 
   get 'users/:id' => 'users#show'
   resources :events, only: [:index, :show] do

@@ -1,10 +1,10 @@
 <div class="search-container">
   <div class="search-container-inner">
-    <%= form_with url: events_path, method: :get, class: "search-imput-form", remote: true, data: { action: "submit->map#updateMapMarkers" } do %>
+    <%= form_with url: gardens_path, method: :get, class: "search-imput-form", remote: true, data: { action: "appropriate-action" } do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control-search search-query-input-new",
-        placeholder: "Type a keyword", data: { action: "input->map#updateMapMarkers" }
+        placeholder: "Type a keyword", data: { action: "appropriate-action" }
       %>
       <div class="button-search-form-css">
         <%= submit_tag "", name: "", class: "search-imput-submit-button" %>
@@ -13,5 +13,3 @@
     <% end %>
   </div>
 </div>
-
-
