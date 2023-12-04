@@ -14,12 +14,9 @@
 @import "components/action_button";
 @import "components/navbar";
 @import "pages/events_index";
-
-// ???
-p {
-  margin: 0;
-}
-
+@import "garden";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import "parcels";
 @import "pages/index_search";
 @import "components/signup";
 @import "components/login";
