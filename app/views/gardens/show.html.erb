@@ -6,6 +6,7 @@
     </div>
     <div class="show-description-column">
       <h3 class="show-garden-title"><strong><%= @garden.name %></strong></h3>
+      <p class="show-location"><%= @garden.location %></p>
       <p class="show-description"><%= @garden.description %></p>
     </div>
   </div>
@@ -13,16 +14,15 @@
 
 <section class="event-card">
   <div class="event-card-info">
-    <h3 class="text-center">10 events</h3>
+    <h3 class="text-center">Upcoming events</h3>
   </div>
 </section>
 
 <section class="event-card-details">
-  <% @garden.events.each do |event| %>
-    <div>
-      <p class="text-left">Event name: <%= event.name %></p>
-      <p class="text-left">Date and time: <%= event.date.strftime("%d %b %y") %></p>
-    </div>
-  <% end %>
-<%= link_to "Book", event_path, class: "action-button" %>
+  <div>
+    <p class="text-left">Event name:</p>
+    <p class="text-left">Event Description:</p>
+    <p class="text-left">Date and time:</p>
+  </div>
+  <button>Book</button>
 </section>

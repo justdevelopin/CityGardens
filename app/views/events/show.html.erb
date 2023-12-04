@@ -13,6 +13,8 @@
         <h3 class="show-event-title"><strong><%= @event.name %></strong></h3>
         <p class="event-address"><%= @event.garden.location %></p>
         <p class="show-description"><%= @event.description %></p>
+        <p class="show-description"> Total participans: <%= @event.bookings.sum(:attendees)%></p>
+        <p class="show-description"> Date: <%= @event.date%></p>
       </div>
     </div>
   </section>
@@ -22,7 +24,7 @@
 
   <div class="event-booking-form mx-3">
     <% if @already_booked %>
-      <p>You have already signed up for this event!</p>
+      <p><strong><i class="fa-solid fa-check"></i>You're already signed up!</strong></p>
     <% else %>
       <%= simple_form_for [@event, @booking] do |f| %>
         <%= f.input :attendees %>
