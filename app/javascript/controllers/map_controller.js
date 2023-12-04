@@ -16,18 +16,27 @@ export default class extends Controller {
       style: "mapbox://styles/adrewkin/ckw0ygjis9a9h14ujewnkojkm"
     })
 
+    this.currentMarkers = [];
     this.addMarkersToMap()
     this.fitMapToMarkers()
   }
 
   addMarkersToMap() {
-    this.markersValue.forEach((marker) => {
-      const popup = new mapboxgl.Popup({ className: "fixed-popup", maxWidth: "none", anchor: "bottom" }).setHTML(marker.infoWindow)
-      new mapboxgl.Marker()
-        .setLngLat([ marker.lng, marker.lat ])
+
+    this.currentMarkers.forEach(marker => marker.remove())
+    this.currentMarkers = []
+
+    this.markersValue.forEach((markerData) => {
+      const popup = new mapboxgl.Popup({ className: "fixed-popup", maxWidth: "none", anchor: "bottom" })
+        .setHTML(markerData.infoWindow)
+
+      const marker = new mapboxgl.Marker()
+        .setLngLat([markerData.lng, markerData.lat])
         .setPopup(popup)
         .addTo(this.map)
-    });
+
+      this.currentMarkers.push(marker)
+    })
   }
 
   showInfoPanel(marker) {
@@ -52,6 +61,26 @@ export default class extends Controller {
     const bounds = new mapboxgl.LngLatBounds()
     this.markersValue.forEach(marker => bounds.extend([marker.lng, marker.lat]))
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
+  }
+
+  updateMapMarkers(event) {
+    event.preventDefault()
+
+    const query = new FormData(event.target).get('query')
+    const url = `${this.data.get("url")}?query=${query}`
+
+    fetch(url, {
+      headers: { Accept: 'application/json' }
+    })
+      .then(response => response.json())
+      .then(data => this.updateMarkersOnMap(data))
+      .catch(error => console.error("Error fetching markers:", error))
+  }
+
+  updateMarkersOnMap(data) {
+    this.markersValue = data
+    this.addMarkersToMap()
+    this.fitMapToMarkers()
   }
 
 }

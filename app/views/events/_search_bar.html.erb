@@ -1,11 +1,11 @@
 <div class="search-container">
   <div class="search-container-inner">
-    <%= form_with url: events_path, method: :get, class: "search-imput-form" do %>
+    <%= form_with url: events_path, method: :get, class: "search-imput-form", remote: true, data: { action: "submit->map#updateMapMarkers" } do %>
       <%= text_field_tag :query,
-            params[:query],
-            class: "form-control-search search-query-input-new",
-            placeholder: "Type a keyword"
-        %>
+        params[:query],
+        class: "form-control-search search-query-input-new",
+        placeholder: "Type a keyword", data: { action: "input->map#updateMapMarkers" }
+      %>
       <div class="button-search-form-css">
         <%= submit_tag "", name: "", class: "search-imput-submit-button" %>
         <span class="svg-icon-search"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" style="display:block;fill:none;height:12px;width:12px;stroke:currentColor;stroke-width:5.333333333333333;overflow:visible" aria-hidden="true" role="presentation" focusable="false"><path fill="none" d="M13 24a11 11 0 1 0 0-22 11 11 0 0 0 0 22zm8-3 9 9"></path></svg></span>
