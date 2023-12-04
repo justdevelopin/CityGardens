@@ -1,6 +1,6 @@
 <div class="events-show">
 
-  <section class="section-show">
+  <section class="section-show mx-2">
     <div class="show-container">
       <div class="show-photo-column">
         <% if @event.photo.attached? %>
@@ -13,24 +13,32 @@
         <h3 class="show-event-title"><strong><%= @event.name %></strong></h3>
         <p class="event-address"><%= @event.garden.location %></p>
         <p class="show-description"><%= @event.description %></p>
-        <p class="show-description"><%= @event.date.strftime("%d %B") %></p>
+        <p class="show-participants"><strong>Total participants:</strong> <%= @event.bookings.sum(:attendees)%></p>
+        <p class="show-participants"><strong>Available spots:</strong> <%= @event.available_spots %></p>
+        <p class="show-date"><strong>Date & Time:</strong> <%= @event.date.strftime("%d %B  %Y %R") %></p>
       </div>
     </div>
   </section>
 
-  <div class="event-container">
-
-
-  <div class="event-booking-form mx-3">
-    <% if @already_booked %>
-      <p>You have already signed up for this event!</p>
-    <% else %>
-      <%= simple_form_for [@event, @booking] do |f| %>
-        <%= f.input :attendees %>
-        <%= f.submit "Finalize booking", class: "btn btn-primary" %>
-      <% end %>
-    <% end %>
+  <div data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+      class="show-page-map mx-2 mt-4">
   </div>
 
+  <div class="section-show mt-4 mx-2 p-2">
+    <div class="event-container">
+      <div class="event-booking-form mx-3">
+        <h2>Book now</h2>
+        <% if @already_booked %>
+          <p><strong><i class="fa-solid fa-check"></i>You're already signed up!</strong></p>
+        <% else %>
+          <%= simple_form_for [@event, @booking] do |f| %>
+            <%= f.input :attendees, label: "Nº of people" %>
+            <%= f.submit "Finalize booking", class: "btn btn-primary mb-4" %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

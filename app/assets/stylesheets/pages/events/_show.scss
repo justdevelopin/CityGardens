@@ -1,77 +1,113 @@
-.event-address {
-  font-size: 14px;
-  font-family: 'Montserrat';
-  opacity: 0.6;
-  margin-left: 10px;
-  margin-top: -06px;
-}
-
-.show-event-title {
-  margin-bottom: 2px;
-  font-weight: bold;
-  font-family: 'Montserrat';
-}
-
-.show-description {
-  font-size: 16px;
-  margin-left: 10px;
-  margin-top: 12px;
-  margin-bottom: 30px;
-  font-family: 'Montserrat';
-}
-
-.form-label {
-  font-family: 'Montserrat';
-  font-weight: bold;
-  margin-left: 10px;
-  margin-top: -06px;
-}
-
-.btn-primary {
-  font-family: 'Montserrat';
-  color: #ebede9;
-  background-color: #5d6b4d;
-  transition: 0.2s;
-  width: 100%;
-  &:hover {
-    background-color: #485936;
-}
-}
-
-.section-show {
-  img {
-    width: 100%;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
-    padding: 10px;
-  }
-  }
-
-.show-container
-{
-  background-color: #F7F8F5;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
-
-}
-
 .events-show {
   background-color: #F7F8F5;
+  margin-top: 20px;
+  background-color: #EFF3D9;
+  color: #344620;
+
+  .section-show {
+    background-color: #ffffff;
+    border-radius: 10px;
+    h3 {
+      margin-left: 0px;
+      margin-top: -10%;
+    }
+
+    .event-address {
+      font-size: 17px;
+      font-family: 'Montserrat';
+      opacity: 0.6;
+      margin-left: 0px;
+      margin-top: -06px;
+    }
+
+    .show-event-title {
+      margin-bottom: 2px;
+      font-weight: bold;
+      font-family: 'Montserrat';
+      font-size: 25px;
+    }
+
+    .show-description {
+      font-size: 20px;
+      margin-left: 0px;
+      margin-top: 50px;
+      margin-bottom: 30px;
+      font-family: 'Montserrat';
+    }
+
+    .show-participants {
+      font-family: 'Montserrat';
+      font-size: 20px;
+      margin-bottom: 1px;
+    }
+
+    .show-date {
+      font-family: 'Montserrat';
+      font-size: 20px;
+      margin-bottom: 60px;
+    }
+
+    .confirm {
+      font-size: 23px;
+    }
+
+    .show-container
+      {
+        img {
+          width: 100%;
+          border-radius: 7%;
+          padding: 10px;
+        }
+      }
+  }
+
+  .event-container {
+
+    .form-control {
+      background-color: white;
+    }
+
+    .event-booking-form {
+
+      i {
+        margin-left: 11%;
+      }
+
+      p {
+        font-family: 'Montserrat';
+        font-size: 20px;
+        color: #436c21;
+        font-size: 25px;
+      }
+    }
+
+    .form-label {
+      font-family: 'Montserrat';
+      font-weight: bold;
+      margin-left: 0px;
+      margin-top: -06px;
+    }
+
+    .btn-primary {
+      font-family: 'Montserrat';
+      font-size: 20px;
+      font-weight: bold;
+      color: #ebede9;
+      background-color: #5d6b4d;
+      transition: 0.2s;
+      width: 100%;
+      &:hover {
+        background-color: #485936;
+      }
+    }
+  }
 }
 
-.event-container {
-  background-color: #F7F8F5;
-}
+.show-page-map {
+  height: 300px;
+  margin: auto;
 
-.form-control {
-  background-color: white;
-}
-
-.event-booking-form {
-
-  p {
-    font-family: 'Montserrat';
-    font-weight: bolder;
-    font-size: 20px;
+  .mapboxgl-canvas {
+    top: 0 !important;
   }
 }

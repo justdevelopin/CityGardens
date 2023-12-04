@@ -1,6 +1,8 @@
 class Event < ApplicationRecord
   belongs_to :garden
   has_many :bookings, dependent: :destroy
+  has_many :attendees, through: :bookings, source: "user"
+
   has_one_attached :photo
 
   validates :name, presence: true
@@ -13,5 +15,9 @@ class Event < ApplicationRecord
 
   def date_cannot_be_in_the_past
     errors.add(:date, "can't be in the past") if date.present? && date < Date.today
+  end
+
+  def available_spots
+    max_attendees - bookings.sum(:attendees)
   end
 end
