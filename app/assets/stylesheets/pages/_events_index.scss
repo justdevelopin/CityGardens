@@ -1,7 +1,7 @@
 .events-container {
   position: fixed;
   scroll-behavior: smooth;
-  background: #F7F8F5;
+  background: #EFF3D9;
   padding: 67px 15px 15px 15px;
   overflow: scroll;
   top: 0;
@@ -237,4 +237,17 @@ button.mapboxgl-popup-close-button {
 .custom-marker {
   border-radius: 100%;
   border: solid 4px #fff;
+}
+
+.info-window .events-atribute-list {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-around;
+  align-items: stretch;
+  width: calc(100% - 1.6rem);
+  margin-left: -7.2rem;
+  flex-direction: column;
+  border-bottom: solid 0.5px #595e5b;
+  margin-bottom: 14px;
 }
