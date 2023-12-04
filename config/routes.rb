@@ -19,8 +19,6 @@ Rails.application.routes.draw do
     resources :parcels, only: [:new, :create, :index] # Nested within gardens
   end
 
-
-
   resources :gardens, only: [:new, :create] do
     resources :events, only: [:new, :create]
     resources :reviews, only: [:destroy, :create ]
