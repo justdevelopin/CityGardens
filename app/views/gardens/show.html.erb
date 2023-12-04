@@ -1,28 +1,49 @@
-
-<section class="section-show">
-  <div class="show-container">
-    <div class="show-photo-column">
-      <%= image_tag "garden1.jpg", class:"show-photo"%>
-    </div>
-    <div class="show-description-column">
-      <h3 class="show-garden-title"><strong><%= @garden.name %></strong></h3>
-      <p class="show-description"><%= @garden.description %></p>
-    </div>
+<div class="garden-show">
+  <div class="garden-image">
+    <% if @garden.photos.attached? %>
+      <%= image_tag(@garden.photos.first, alt: @garden.name, class: "garden-show-image") %>
+    <% else %>
+      <%= image_tag('logo.png', alt: 'No image available', class: "garden-show-image") %>
+    <% end %>
   </div>
-</section>
+
+  <h1><%= @garden.name %></h1>
+  <p><%= @garden.description %></p>
+
+  <div class="rent-parcel-form">
+    <h2>Rent a Parcel</h2>
+    <%= form_with(model: [ @garden, @garden.events.build ]) do |form| %>
+      <div class="field">
+        <%= form.label :date_and_time, "Date and Time for Visit" %>
+        <%= form.datetime_select :date_and_time %>
+      </div>
+
+      <div class="field">
+        <%= form.label :number_of_guests, "Number of Guests (if applicable)" %>
+        <%= form.number_field :number_of_guests, in: 1..100 %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit "Confirm Booking" %>
+      </div>
+    <% end %>
+  </div>
+</div>
 
 <section class="event-card">
   <div class="event-card-info">
-    <h3 class="text-center">10 events</h3>
-  </div>
-</section>
+    <h3 class="text-center">Events</h3>
+    <% @garden.events.each do |event| %>
+      <!-- Debugging Output -->
+      <% Rails.logger.debug "Event: #{event.inspect}" %>
 
-<section class="event-card-details">
-  <% @garden.events.each do |event| %>
-    <div>
-      <p class="text-left">Event name: <%= event.name %></p>
-      <p class="text-left">Date and time: <%= event.date.strftime("%d %b %y") %></p>
-    </div>
-  <% end %>
-<%= link_to "Book", event_path, class: "action-button" %>
+      <div class="event-detail">
+        <p>Event name: <%= event.name %></p>
+        <p>Date and time: <%= event.date ? event.date.strftime("%d %b %Y") : "Not specified" %></p>
+        <% if event.persisted? %>
+          <%= link_to "Book", event_path(event), class: "action-button" %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </section>

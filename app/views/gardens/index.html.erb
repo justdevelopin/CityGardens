@@ -1,10 +1,17 @@
-<ul>
-  <% @gardens.each do |garden| %>
-  <li>
-    <div class="show-description-column">
-      <h3 class="show-garden-title"><%= garden.name %></h3>
-      <p class="show-description"><%= garden.description %></p>
-    </div>
-  </li>
-  <%end%>
-</ul>
+<% if @gardens.any? %>
+  <div class="garden-grid">
+    <% @gardens.each do |garden| %>
+      <div class="garden-card">
+        <% if garden.photos.attached? %>
+          <%= image_tag garden.photos.first, alt: garden.name, class: 'garden-image' %>
+        <% else %>
+          <%= image_tag("logo.png", alt: "default image") %> 
+        <% end %>
+        <%= link_to garden.name, garden, class: 'garden-name' %>
+        <p class="garden-address"><%= garden.location %></p>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p>No gardens found.</p>
+<% end %>

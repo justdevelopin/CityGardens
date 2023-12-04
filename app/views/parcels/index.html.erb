@@ -1,0 +1,35 @@
+
+<div class="parcel-container">
+  <h1>Parcels</h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Size</th>
+        <th>Garden</th>
+        <th>Reservations</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @parcels.each do |parcel| %>
+        <tr>
+          <td><%= parcel.name %></td>
+          <td><%= parcel.size %></td>
+          <td><%= parcel.garden.name %></td>
+          <td>
+            <% parcel.parcel_reservations.each do |reservation| %>
+              <div class="reservation-item">
+                <p><strong>User:</strong> <%= reservation.user.name %>, <strong>Status:</strong> <%= reservation.status %></p>
+                <%= form_with model: reservation, url: parcel_reservation_path(reservation), method: :patch, class: 'reservation-form' do |form| %>
+                  <%= form.select :status, ['accepted', 'rejected'], include_blank: true %>
+                  <%= form.submit "Update" %>
+                <% end %>
+              </div>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
