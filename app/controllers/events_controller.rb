@@ -30,6 +30,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @already_booked = current_user.bookings.where(event: @event).any?
     @booking = Booking.new
+    @markers = [{ lat: @event.garden.latitude, lng: @event.garden.longitude }]
   end
 
   def new

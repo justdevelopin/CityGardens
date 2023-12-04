@@ -1,12 +1,15 @@
 .events-show {
   background-color: #F7F8F5;
+  margin-top: 20px;
+  background-color: #EFF3D9;
+  color: #344620;
 
   .section-show {
-    min-height: 70vh;
-    background-color: #F7F8F5;
-
+    background-color: #ffffff;
+    border-radius: 10px;
     h3 {
       margin-left: 0px;
+      margin-top: -10%;
     }
 
     .event-address {
@@ -27,9 +30,25 @@
     .show-description {
       font-size: 20px;
       margin-left: 0px;
-      margin-top: 12px;
+      margin-top: 50px;
       margin-bottom: 30px;
       font-family: 'Montserrat';
+    }
+
+    .show-participants {
+      font-family: 'Montserrat';
+      font-size: 20px;
+      margin-bottom: 1px;
+    }
+
+    .show-date {
+      font-family: 'Montserrat';
+      font-size: 20px;
+      margin-bottom: 60px;
+    }
+
+    .confirm {
+      font-size: 23px;
     }
 
     .show-container
@@ -43,8 +62,6 @@
   }
 
   .event-container {
-    background-color: #F7F8F5;
-    min-height: 25vh;
 
     .form-control {
       background-color: white;
@@ -73,6 +90,8 @@
 
     .btn-primary {
       font-family: 'Montserrat';
+      font-size: 20px;
+      font-weight: bold;
       color: #ebede9;
       background-color: #5d6b4d;
       transition: 0.2s;
@@ -81,5 +100,14 @@
         background-color: #485936;
       }
     }
+  }
+}
+
+.show-page-map {
+  height: 300px;
+  margin: auto;
+
+  .mapboxgl-canvas {
+    top: 0 !important;
   }
 }
