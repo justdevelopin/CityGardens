@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_29_104319) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_04_103454) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -66,7 +66,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_29_104319) do
     t.bigint "garden_id", null: false
     t.text "description"
     t.string "name"
-    t.date "date"
+    t.datetime "date"
     t.integer "max_attendees"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -83,6 +83,25 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_29_104319) do
     t.float "latitude"
     t.float "longitude"
     t.index ["user_id"], name: "index_gardens_on_user_id"
+  end
+
+  create_table "parcel_reservations", force: :cascade do |t|
+    t.bigint "parcel_id"
+    t.bigint "user_id"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["parcel_id"], name: "index_parcel_reservations_on_parcel_id"
+    t.index ["user_id"], name: "index_parcel_reservations_on_user_id"
+  end
+
+  create_table "parcels", force: :cascade do |t|
+    t.string "name"
+    t.integer "size"
+    t.bigint "garden_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["garden_id"], name: "index_parcels_on_garden_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -121,5 +140,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_29_104319) do
   add_foreign_key "bookmarks", "users"
   add_foreign_key "events", "gardens"
   add_foreign_key "gardens", "users"
+  add_foreign_key "parcel_reservations", "parcels"
+  add_foreign_key "parcel_reservations", "users"
+  add_foreign_key "parcels", "gardens"
   add_foreign_key "reviews", "users"
 end

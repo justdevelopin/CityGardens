@@ -1,8 +1,13 @@
 // Next time the general styling should be all in one place
+.new-container-head {
+  margin-top: 86px;
+    margin-bottom: 47px;
+  border-radius: 10px;
+  background-color: #ebede9;
+}
 
 .tirtuary-h {
   color: #485936;
-  margin-block: 50px;
 }
 
 .action-button {
@@ -10,15 +15,44 @@
 }
 
 .form-container {
-  padding: 50px;
+  padding: 10px;
   background-color: #ebede9;
   border-radius: 10px;
-  // box-shadow: 0 5px 10px 0 rgba(5, 7, 3, 0.206);
+  box-shadow: 0 5px 10px 0 rgba(5, 7, 3, 0.206);
   border: 2px solid #717e635f;
+  width: 395px;
+  height: 80vh;
+  margin-top: 100px;
+  margin-left: 18px;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center;    /* Center children horizontally */
+  justify-content: center;
+
+  .new-container {
+    margin-top: -91px;
+  }
+
+  .container-logo {
+    width: 150px;       /* Adjust as needed */
+    height: 150px;      /* Adjust as needed */
+    border-radius: 50%; /* Make it round */   /* Ensures no overflow if image is too big */
+    margin: auto;       /* Centers the container horizontally */
+    display: flex;      /* Use flexbox to center the image inside */
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-image {
+    width: 100%;
+    height: auto;
+    margin-top: -100px;
+  }
 
   form {
     color: #2F3F1D;
     font-weight: 700;
+    margin-bottom: 24px;
 
     input, textarea {
       border-radius: 5px;

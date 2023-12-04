@@ -175,7 +175,7 @@ span.event-atribute {
 }
 
 button.mapboxgl-popup-close-button {
-  background: #e1dcdc;
+  background: #c4d3bf;
   border-radius: 100%;
   width: 32px;
   height: 32px;
@@ -232,4 +232,10 @@ button.mapboxgl-popup-close-button {
   border-radius: 0.8rem;
   margin-bottom: 1.5rem;
   border: solid 1px #ccc;
+}
+
+
+.custom-marker {
+  border-radius: 100%;
+  border: solid 4px #fff;
 }

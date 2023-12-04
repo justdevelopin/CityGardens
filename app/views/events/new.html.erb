@@ -1,18 +1,20 @@
-
-<div class="container">
-  <h3 class="tirtuary-h">Please fill in the information about your event</h3>
-
-  <div class="form-container">
-    <%= simple_form_for @event do |f| %>
-      <%= f.input :name, wrapper_html: {class: "f-input"}, label: "Event title"  %>
-      <%= f.input :description, wrapper_html: {class: "f-input"} %>
-      <%= f.input :date,
+<div class="form-container">
+  <div class="container-logo">
+    <%= image_tag 'logo.png', alt: 'Website Logo', class: 'logo-image' %>
+  </div>
+  <div class="new-container">
+    <div class="new-container-head">
+      <h3 class="tirtuary-h">Please fill in the information about your event</h3>
+    </div>
+      <%= simple_form_for [@garden, @event] do |f| %>
+        <%= f.input :name, wrapper_html: {class: "f-input"}, label: "Event title"  %>
+        <%= f.input :description, wrapper_html: {class: "f-input"} %>
+        <%= f.input :date,
                   as: :string,
                   input_html: { data: { controller: "datepicker" } } %>
-      <%= f.input :max_attendees, wrapper_html: {class: "f-input"} %>
-      <%= f.input :photo, as: :file, input_html: { multiple: false }, label: "Upload event photo" %>
-
-      <%= f.button :submit, wrapper_html: {class: "action-button"} %>
-    <% end %>
+        <%= f.input :max_attendees, wrapper_html: {class: "f-input"}, as: :numeric %>
+        <%= f.input :photo, as: :file, input_html: { multiple: false }, label: "Upload event photo" %>
+        <%= f.button :submit, wrapper_html: {class: "action-button"} %>
+      <% end %>
   </div>
 </div>

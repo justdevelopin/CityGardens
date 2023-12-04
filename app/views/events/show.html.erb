@@ -14,7 +14,8 @@
         <p class="event-address"><%= @event.garden.location %></p>
         <p class="show-description"><%= @event.description %></p>
         <p class="show-description"> Total participans: <%= @event.bookings.sum(:attendees)%></p>
-        <p class="show-description"> Date: <%= @event.date%></p>
+        <p class="show-description"><%= @event.date.strftime("%d %B") %></p>
+
       </div>
     </div>
   </section>
