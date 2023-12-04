@@ -5,6 +5,49 @@ User.destroy_all
 Event.destroy_all
 Garden.destroy_all
 
+
+garden_image_urls = [
+  "https://res.cloudinary.com/drlqgbpvb/image/upload/v1701653370/CityGarden/pbjdxgmh3rykyfpnken3.jpg",
+  "https://res.cloudinary.com/drlqgbpvb/image/upload/v1701653369/CityGarden/s103tg7whgledhifhvyq.jpg",
+  "https://res.cloudinary.com/drlqgbpvb/image/upload/v1701653368/CityGarden/tzu9ozcrnnwrjblabekm.jpg",
+  "https://res.cloudinary.com/drlqgbpvb/image/upload/v1701653318/CityGarden/lupy6uqwxkm1dayl0xod.jpg",
+  "https://res.cloudinary.com/drlqgbpvb/image/upload/v1701653235/CityGarden/iz09jb6c4x4hq5u71vqt.jpg",
+  "https://res.cloudinary.com/drlqgbpvb/image/upload/v1701653208/CityGarden/kpyuybol4tsocgvrxgol.jpg",
+  "https://res.cloudinary.com/drlqgbpvb/image/upload/v1701653167/CityGarden/kqfiqx5gwptgia0kn0vc.jpg",
+  "https://res.cloudinary.com/drlqgbpvb/image/upload/v1701653142/CityGarden/yfdtefjdwbkg4fh4knzp.jpg",
+  "https://res.cloudinary.com/drlqgbpvb/image/upload/v1701653106/CityGarden/m4rdxikvr8v9hfmht8bl.jpg",
+  "https://res.cloudinary.com/drlqgbpvb/image/upload/v1701653369/CityGarden/jc1uz5vl3v7jk3omdwgs.jpg"
+]
+
+garden_names = ['Urban Oasis', 'Riverside Retreat', 'Parc de la Ciutadella Haven', 'Montjuïc Hillside Garden', 'Park Güell Community Garden', 'Labyrinth Park of Horta', 'Jardins de Joan Brossa', 'Jardins del Palau Robert', 'Jardins de Mossèn Costa i Llobera', 'Green Haven']
+
+garden_locations = [
+  'Parc de la Ciutadella, Barcelona',
+  'Parc de Joan Miró, Barcelona',
+  'Parc de la Ciutadella, Barcelona',
+  'Montjuïc, Barcelona',
+  'Park Güell, Barcelona',
+  'Labyrinth Park of Horta, Barcelona',
+  'Jardins de Joan Brossa, Barcelona',
+  'Jardins del Palau Robert, Barcelona',
+  'Jardins de Mossèn Costa i Llobera, Barcelona',
+  'Parc de Montjuïc, Barcelona'
+]
+
+
+garden_descriptions = [
+  'A small yet vibrant garden in the heart of the city, perfect for urban dwellers.',
+  'A peaceful garden by the river, offering a serene escape from the urban hustle.',
+  'A lush green space within the famous Parc de la Ciutadella, promoting urban biodiversity.',
+  'Located on the scenic Montjuïc hill, this garden offers breathtaking views of the city and sea.',
+  'A vibrant garden nestled in the artistic surroundings of Park Güell, inspired by Gaudí’s work.',
+  'A historic garden featuring a labyrinth, perfect for those who enjoy a touch of mystery.',
+  'A tranquil garden offering a variety of flora and artistic sculptures.',
+  'A small but elegant garden known for its peaceful ambiance and beautiful plant arrangements.',
+  'Specializing in cacti and succulents, this garden offers a unique botanical experience.',
+  'A large community-focused garden promoting environmental education and sustainability.'
+]
+
 # User 1
 User.create(
   email: 'user1@example.com',
@@ -115,87 +158,21 @@ User.create(
   is_admin: true
 )
 
-# Garden 1
-Garden.create(
-  user_id: User.find_by(email: 'user1@example.com').id,
-  name: 'Urban Oasis',
-  description: 'A small yet vibrant garden in the heart of the city, perfect for urban dwellers.',
-  location: 'Parc de la Ciutadella, Barcelona'
+10.times do |i|
+  user = User.find_by(email: "user#{i + 1}@example.com")
+  garden = Garden.create(
+    user: user,
+    name: garden_names[i],
+    description: garden_descriptions[i],
+    location: garden_locations[i]
+  )
 
-)
+  # Attach an image from Cloudinary URL
+  image_url = garden_image_urls[i]
+  downloaded_image = URI.open(image_url)
+  garden.photos.attach(io: downloaded_image, filename: "garden_#{i + 1}.jpg")
+end
 
-# Garden 2
-Garden.create(
-  user_id: User.find_by(email: 'user2@example.com').id,
-  name: 'Riverside Retreat',
-  description: 'A peaceful garden by the river, offering a serene escape from the urban hustle.',
-  location: 'Parc de Joan Miró, Barcelona'
-)
-
-# Garden 3
-Garden.create(
-  user_id: User.find_by(email: 'user3@example.com').id,
-  name: 'Parc de la Ciutadella Haven',
-  description: 'A lush green space within the famous Parc de la Ciutadella, promoting urban biodiversity.',
-  location: 'Parc de la Ciutadella, Barcelona'
-
-)
-
-# Garden 4
-Garden.create(
-  user_id: User.find_by(email: 'user4@example.com').id,
-  name: 'Montjuïc Hillside Garden',
-  description: 'Located on the scenic Montjuïc hill, this garden offers breathtaking views of the city and sea.',
-  location: 'Montjuïc, Barcelona'
-)
-
-# Garden 5
-Garden.create(
-  user_id: User.find_by(email: 'user5@example.com').id,
-  name: 'Park Güell Community Garden',
-  description: 'A vibrant garden nestled in the artistic surroundings of Park Güell, inspired by Gaudí’s work.',
-  location: 'Park Güell, Barcelona'
-)
-
-# Garden 6
-Garden.create(
-  user_id: User.find_by(email: 'user6@example.com').id,
-  name: 'Labyrinth Park of Horta',
-  description: 'A historic garden featuring a labyrinth, perfect for those who enjoy a touch of mystery.',
-  location: 'Labyrinth Park of Horta, Barcelona'
-)
-
-# Garden 7
-Garden.create(
-  user_id: User.find_by(email: 'user7@example.com').id,
-  name: 'Jardins de Joan Brossa',
-  description: 'A tranquil garden offering a variety of flora and artistic sculptures.',
-  location: 'Jardins de Joan Brossa, Barcelona'
-)
-
-# Garden 8
-Garden.create(
-  user_id: User.find_by(email: 'user8@example.com').id,
-  name: 'Jardins del Palau Robert',
-  description: 'A small but elegant garden known for its peaceful ambiance and beautiful plant arrangements.',
-  location: 'Jardins del Palau Robert, Barcelona'
-)
-
-# Garden 9
-Garden.create(
-  user_id: User.find_by(email: 'user9@example.com').id,
-  name: 'Jardins de Mossèn Costa i Llobera',
-  description: 'Specializing in cacti and succulents, this garden offers a unique botanical experience.',
-  location: 'Jardins de Mossèn Costa i Llobera, Barcelona'
-)
-
-# Garden 10
-Garden.create(
-  user_id: User.find_by(email: 'user10@example.com').id,
-  name: 'Green Haven',
-  description: 'A large community-focused garden promoting environmental education and sustainability.',
-  location: 'Parc de Montjuïc, Barcelona',
-)
 
 # Gardening Workshops at Garden 1 (Urban Oasis)
 Event.create!(
