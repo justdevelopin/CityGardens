@@ -10,6 +10,17 @@ Rails.application.routes.draw do
     resources :bookmarks, only: [:create, :destroy]
   end
 
+
+  resources :parcel_reservations, only: [:update]
+
+  resources :gardens do
+    resources :events, only: [:new, :create]
+    resources :reviews, only: [:destroy, :create]
+    resources :parcels, only: [:new, :create, :index] # Nested within gardens
+  end
+
+
+
   resources :gardens, only: [:new, :create] do
     resources :events, only: [:new, :create]
     resources :reviews, only: [:destroy, :create ]
