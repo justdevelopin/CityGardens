@@ -36,16 +36,16 @@ garden_locations = [
 
 
 garden_descriptions = [
-  'A small yet vibrant garden in the heart of the city, perfect for urban dwellers.',
-  'A peaceful garden by the river, offering a serene escape from the urban hustle.',
-  'A lush green space within the famous Parc de la Ciutadella, promoting urban biodiversity.',
-  'Located on the scenic Montjuïc hill, this garden offers breathtaking views of the city and sea.',
-  'A vibrant garden nestled in the artistic surroundings of Park Güell, inspired by Gaudí’s work.',
-  'A historic garden featuring a labyrinth, perfect for those who enjoy a touch of mystery.',
-  'A tranquil garden offering a variety of flora and artistic sculptures.',
-  'A small but elegant garden known for its peaceful ambiance and beautiful plant arrangements.',
-  'Specializing in cacti and succulents, this garden offers a unique botanical experience.',
-  'A large community-focused garden promoting environmental education and sustainability.'
+  "A small yet vibrant garden nestled in the heart of the city, Urban Oasis beckons urban dwellers seeking a green refuge. Its diverse array of flora, thoughtfully curated in compact spaces, offers not just a visual treat but a serene escape from the bustling city life. Whether you seek solace or a place to reconnect with nature, this intimate garden provides a peaceful sanctuary amid the urban landscape.",
+  "Serenity finds its home at Riverside Retreat, a peaceful garden harmoniously situated by the flowing river. Beyond its picturesque setting, this garden offers a serene escape from the constant urban hustle. With nature as its canvas, it invites visitors to unwind, listen to the soothing sounds of the river, and indulge in tranquil moments amidst a verdant sanctuary.",
+  "Nestled within the famous Parc de la Ciutadella, this lush green space stands as an urban oasis promoting biodiversity. Its vibrant ecosystem, adorned with diverse flora, not only captivates the eye but also serves as a haven for urban wildlife. Embracing nature in the heart of the city, this garden offers a scenic respite where visitors can explore and celebrate the richness of urban biodiversity.",
+  "Perched atop the scenic Montjuïc hill, this garden mesmerizes visitors with breathtaking views spanning the city and sea. Beyond its stunning vistas, the garden's curated landscape provides a sensory delight, marrying panoramic views with meticulously nurtured flora. It's an elevated retreat where visitors can immerse themselves in beauty while relishing panoramic perspectives of the surrounding landscapes.",
+  "Vibrancy meets artistic inspiration in this garden nestled amid the creative ambiance of Park Güell. Inspired by Gaudí's visionary work, the garden's vibrant landscapes and architectural elements evoke a sense of wonder. Visitors can explore and experience the artistic essence that intertwines seamlessly with nature, offering an enriching journey through art and greenery.",
+  "Steeped in history and mystery, this historic garden captivates explorers with its labyrinthine pathways. Beyond its enigmatic allure, the garden boasts a diverse collection of flora and provides an intriguing space for those seeking both natural beauty and a touch of mystique. It's an inviting landscape where visitors can lose themselves in the charm of horticultural puzzles and serene surroundings.",
+  "Tranquility takes form in this tranquil garden adorned with an array of flora and artistic sculptures. Beyond its botanical charm, the garden serves as a canvas for artistic expression, blending nature and art seamlessly. Its serene ambiance invites visitors to appreciate both the beauty of meticulously arranged plant life and the creative allure of sculptural artworks.",
+  "Elegance defines this small yet sophisticated garden, renowned for its peaceful ambiance and meticulously arranged plant compositions. Amidst its intimate setting, visitors can immerse themselves in the beauty of carefully curated plant arrangements and find moments of quiet contemplation. It's a serene retreat where simplicity meets sophistication in a harmonious blend of nature and design.",
+  "Specializing in cacti and succulents, this garden offers a unique botanical experience amidst a diverse collection of arid plants. Its focus on desert flora provides an educational yet visually striking landscape, inviting visitors to explore the captivating world of succulents and cacti. It's a specialized haven celebrating the resilience and beauty of drought-resistant plant species.",
+  "As a large community-focused garden, Green Haven stands as an educational hub promoting environmental awareness and sustainability. Its expansive landscape serves as an interactive platform for visitors of all ages to engage with nature, fostering a deeper understanding of ecological balance. Beyond its lush greenery, this garden encourages community involvement and environmental stewardship, embodying the spirit of a sustainable, nature-centric haven."
 ]
 
 # User 1
@@ -178,8 +178,8 @@ end
 Event.create!(
   garden_id: Garden.find_by(name: 'Urban Oasis').id,
   name: 'Gardening Workshops',
-  description: 'Educational sessions on organic gardening, composting, or sustainable practices.',
-  date: Date.new(2024, 3, 15),
+  description: "Join us at Urban Oasis for a series of engaging and informative gardening workshops. Delve into the world of organic gardening, composting techniques, and sustainable practices. These educational sessions aim to empower attendees with the knowledge and skills needed to cultivate their own thriving green spaces while fostering a deeper connection to nature. Whether you are a seasoned gardener or just starting, these workshops provide a nurturing environment to learn and grow together.",
+  date: DateTime.new(2024, 3, 15, 14),
   max_attendees: 15
 )
 
@@ -187,8 +187,8 @@ Event.create!(
 Event.create(
   garden_id: Garden.find_by(name: 'Riverside Retreat').id,
   name: 'Plant Swap Meet',
-  description: 'A gathering where community members can exchange plants or seeds.',
-  date: Date.new(2024, 4, 10),
+  description: "At Riverside Retreat, immerse yourself in a green haven and be part of our Plant Swap Meet. It's a delightful gathering where gardening enthusiasts and community members come together to exchange plants, seeds, and gardening stories. This event celebrates the diversity of flora while fostering connections within the community. Bring your favorite plants to swap, discover new species, and expand your garden while mingling with fellow plant lovers against the serene backdrop of Riverside Retreat.",
+  date: DateTime.new(2024, 4, 10, 10, 30),
   max_attendees: 15
 )
 
@@ -196,8 +196,8 @@ Event.create(
 Event.create(
   garden_id: Garden.find_by(name: 'Parc de la Ciutadella Haven').id,
   name: 'Garden Yoga Classes',
-  description: 'Offering yoga sessions amidst the tranquility of the garden.',
-  date: Date.new(2024, 5, 20),
+  description: "Experience tranquility and wellness in the heart of nature at Parc de la Ciutadella Haven's Garden Yoga Classes. These sessions offer a unique opportunity to rejuvenate mind, body, and spirit amidst the lush greenery of the garden. Led by experienced instructors, these yoga classes encourage a harmonious blend of movement and relaxation, allowing participants to unwind and find inner peace within the serene landscape of the park.",
+  date: DateTime.new(2024, 5, 20, 9),
   max_attendees: 15
 )
 
@@ -205,8 +205,8 @@ Event.create(
 Event.create(
   garden_id: Garden.find_by(name: 'Montjuïc Hillside Garden').id,
   name: 'Schools Gardening Day',
-  description: 'Activities and learning experiences designed for young gardeners.',
-  date: Date.new(2024, 6, 17),
+  description: "Montjuïc Hillside Garden invites young gardeners and schools for an immersive and educational experience on Schools Gardening Day. This event is designed to spark curiosity and foster a love for nature among children through hands-on gardening activities. With interactive workshops and engaging tasks, kids will learn about plant life, sustainability, and the joy of nurturing green spaces, fostering a sense of responsibility towards the environment in a playful and inspiring setting.",
+  date: DateTime.new(2024, 6, 17, 12),
   max_attendees: 15
 )
 
@@ -214,8 +214,8 @@ Event.create(
 Event.create(
   garden_id: Garden.find_by(name: 'Park Güell Community Garden').id,
   name: 'Garden Art Day',
-  description: 'Encouraging artistic expression in the garden, such as painting or sculpture.',
-  date: Date.new(2024, 7, 22),
+  description: "Unleash your creativity amidst the natural beauty of Park Güell Community Garden on Garden Art Day. This event invites artists and enthusiasts to express themselves through various art forms such as painting, sculpture, and more. It's a day dedicated to celebrating art in nature, allowing participants to draw inspiration from the vibrant surroundings and create captivating works of art, fostering a deeper appreciation for the intersection of creativity and the natural world.",
+  date: DateTime.new(2024, 7, 22, 17, 30),
   max_attendees: 15
 )
 
@@ -223,8 +223,8 @@ Event.create(
 Event.create(
   garden_id: Garden.find_by(name: 'Labyrinth Park of Horta').id,
   name: 'Community Dinners',
-  description: 'Everyone brings a dish to share, preferably made with garden produce.',
-  date: Date.new(2024, 8, 12),
+  description: "Join us for an evening of community and culinary delights at Labyrinth Park of Horta's Community Dinners. Bring a dish made from garden-fresh produce and share in a potluck-style gathering with fellow garden enthusiasts. It's an opportunity to connect, bond, and savor delicious homemade meals while surrounded by the beauty of the garden, fostering a sense of togetherness and appreciation for locally grown, wholesome food.",
+  date: DateTime.new(2024, 8, 12, 18),
   max_attendees: 15
 )
 
@@ -232,8 +232,8 @@ Event.create(
 Event.create(
   garden_id: Garden.find_by(name: 'Jardins de Joan Brossa').id,
   name: 'Garden Book Club',
-  description: 'Discussing books related to gardening, nature, or sustainability.',
-  date: Date.new(2024, 9, 15),
+  description: "Indulge in literary discussions amidst the serene ambiance of Jardins de Joan Brossa's Garden Book Club. This gathering invites bookworms and nature enthusiasts to explore literature centered around gardening, nature, and sustainability. Dive into thought-provoking conversations, share insights, and connect with like-minded individuals passionate about both literature and the natural world. It's a delightful opportunity to cultivate knowledge, exchange ideas, and nurture a deeper understanding of our relationship with nature through the power of storytelling.",
+  date: DateTime.new(2024, 9, 15, 20),
   max_attendees: 15
 )
 
@@ -241,8 +241,8 @@ Event.create(
 Event.create(
   garden_id: Garden.find_by(name: 'Jardins del Palau Robert').id,
   name: 'Garden Volunteer Days',
-  description: 'Organizing community work days for garden maintenance and improvement.',
-  date: Date.new(2024, 10, 18),
+  description: "Join hands for a shared cause on Garden Volunteer Days at Jardins del Palau Robert. This event invites the community to come together for a day of collective action aimed at maintaining and enhancing the garden's beauty. From planting new blooms to tidying up pathways, participants contribute to the upkeep and growth of the garden, fostering a sense of ownership and pride in this shared green space. It's a chance to make a tangible difference while forging lasting connections within the community.",
+  date: DateTime.new(2024, 10, 18, 10),
   max_attendees: 15
 )
 
@@ -250,8 +250,8 @@ Event.create(
 Event.create(
   garden_id: Garden.find_by(name: 'Jardins de Mossèn Costa i Llobera').id,
   name: 'Garden-Themed Movie Nights',
-  description: 'Outdoor screenings of films related to gardening or nature.',
-  date: Date.new(2024, 11, 5),
+  description: "Experience cinematic enchantment under the stars at Jardins de Mossèn Costa i Llobera's Garden-Themed Movie Nights. Set against the backdrop of lush greenery, these outdoor screenings feature films that celebrate gardening, nature, and environmental consciousness. Gather with friends and fellow film enthusiasts to enjoy thought-provoking and visually captivating movies that inspire a deeper appreciation for the natural world. It's an evening of entertainment and enlightenment, fostering a sense of wonder and reflection amidst the garden's serene setting.",
+  date: DateTime.new(2024, 11, 5, 19),
   max_attendees: 15
 )
 
@@ -259,7 +259,7 @@ Event.create(
 Event.create(
   garden_id: Garden.find_by(name: 'Green Haven').id,
   name: 'Nature Photography Workshop',
-  description: 'A workshop focusing on capturing the beauty of the garden and its natural surroundings through photography.',
-  date: Date.new(2024, 12, 10),
+  description: "Capture the breathtaking beauty of nature at Green Haven's Nature Photography Workshop. This immersive workshop is tailored for photography enthusiasts seeking to hone their skills in capturing the garden's mesmerizing landscapes and natural wonders through the lens. Led by seasoned photographers, participants will explore techniques, compositions, and the art of storytelling through nature photography. It's an opportunity to connect with nature on a deeper level while refining photography skills in a picturesque setting.",
+  date: DateTime.new(2024, 12, 10, 13),
   max_attendees: 15
 )
