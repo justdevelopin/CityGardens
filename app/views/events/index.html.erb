@@ -17,21 +17,30 @@
       class="index-wrapper">
 
     <div id="events-map"  data-toggle-target="map">
+      <!-- Map will be rendered here -->
     </div>
     <div id="info-panel" class="info-panel hidden" data-map-target="infoPanel">
       <button type="button" data-action="click->map#closeInfoPanel">Close</button>
     </div>
   </div>
-  <div class="events-dynamic-container">
-    <div class="event-list" data-toggle-target="list">
-      <div class="events-container">
-        <% @events.each do |event| %>
-          <div class="event-card-index">
-            <div class="img-container">
-              <%= image_tag "photo1.jpg", class:"d-block w-100" %>
-            </div>
-            <h2><%= event.name %></h2>
-            <% if event.garden %>
+</div>
+
+<div class="events-dynamic-container">
+  <div class="event-list" data-toggle-target="list">
+    <div class="events-container">
+      <% @events.each do |event| %>
+        <div class="event-card-index">
+          <div class="img-container">
+            <% if event.image_url.present? %>
+              <%= link_to event_path(event) do %>
+                <%= image_tag event.image_url, class: "d-block w-100" %>
+              <% end %>
+            <% else %>
+              <%= image_tag "default-image.jpg", class: "d-block w-100" %>
+            <% end %>
+          </div>
+          <h2><%= event.name %></h2>
+          <% if event.garden %>
               <div class="events-atribute-list">
                 <span class="event-atribute">
               <div class="svg-icons-events-attribute">
