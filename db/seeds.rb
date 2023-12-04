@@ -167,7 +167,7 @@ User.create(
     location: garden_locations[i]
   )
 
-  # Attach an image from Cloudinary URL
+
   image_url = garden_image_urls[i]
   downloaded_image = URI.open(image_url)
   garden.photos.attach(io: downloaded_image, filename: "garden_#{i + 1}.jpg")
@@ -180,7 +180,8 @@ Event.create!(
   name: 'Gardening Workshops',
   description: "Join us at Urban Oasis for a series of engaging and informative gardening workshops. Delve into the world of organic gardening, composting techniques, and sustainable practices. These educational sessions aim to empower attendees with the knowledge and skills needed to cultivate their own thriving green spaces while fostering a deeper connection to nature. Whether you are a seasoned gardener or just starting, these workshops provide a nurturing environment to learn and grow together.",
   date: DateTime.new(2024, 3, 15, 14),
-  max_attendees: 15
+  max_attendees: 15,
+  image_url: "https://res.cloudinary.com/drlqgbpvb/image/upload/v1701688773/Best-Plants-for-a-Community-Garden-in-Moderate-Climates-1024x682_fdhw3q.jpg"
 )
 
 # Plant Swap Meet at Garden 2 (Riverside Retreat)
@@ -189,7 +190,8 @@ Event.create(
   name: 'Plant Swap Meet',
   description: "At Riverside Retreat, immerse yourself in a green haven and be part of our Plant Swap Meet. It's a delightful gathering where gardening enthusiasts and community members come together to exchange plants, seeds, and gardening stories. This event celebrates the diversity of flora while fostering connections within the community. Bring your favorite plants to swap, discover new species, and expand your garden while mingling with fellow plant lovers against the serene backdrop of Riverside Retreat.",
   date: DateTime.new(2024, 4, 10, 10, 30),
-  max_attendees: 15
+  max_attendees: 15,
+  image_url: "https://res.cloudinary.com/drlqgbpvb/image/upload/v1701658322/development/szg2y82cxmm184nu2jtw5lvksc0q.jpg"
 )
 
 # Garden Yoga Classes at Garden 3 (Parc de la Ciutadella Haven)
@@ -198,7 +200,8 @@ Event.create(
   name: 'Garden Yoga Classes',
   description: "Experience tranquility and wellness in the heart of nature at Parc de la Ciutadella Haven's Garden Yoga Classes. These sessions offer a unique opportunity to rejuvenate mind, body, and spirit amidst the lush greenery of the garden. Led by experienced instructors, these yoga classes encourage a harmonious blend of movement and relaxation, allowing participants to unwind and find inner peace within the serene landscape of the park.",
   date: DateTime.new(2024, 5, 20, 9),
-  max_attendees: 15
+  max_attendees: 15,
+  image_url: "https://res.cloudinary.com/drlqgbpvb/image/upload/v1701436356/CityGarden/imagen15_djqasy.jpg"
 )
 
 # Schools Gardening Day at Garden 4 (Montjuïc Hillside Garden)
@@ -207,7 +210,8 @@ Event.create(
   name: 'Schools Gardening Day',
   description: "Montjuïc Hillside Garden invites young gardeners and schools for an immersive and educational experience on Schools Gardening Day. This event is designed to spark curiosity and foster a love for nature among children through hands-on gardening activities. With interactive workshops and engaging tasks, kids will learn about plant life, sustainability, and the joy of nurturing green spaces, fostering a sense of responsibility towards the environment in a playful and inspiring setting.",
   date: DateTime.new(2024, 6, 17, 12),
-  max_attendees: 15
+  max_attendees: 15,
+  image_url: "https://res.cloudinary.com/drlqgbpvb/image/upload/v1701436342/CityGarden/imagen12_iuzjij.jpg"
 )
 
 # Garden Art Day at Garden 5 (Park Güell Community Garden)
@@ -216,7 +220,8 @@ Event.create(
   name: 'Garden Art Day',
   description: "Unleash your creativity amidst the natural beauty of Park Güell Community Garden on Garden Art Day. This event invites artists and enthusiasts to express themselves through various art forms such as painting, sculpture, and more. It's a day dedicated to celebrating art in nature, allowing participants to draw inspiration from the vibrant surroundings and create captivating works of art, fostering a deeper appreciation for the intersection of creativity and the natural world.",
   date: DateTime.new(2024, 7, 22, 17, 30),
-  max_attendees: 15
+  max_attendees: 15,
+  image_url: "https://res.cloudinary.com/drlqgbpvb/image/upload/v1701436039/CityGarden/imagen9_b8wiii.jpg",
 )
 
 # Community Dinners at Garden 6 (Labyrinth Park of Horta)
@@ -225,7 +230,8 @@ Event.create(
   name: 'Community Dinners',
   description: "Join us for an evening of community and culinary delights at Labyrinth Park of Horta's Community Dinners. Bring a dish made from garden-fresh produce and share in a potluck-style gathering with fellow garden enthusiasts. It's an opportunity to connect, bond, and savor delicious homemade meals while surrounded by the beauty of the garden, fostering a sense of togetherness and appreciation for locally grown, wholesome food.",
   date: DateTime.new(2024, 8, 12, 18),
-  max_attendees: 15
+  max_attendees: 15,
+  image_url: "https://res.cloudinary.com/drlqgbpvb/image/upload/v1701435933/CityGarden/imagen5_fzcqoo.jpg",
 )
 
 # Garden Book Club at Garden 7 (Jardins de Joan Brossa)
@@ -234,7 +240,8 @@ Event.create(
   name: 'Garden Book Club',
   description: "Indulge in literary discussions amidst the serene ambiance of Jardins de Joan Brossa's Garden Book Club. This gathering invites bookworms and nature enthusiasts to explore literature centered around gardening, nature, and sustainability. Dive into thought-provoking conversations, share insights, and connect with like-minded individuals passionate about both literature and the natural world. It's a delightful opportunity to cultivate knowledge, exchange ideas, and nurture a deeper understanding of our relationship with nature through the power of storytelling.",
   date: DateTime.new(2024, 9, 15, 20),
-  max_attendees: 15
+  max_attendees: 15,
+  image_url: "https://res.cloudinary.com/drlqgbpvb/image/upload/v1701435925/CityGarden/imagen4_dckxtm.webp",
 )
 
 # Garden Volunteer Days at Garden 8 (Jardins del Palau Robert)
@@ -243,7 +250,8 @@ Event.create(
   name: 'Garden Volunteer Days',
   description: "Join hands for a shared cause on Garden Volunteer Days at Jardins del Palau Robert. This event invites the community to come together for a day of collective action aimed at maintaining and enhancing the garden's beauty. From planting new blooms to tidying up pathways, participants contribute to the upkeep and growth of the garden, fostering a sense of ownership and pride in this shared green space. It's a chance to make a tangible difference while forging lasting connections within the community.",
   date: DateTime.new(2024, 10, 18, 10),
-  max_attendees: 15
+  max_attendees: 15,
+  image_url: "https://res.cloudinary.com/drlqgbpvb/image/upload/v1701435915/CityGarden/imagen3_mgx0aj.webp",
 )
 
 # Garden-Themed Movie Nights at Garden 9 (Jardins de Mossèn Costa i Llobera)
@@ -252,7 +260,8 @@ Event.create(
   name: 'Garden-Themed Movie Nights',
   description: "Experience cinematic enchantment under the stars at Jardins de Mossèn Costa i Llobera's Garden-Themed Movie Nights. Set against the backdrop of lush greenery, these outdoor screenings feature films that celebrate gardening, nature, and environmental consciousness. Gather with friends and fellow film enthusiasts to enjoy thought-provoking and visually captivating movies that inspire a deeper appreciation for the natural world. It's an evening of entertainment and enlightenment, fostering a sense of wonder and reflection amidst the garden's serene setting.",
   date: DateTime.new(2024, 11, 5, 19),
-  max_attendees: 15
+  max_attendees: 15,
+  image_url: "https://res.cloudinary.com/drlqgbpvb/image/upload/v1701435758/CityGarden/imagen2_vful5m.avif",
 )
 
 # Nature Photography Workshop at Garden 10 (Green Haven)
@@ -261,5 +270,6 @@ Event.create(
   name: 'Nature Photography Workshop',
   description: "Capture the breathtaking beauty of nature at Green Haven's Nature Photography Workshop. This immersive workshop is tailored for photography enthusiasts seeking to hone their skills in capturing the garden's mesmerizing landscapes and natural wonders through the lens. Led by seasoned photographers, participants will explore techniques, compositions, and the art of storytelling through nature photography. It's an opportunity to connect with nature on a deeper level while refining photography skills in a picturesque setting.",
   date: DateTime.new(2024, 12, 10, 13),
-  max_attendees: 15
+  max_attendees: 15,
+  image_url: "https://res.cloudinary.com/drlqgbpvb/image/upload/v1701435688/CityGarden/imagen1_dgufml.jpg",
 )

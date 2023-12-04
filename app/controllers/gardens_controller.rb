@@ -15,6 +15,10 @@ class GardensController < ApplicationController
     end
   end
 
+  def search
+    @gardens = search_gardens(params[:query])
+    render :index
+  end
 
   def show
 
@@ -59,8 +63,18 @@ class GardensController < ApplicationController
     @garden = Garden.find(params[:id])
   end
 
- 
+
   def garden_params
     params.require(:garden).permit(:name, :location, :description, :latitude, :longitude)
   end
+
+  def search_gardens(query)
+    sql_subquery = <<~SQL
+      gardens.name ILIKE :query
+      OR gardens.location ILIKE :query
+      OR gardens.description ILIKE :query
+    SQL
+    Garden.where(sql_subquery, query: "%#{query}%")
+  end
+  
 end
