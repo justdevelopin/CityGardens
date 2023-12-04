@@ -1,5 +1,3 @@
-
-
 .logo {
   max-height: 120px;
   height: 100%;
@@ -19,23 +17,28 @@ body {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: #fff;
-  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+  height: 59px;
+  background: linear-gradient(to right, #6b9932, #354521);;
   display: flex;
-  justify-content: space-around;
   padding: 10px 0;
   z-index: 1000;
+  align-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .bottom-navbar i {
   font-size: 24px;
-  color: #2d9a32;
+  color: #ffffff;
 }
 
 .nav-item {
   height: 32px ;
   text-align: center;
   flex-grow: 1;
+  color: #ffffff;
 }
 
 
