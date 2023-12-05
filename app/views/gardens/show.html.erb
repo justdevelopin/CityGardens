@@ -46,3 +46,47 @@
     <% end %>
   </div>
 </section>
+
+<section class="event-card">
+  <div class="event-card-info">
+    <h2>REVIEWS</h2>
+    <p>Add a review</>
+
+    <%= simple_form_for [@garden, @review] do |f| %>
+      <%= f.input :rating, collection: (1..5) %>
+      <%= f.input :content %>
+      <%= f.submit "Submit", class: "action-button" %>
+    <% end %>
+
+  <% @garden_reviews.each do |review| %>
+  <div class= "review-top-card">
+    <%= image_tag "logo.png" %>
+    <p class= "review-first-name"><%= review.user.first_name %></p>
+  </div>
+
+  <div class= "review-date">
+    <p> <%= review.created_at.strftime("%d %B  %Y %R") %></p>
+  </div>
+
+
+
+  <div class= "review-text">
+    <p><%= review.content %></p>
+  </div>
+
+  <div class= "d-flex mb-3">
+    <% review.rating.times do %>
+      <span class="fa fa-star checked"></span>
+    <% end %>
+    <% (5 - review.rating).times do %>
+    <span class="fa fa-star unchecked"></span>
+    <% end %>
+  </div>
+
+  <% end %>
+
+
+
+
+  </div>
+</section>

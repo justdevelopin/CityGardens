@@ -29,10 +29,10 @@
   <div class="section-show mt-4 mx-2 p-2">
     <div class="event-container">
       <div class="event-booking-form mx-3">
-        <h2>Book now</h2>
         <% if @already_booked %>
           <p><strong><i class="fa-solid fa-check"></i>You're already signed up!</strong></p>
         <% else %>
+          <h2>Book now</h2>
           <%= simple_form_for [@event, @booking] do |f| %>
             <%= f.input :attendees, label: "Nº of people" %>
             <%= f.submit "Finalize booking", class: "btn btn-primary mb-4" %>
