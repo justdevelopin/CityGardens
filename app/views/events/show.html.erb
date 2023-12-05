@@ -2,7 +2,7 @@
   <section class="section-show mx-2">
     <div class="show-container">
       <div class="show-photo-column">
-        <% if event.photo.attached? %>
+        <% if @event.photo.attached? %>
           <%= cl_image_tag @event.photo.key, class: "show-photo" %>
         <% else %>
           <%= image_tag "logo.png", class: "show-photo" %>

@@ -1,38 +1,25 @@
 class GardensController < ApplicationController
-  before_action :set_garden, only: [:show, :edit, :update, :destroy]
-  def show
-    @garden = Garden.find(params[:id])
-  end
-
   def index
-    @gardens = Garden.all
-
-    @markers = @gardens.geocoded.map do |garden|
-      {
-        lat: garden.latitude,
-        lng: garden.longitude
-      }
+    if params[:query].present?
+        @gardens = search_gardens(params[:query])
+    else
+        @gardens = Garden.all
     end
   end
 
-  def search
-    @gardens = search_gardens(params[:query])
-    render :index
+
+  def search_gardens(query)
+    sql_subquery = "name ILIKE :query OR description ILIKE :query OR location ILIKE :query"
+    Garden.where(sql_subquery, query: "%#{query}%")
   end
 
   def show
-
+    @garden = Garden.find(params[:id])
   end
 
   def new
     @garden = Garden.new
   end
-
-
-  def edit
-
-  end
-
 
   def create
     @garden = Garden.new(garden_params)
@@ -51,7 +38,6 @@ class GardensController < ApplicationController
     end
   end
 
-
   def destroy
     @garden.destroy
     redirect_to gardens_url, notice: 'Garden was successfully destroyed.'
@@ -59,22 +45,7 @@ class GardensController < ApplicationController
 
   private
 
-  def set_garden
-    @garden = Garden.find(params[:id])
-  end
-
-
   def garden_params
     params.require(:garden).permit(:name, :location, :description, :latitude, :longitude)
   end
-
-  def search_gardens(query)
-    sql_subquery = <<~SQL
-      gardens.name ILIKE :query
-      OR gardens.location ILIKE :query
-      OR gardens.description ILIKE :query
-    SQL
-    Garden.where(sql_subquery, query: "%#{query}%")
-  end
-  
 end
