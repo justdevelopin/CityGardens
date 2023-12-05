@@ -1,13 +1,14 @@
 <div class="search-container">
   <div class="search-container-inner">
-    <%= form_with url: gardens_path, method: :get, class: "search-imput-form", remote: true, data: { action: "appropriate-action" } do %>
+    <%= form_with url: gardens_path, method: :get, class: "search-input-form", remote: true, data: { controller: "search-garden", action: "search#submit" } do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control-search search-query-input-new",
-        placeholder: "Type a keyword", data: { action: "appropriate-action" }
+        placeholder: "Type a keyword",
+        data: { target: "search.query" }
       %>
       <div class="button-search-form-css">
-        <%= submit_tag "", name: "", class: "search-imput-submit-button" %>
+        <%= submit_tag "", class: "search-input-submit-button" %>
         <span class="svg-icon-search"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" style="display:block;fill:none;height:12px;width:12px;stroke:currentColor;stroke-width:5.333333333333333;overflow:visible" aria-hidden="true" role="presentation" focusable="false"><path fill="none" d="M13 24a11 11 0 1 0 0-22 11 11 0 0 0 0 22zm8-3 9 9"></path></svg></span>
       </div>
     <% end %>

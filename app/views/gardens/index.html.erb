@@ -1,28 +1,16 @@
 <div class="title-index">
   <div class="title-inner">
-    <h1>Gardens</h1>
+    <h1>Gardens in Barcelona</h1>
   </div>
   <%= render 'gardens/search_bar' %>
 </div>
-
-<% if @gardens.any? %>
-  <div class="garden-grid">
-    <% @gardens.each do |garden| %>
-      <div class="event-card-index">
-        <div class="img-container">
-          <% if garden.photos.attached? %>
-            <%= image_tag garden.photos.first, alt: garden.name, class: 'd-block w-100' %>
-          <% else %>
-            <%= image_tag("logo.png", alt: "default image", class: 'd-block w-100') %>
-          <% end %>
-        </div>
-        <div class="card-content">
-          <h2><%= garden.name %></h2>
-          <p class="garden-address"><%= garden.location %></p>
-        </div>
+<div class="events-dynamic-container">
+  <div class="event-list">
+    <div class="events-container">
+      <% @gardens.each do |garden| %>
+        <%= render "garden_card", garden: garden %>
+      <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
-<% else %>
-  <p>No gardens found.</p>
-<% end %>
+</div>
