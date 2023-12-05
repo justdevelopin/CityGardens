@@ -5,7 +5,6 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-
 .garden-card {
   transition: box-shadow 0.3s ease-in-out;
   width: 350px;
@@ -63,7 +62,6 @@ body {
     margin: 5px auto;
   }
 }
-
 
 .garden-show, .event-card-info {
   display: flex;
@@ -129,17 +127,14 @@ body {
   cursor: pointer;
 }
 
-
 .garden-show .field, .garden-show .actions {
   margin: 10px 0;
 }
-
 
 .show-photo {
   max-width: 100%;
   height: auto;
 }
-
 
 /* Search Bar Style */
 .search-bar-container {
