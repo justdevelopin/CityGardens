@@ -1,8 +1,8 @@
 <div class="event-card-index">
   <div class="img-container">
-    <% if event.image_url.present? %>
+    <% if event.photo.attached? %>
       <%= link_to event_path(event) do %>
-        <%= image_tag event.image_url, class: "d-block w-100" %>
+        <%= cl_image_tag event.photo.key, class: "d-block w-100" %>
       <% end %>
     <% else %>
       <%= image_tag "default-image.jpg", class: "d-block w-100" %>

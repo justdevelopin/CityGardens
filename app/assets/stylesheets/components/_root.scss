@@ -1,12 +1,16 @@
 .root {
   width: 100vw;
   height: 100vh;
+  min-height: 70vh;
   overflow: hidden;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .root-background {
-  // background-image: linear-gradient(to top, #344620a0 20%, #1a2310e7 60%), asset-url("root.jpg");
+  // background-image: linear-gradient(to top, #344620a0 20%, #344620a0 70%), asset-url("root.jpg");
   background-size: cover;
   height: 100%;
   width: 100%;
@@ -17,7 +21,7 @@
 }
 
 .root-gradient {
-  background-image: linear-gradient(to top, #344620a0 20%, #1a2310d3 60%);
+  background-image: linear-gradient(to bottom, #34462000 20%, #344620a0 60%);
   background-size: cover;
   height: 100%;
   width: 100%;
@@ -36,44 +40,7 @@
   z-index: -2;
 }
 
-.root-header {
-  font-size: 50px;
-  font-weight: 700;
-  letter-spacing: 7px;
-  color: #9aa390;
-  margin-top: 10rem;
-  text-align: center;
-  margin-bottom: 170px;
 
-}
-
-.carousel-wrapper {
-  padding: 20px;
-  // margin-top: 90px;
-  // border-radius: 10px;
-  // overflow: hidden;
-}
-
-.carousel-item {
-  height: 650px;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-
-.root-description {
-  font-size: 20px;
-  font-weight: 600;
-  color: #c2c8bc;
-  padding: 0 10px;
-  line-height: 28px;
-  letter-spacing: 2px;
-
-}
-
-.slide-img {
-  margin-bottom: 20px;
-}
 
 .root-links {
   display: flex;
