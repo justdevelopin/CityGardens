@@ -139,3 +139,98 @@ body {
   max-width: 100%;
   height: auto;
 }
+
+.event-card-info {
+  background-color: white;
+}
+h2{
+  font-family: 'Montserrat';
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #344620;
+  margin-top: 40px;
+  font-weight: bold;
+}
+.event-card p{
+  font-family: 'Montserrat';
+  font-weight: lighter;
+  background-color: white;
+  color: #344620;
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+.form-label {
+  font-family: 'Montserrat';
+  font-weight: bold;
+  color: #344620;
+}
+
+.form  {
+  font-family: 'Montserrat';
+  font-weight: bold;
+}
+
+.form-control {
+  border-radius: 10px;
+  background-color: #F9FAF0;
+}
+
+.form-select {
+  border-radius: 10px;
+  background-color: #F9FAF0;
+}
+
+.action-button {
+  font-family: 'Montserrat';
+}
+
+.checked {
+  color: orange;
+  font-size: 10px;
+}
+
+.unchecked {
+  font-size: 10px;
+  color: grey;
+}
+
+.review-text {
+  width: 80%;
+  text-align: left;
+  overflow-wrap: break-word;
+  margin-right: 50px;
+  p {
+    margin-top: 0;
+    margin-left: 60px;
+    font-size: 17px;
+
+  }
+}
+
+.review-top-card {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 10px;
+  img {
+    border-radius: 50%;
+    height: 48px;
+    width: 48px;
+  }
+}
+
+.review-first-name {
+  margin-left: 8px;
+  font-weight: 600!important;
+}
+
+.review-date {
+  p {
+    margin-top: -10%;
+    font-size: 14px;
+    margin-right: 50px;
+  }
+}

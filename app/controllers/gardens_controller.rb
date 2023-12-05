@@ -1,7 +1,11 @@
 class GardensController < ApplicationController
   before_action :set_garden, only: [:show, :edit, :update, :destroy]
+
   def show
     @garden = Garden.find(params[:id])
+    @review = Review.new
+    reviews = Review.where(reviewable_type: "Garden")
+    @garden_reviews = reviews.where(reviewable_id: @garden.id)
   end
 
   def index
@@ -13,11 +17,6 @@ class GardensController < ApplicationController
         lng: garden.longitude
       }
     end
-  end
-
-
-  def show
-
   end
 
   def new
@@ -59,7 +58,7 @@ class GardensController < ApplicationController
     @garden = Garden.find(params[:id])
   end
 
- 
+
   def garden_params
     params.require(:garden).permit(:name, :location, :description, :latitude, :longitude)
   end

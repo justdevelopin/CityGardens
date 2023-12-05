@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   get 'users/:id' => 'users#show'
   resources :events, only: [:index, :show] do
     resources :bookings, only: [:show, :create, :destroy]
-    resources :reviews, only: [:destory, :create ]
     resources :bookmarks, only: [:create, :destroy]
   end
 
