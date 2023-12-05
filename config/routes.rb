@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   resources :events, only: [:index, :show] do
     resources :bookings, only: [:show, :create, :destroy]
     resources :reviews, only: [:destory, :create ]
-    resources :bookmarks, only: [:create, :destroy]
   end
+  resources :bookmarks, only: [:create, :destroy]
 
   resources :parcel_reservations, only: [:update]
 

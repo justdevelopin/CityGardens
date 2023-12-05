@@ -76,7 +76,15 @@
           <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
             <div class="accordion-body">
               <% if current_user.is_admin %>
-                <%= render "shared/gardens" %>
+                <div class="events-dynamic-container">
+                  <div class="event-list">
+                    <div class="events-container">
+                      <% @gardens.each do |garden| %>
+                        <%= render "shared/gardens", garden: garden %>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
               <% end %>
             </div>
           </div>
