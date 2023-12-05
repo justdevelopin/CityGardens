@@ -26,8 +26,6 @@ class ParcelsController < ApplicationController
     @garden = Garden.find(params[:id])
   end
 
-
-
   private
 
   def set_garden
@@ -35,7 +33,7 @@ class ParcelsController < ApplicationController
   end
 
   def parcel_params
-    params.require(:parcel).permit(:name, :size, :other_attributes)
+    params.require(:parcel).permit(:name, :size, :photo, :other_attributes)
   end
 
 
