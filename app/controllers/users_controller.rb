@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     end
 
     @gardens = @user.gardens
+    @favourites = @user.bookmarks
     @attending_events = @user.attending_events
     @events = @user.events
     # @events = Event.joins(:garden).where()

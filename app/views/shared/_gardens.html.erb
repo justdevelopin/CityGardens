@@ -1,13 +1,5 @@
-
-<div class="title-index">
-  <div class="title-inner">
-    <h1>Gardens</h1>
-  </div>
-  <%= render 'gardens/search_bar' %>
-</div>
-
 <% if @gardens.any? %>
-  <div class="garden-grid">
+  <div>
     <% @gardens.each do |garden| %>
       <div class="event-card-index">
         <div class="img-container">
@@ -28,5 +20,5 @@
     <% end %>
   </div>
 <% else %>
-  <p>No gardens found.</p>
+  <p>No favourites found.</p>
 <% end %>
