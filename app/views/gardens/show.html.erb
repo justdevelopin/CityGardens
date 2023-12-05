@@ -34,7 +34,6 @@
   <div class="event-card-info">
     <h3 class="text-center">Events</h3>
     <% @garden.events.each do |event| %>
-      <!-- Debugging Output -->
       <% Rails.logger.debug "Event: #{event.inspect}" %>
 
       <div class="event-detail">

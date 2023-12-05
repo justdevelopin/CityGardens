@@ -9,25 +9,22 @@ class GardensController < ApplicationController
   end
 
   def index
-    @gardens = Garden.all
-
-    @markers = @gardens.geocoded.map do |garden|
-      {
-        lat: garden.latitude,
-        lng: garden.longitude
-      }
+    if params[:query].present?
+        @gardens = search_gardens(params[:query])
+    else
+        @gardens = Garden.all
     end
+  end
+
+
+  def search_gardens(query)
+    sql_subquery = "name ILIKE :query OR description ILIKE :query OR location ILIKE :query"
+    Garden.where(sql_subquery, query: "%#{query}%")
   end
 
   def new
     @garden = Garden.new
   end
-
-
-  def edit
-
-  end
-
 
   def create
     @garden = Garden.new(garden_params)
@@ -45,7 +42,6 @@ class GardensController < ApplicationController
       render :edit
     end
   end
-
 
   def destroy
     @garden.destroy

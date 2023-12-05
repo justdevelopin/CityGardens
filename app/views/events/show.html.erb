@@ -1,14 +1,14 @@
 <div class="events-show">
-
   <section class="section-show mx-2">
     <div class="show-container">
       <div class="show-photo-column">
         <% if @event.photo.attached? %>
-            <%= cl_image_tag @event.photo.key, class: "show-photo" %>
-          <% else %>
-            <%= image_tag "photo1.jpg", class: "show-photo" %>
-          <% end %>
+          <%= cl_image_tag @event.photo.key, class: "show-photo" %>
+        <% else %>
+          <%= image_tag "logo.png", class: "show-photo" %>
+        <% end %>
       </div>
+
       <div class="show-description-column mx-3 mt-3">
         <h3 class="show-event-title"><strong><%= @event.name %></strong></h3>
         <p class="event-address"><%= @event.garden.location %></p>

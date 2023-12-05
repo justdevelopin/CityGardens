@@ -2,13 +2,13 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   get '/profile', to: 'users#show', as: :user_profile
+  get 'gardens/search', to: 'gardens#search', as: 'search_gardens'
 
   get 'users/:id' => 'users#show'
   resources :events, only: [:index, :show] do
     resources :bookings, only: [:show, :create, :destroy]
     resources :bookmarks, only: [:create, :destroy]
   end
-
 
   resources :parcel_reservations, only: [:update]
 
@@ -17,8 +17,6 @@ Rails.application.routes.draw do
     resources :reviews, only: [:destroy, :create]
     resources :parcels, only: [:new, :create, :index] # Nested within gardens
   end
-
-
 
   resources :gardens, only: [:new, :create] do
     resources :events, only: [:new, :create]

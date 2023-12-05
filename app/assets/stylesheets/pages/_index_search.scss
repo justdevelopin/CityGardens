@@ -32,15 +32,15 @@
   font-size: large;
 }
 
-.search-imput-form {
+.search-input-form {
   position: relative;
 }
 
-.search-imput-form input {
+.search-input-form input {
   width: 60px;
 }
 
-form.search-imput-form {
+form.search-input-form {
   display: inline-flex;
   align-content: center;
   justify-content: space-between;
@@ -48,7 +48,7 @@ form.search-imput-form {
   width: 100%;
   height: 40px;
 }
-form.search-imput-form {
+form.search-input-form {
   border-radius: 40px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.05);
   margin-left: 1.5rem;
@@ -58,20 +58,21 @@ form.search-imput-form {
   overflow: hidden;
   border: 1px solid #dddddd;
 }
-input.search-imput-submit-button {
+input.search-input-submit-button {
   height: 40px;
 }
-.search-imput-form .search-query-input-new {
+.search-input-form .search-query-input-new {
   width: 100%;
   border: none;
   padding: 0.3rem;
   font-size: 14px;
   padding-left: 1.5rem;
+  background: #eceee3;
 }
 .button-search-form-css {
   position: relative;
 }
-input.search-imput-submit-button {
+input.search-input-submit-button {
   height: 33px;
   margin-bottom: -0.4rem;
   border: none;
@@ -101,7 +102,7 @@ span.svg-icon-search {
   transform: translate(-50%, -50%);
   object-fit: cover; /* Resize and crop the image to cover the area */
 }
-.search-imput-form:focus {
+.search-input-form:focus {
   /* Overwrite styles here; for example, remove a border */
   border: none;
   /* Alternatively, revert to default */
@@ -109,7 +110,7 @@ span.svg-icon-search {
 }
 
 /* Or to completely remove all styles */
-.search-imput-form:focus {
+.search-input-form:focus {
   all: unset;
 }
 .event-card-index h2 {
@@ -164,11 +165,10 @@ span.event-atribute {
 }
 
 .event-card-index h2 {
-  position: absolute;
   bottom: 7.8rem;
   background: #fffc;
   padding-right: 0.8rem;
-  width: 100%;
+  width: 398px;
   background-color: #4859366e;
   backdrop-filter: blur(10px);
   color: #eef2ec;
@@ -188,7 +188,7 @@ span.event-atribute {
 
 
 
-input.search-imput-submit-button {
+input.search-input-submit-button {
   height: 39px;
 }
 span.svg-icon-search svg {

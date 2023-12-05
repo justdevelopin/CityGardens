@@ -167,15 +167,13 @@ User.create(
     location: garden_locations[i]
   )
 
-  # Attach an image from Cloudinary URL
   image_url = garden_image_urls[i]
   downloaded_image = URI.open(image_url)
   garden.photos.attach(io: downloaded_image, filename: "garden_#{i + 1}.jpg")
 end
 
-
 # Gardening Workshops at Garden 1 (Urban Oasis)
-Event.create!(
+event1 = Event.create!(
   garden_id: Garden.find_by(name: 'Urban Oasis').id,
   name: 'Gardening Workshops',
   description: "Join us at Urban Oasis for a series of engaging and informative gardening workshops. Delve into the world of organic gardening, composting techniques, and sustainable practices. These educational sessions aim to empower attendees with the knowledge and skills needed to cultivate their own thriving green spaces while fostering a deeper connection to nature. Whether you are a seasoned gardener or just starting, these workshops provide a nurturing environment to learn and grow together.",
@@ -183,8 +181,12 @@ Event.create!(
   max_attendees: 15
 )
 
+event_1_img = URI.open("https://res.cloudinary.com/drlqgbpvb/image/upload/v1701688773/Best-Plants-for-a-Community-Garden-in-Moderate-Climates-1024x682_fdhw3q.jpg")
+event1.photo.attach(io: event_1_img, filename: "event1")
+event1.save
+
 # Plant Swap Meet at Garden 2 (Riverside Retreat)
-Event.create(
+event2 = Event.create(
   garden_id: Garden.find_by(name: 'Riverside Retreat').id,
   name: 'Plant Swap Meet',
   description: "At Riverside Retreat, immerse yourself in a green haven and be part of our Plant Swap Meet. It's a delightful gathering where gardening enthusiasts and community members come together to exchange plants, seeds, and gardening stories. This event celebrates the diversity of flora while fostering connections within the community. Bring your favorite plants to swap, discover new species, and expand your garden while mingling with fellow plant lovers against the serene backdrop of Riverside Retreat.",
@@ -192,8 +194,12 @@ Event.create(
   max_attendees: 15
 )
 
+event_2_img = URI.open("https://res.cloudinary.com/drlqgbpvb/image/upload/v1701658322/development/szg2y82cxmm184nu2jtw5lvksc0q.jpg")
+event2.photo.attach(io: event_2_img, filename: "event1")
+event2.save
+
 # Garden Yoga Classes at Garden 3 (Parc de la Ciutadella Haven)
-Event.create(
+event3 = Event.create(
   garden_id: Garden.find_by(name: 'Parc de la Ciutadella Haven').id,
   name: 'Garden Yoga Classes',
   description: "Experience tranquility and wellness in the heart of nature at Parc de la Ciutadella Haven's Garden Yoga Classes. These sessions offer a unique opportunity to rejuvenate mind, body, and spirit amidst the lush greenery of the garden. Led by experienced instructors, these yoga classes encourage a harmonious blend of movement and relaxation, allowing participants to unwind and find inner peace within the serene landscape of the park.",
@@ -201,8 +207,12 @@ Event.create(
   max_attendees: 15
 )
 
+event_3_img = URI.open("https://res.cloudinary.com/drlqgbpvb/image/upload/v1701436356/CityGarden/imagen15_djqasy.jpg")
+event3.photo.attach(io: event_3_img, filename: "event3")
+event3.save
+
 # Schools Gardening Day at Garden 4 (Montjuïc Hillside Garden)
-Event.create(
+event4 = Event.create(
   garden_id: Garden.find_by(name: 'Montjuïc Hillside Garden').id,
   name: 'Schools Gardening Day',
   description: "Montjuïc Hillside Garden invites young gardeners and schools for an immersive and educational experience on Schools Gardening Day. This event is designed to spark curiosity and foster a love for nature among children through hands-on gardening activities. With interactive workshops and engaging tasks, kids will learn about plant life, sustainability, and the joy of nurturing green spaces, fostering a sense of responsibility towards the environment in a playful and inspiring setting.",
@@ -210,8 +220,12 @@ Event.create(
   max_attendees: 15
 )
 
+event_4_img = URI.open("https://res.cloudinary.com/drlqgbpvb/image/upload/v1701436342/CityGarden/imagen12_iuzjij.jpg")
+event4.photo.attach(io: event_4_img, filename: "event4")
+event4.save
+
 # Garden Art Day at Garden 5 (Park Güell Community Garden)
-Event.create(
+event5 = Event.create(
   garden_id: Garden.find_by(name: 'Park Güell Community Garden').id,
   name: 'Garden Art Day',
   description: "Unleash your creativity amidst the natural beauty of Park Güell Community Garden on Garden Art Day. This event invites artists and enthusiasts to express themselves through various art forms such as painting, sculpture, and more. It's a day dedicated to celebrating art in nature, allowing participants to draw inspiration from the vibrant surroundings and create captivating works of art, fostering a deeper appreciation for the intersection of creativity and the natural world.",
@@ -219,8 +233,12 @@ Event.create(
   max_attendees: 15
 )
 
+event_5_img = URI.open("https://res.cloudinary.com/drlqgbpvb/image/upload/v1701658322/development/szg2y82cxmm184nu2jtw5lvksc0q.jpg")
+event5.photo.attach(io: event_5_img, filename: "event5")
+event5.save
+
 # Community Dinners at Garden 6 (Labyrinth Park of Horta)
-Event.create(
+event6 = Event.create(
   garden_id: Garden.find_by(name: 'Labyrinth Park of Horta').id,
   name: 'Community Dinners',
   description: "Join us for an evening of community and culinary delights at Labyrinth Park of Horta's Community Dinners. Bring a dish made from garden-fresh produce and share in a potluck-style gathering with fellow garden enthusiasts. It's an opportunity to connect, bond, and savor delicious homemade meals while surrounded by the beauty of the garden, fostering a sense of togetherness and appreciation for locally grown, wholesome food.",
@@ -228,8 +246,12 @@ Event.create(
   max_attendees: 15
 )
 
+event_6_img = URI.open("https://res.cloudinary.com/drlqgbpvb/image/upload/v1701435933/CityGarden/imagen5_fzcqoo.jpg")
+event6.photo.attach(io: event_6_img, filename: "event6")
+event6.save
+
 # Garden Book Club at Garden 7 (Jardins de Joan Brossa)
-Event.create(
+event7 = Event.create(
   garden_id: Garden.find_by(name: 'Jardins de Joan Brossa').id,
   name: 'Garden Book Club',
   description: "Indulge in literary discussions amidst the serene ambiance of Jardins de Joan Brossa's Garden Book Club. This gathering invites bookworms and nature enthusiasts to explore literature centered around gardening, nature, and sustainability. Dive into thought-provoking conversations, share insights, and connect with like-minded individuals passionate about both literature and the natural world. It's a delightful opportunity to cultivate knowledge, exchange ideas, and nurture a deeper understanding of our relationship with nature through the power of storytelling.",
@@ -237,8 +259,12 @@ Event.create(
   max_attendees: 15
 )
 
+event_7_img = URI.open("https://res.cloudinary.com/drlqgbpvb/image/upload/v1701435925/CityGarden/imagen4_dckxtm.webp")
+event7.photo.attach(io: event_7_img, filename: "event7")
+event7.save
+
 # Garden Volunteer Days at Garden 8 (Jardins del Palau Robert)
-Event.create(
+event8 = Event.create(
   garden_id: Garden.find_by(name: 'Jardins del Palau Robert').id,
   name: 'Garden Volunteer Days',
   description: "Join hands for a shared cause on Garden Volunteer Days at Jardins del Palau Robert. This event invites the community to come together for a day of collective action aimed at maintaining and enhancing the garden's beauty. From planting new blooms to tidying up pathways, participants contribute to the upkeep and growth of the garden, fostering a sense of ownership and pride in this shared green space. It's a chance to make a tangible difference while forging lasting connections within the community.",
@@ -246,8 +272,12 @@ Event.create(
   max_attendees: 15
 )
 
+event_8_img = URI.open("https://res.cloudinary.com/drlqgbpvb/image/upload/v1701435915/CityGarden/imagen3_mgx0aj.webp")
+event8.photo.attach(io: event_8_img, filename: "event8")
+event8.save
+
 # Garden-Themed Movie Nights at Garden 9 (Jardins de Mossèn Costa i Llobera)
-Event.create(
+event9 = Event.create(
   garden_id: Garden.find_by(name: 'Jardins de Mossèn Costa i Llobera').id,
   name: 'Garden-Themed Movie Nights',
   description: "Experience cinematic enchantment under the stars at Jardins de Mossèn Costa i Llobera's Garden-Themed Movie Nights. Set against the backdrop of lush greenery, these outdoor screenings feature films that celebrate gardening, nature, and environmental consciousness. Gather with friends and fellow film enthusiasts to enjoy thought-provoking and visually captivating movies that inspire a deeper appreciation for the natural world. It's an evening of entertainment and enlightenment, fostering a sense of wonder and reflection amidst the garden's serene setting.",
@@ -255,11 +285,19 @@ Event.create(
   max_attendees: 15
 )
 
+event_9_img = URI.open("https://res.cloudinary.com/drlqgbpvb/image/upload/v1701435758/CityGarden/imagen2_vful5m.avif")
+event9.photo.attach(io: event_9_img, filename: "event9")
+event9.save
+
 # Nature Photography Workshop at Garden 10 (Green Haven)
-Event.create(
+event10 = Event.create(
   garden_id: Garden.find_by(name: 'Green Haven').id,
   name: 'Nature Photography Workshop',
   description: "Capture the breathtaking beauty of nature at Green Haven's Nature Photography Workshop. This immersive workshop is tailored for photography enthusiasts seeking to hone their skills in capturing the garden's mesmerizing landscapes and natural wonders through the lens. Led by seasoned photographers, participants will explore techniques, compositions, and the art of storytelling through nature photography. It's an opportunity to connect with nature on a deeper level while refining photography skills in a picturesque setting.",
   date: DateTime.new(2024, 12, 10, 13),
   max_attendees: 15
 )
+
+event_10_img = URI.open("https://res.cloudinary.com/drlqgbpvb/image/upload/v1701435688/CityGarden/imagen1_dgufml.jpg")
+event10.photo.attach(io: event_10_img, filename: "event10")
+event10.save

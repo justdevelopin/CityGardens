@@ -1,12 +1,12 @@
 <%- if controller_name != 'sessions' %>
   <div class="shared-links-login">
-    <%= link_to "Log in", new_session_path(resource_name) %>
+    <%= link_to "Have an account? Log in!", new_session_path(resource_name) %>
   </div>
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
   <div class="shared-links-singup">
-    <%= link_to "Sign up", new_registration_path(resource_name) %>
+    <%= link_to "Not Registered? Sign up!", new_registration_path(resource_name) %>
   </div>
 <% end %>
 
