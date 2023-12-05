@@ -6,6 +6,14 @@ class GardensController < ApplicationController
 
   def index
     @gardens = Garden.all
+    if params[:query].present?
+      sql_subquery = <<~SQL
+        gardens.name ILIKE :query
+        OR gardens.location ILIKE :query
+        OR gardens.description ILIKE :query
+      SQL
+      Garden.where(sql_subquery, query: "%#{query}%")
+    end
 
     @markers = @gardens.geocoded.map do |garden|
       {
@@ -68,13 +76,4 @@ class GardensController < ApplicationController
     params.require(:garden).permit(:name, :location, :description, :latitude, :longitude)
   end
 
-  def search_gardens(query)
-    sql_subquery = <<~SQL
-      gardens.name ILIKE :query
-      OR gardens.location ILIKE :query
-      OR gardens.description ILIKE :query
-    SQL
-    Garden.where(sql_subquery, query: "%#{query}%")
-  end
-  
 end
