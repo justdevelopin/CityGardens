@@ -5,10 +5,15 @@
         <%= cl_image_tag event.photo.key, class: "d-block w-100" %>
       <% end %>
     <% else %>
-      <%= image_tag "default-image.jpg", class: "d-block w-100" %>
+      <%= link_to event_path(event) do %>
+        <%= image_tag "logo.png", alt: "default image", class: 'd-block w-100' %>
+      <% end %>
     <% end %>
+    <div class="name-container" style="display: flex; align-items: center; justify-content: space-between; width: 398px;">>
+      <h2><%= event.name %></h2>
+        <i class="fa-regular fa-heart" style="color: #ffffff;"></i>
+    </div>
   </div>
-  <h2><%= event.name %></h2>
   <div class="events-atribute-list">
     <span class="event-atribute">
       <div class="svg-icons-events-attribute">

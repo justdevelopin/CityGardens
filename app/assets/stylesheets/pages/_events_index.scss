@@ -13,6 +13,11 @@
   border-radius: 0.8rem;
 }
 
+.name-container {
+  position: absolute;
+  bottom: 0
+}
+
 .events-container.slide-down {
   background-color: #e0e0e0;
   top: 90vh;
@@ -54,6 +59,10 @@
 .toggle-button-container button {
   border: none;
   background: none;
+}
+
+.img-container{
+  position: relative
 }
 
 .title-index {
