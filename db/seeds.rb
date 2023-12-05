@@ -167,12 +167,10 @@ User.create(
     location: garden_locations[i]
   )
 
-
   image_url = garden_image_urls[i]
   downloaded_image = URI.open(image_url)
   garden.photos.attach(io: downloaded_image, filename: "garden_#{i + 1}.jpg")
 end
-
 
 # Gardening Workshops at Garden 1 (Urban Oasis)
 event1 = Event.create!(
