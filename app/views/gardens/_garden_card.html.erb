@@ -1,4 +1,4 @@
-<div class="event-card-index">
+<div class="event-card-index" data-controller="bookmarks">
 <div class="img-container">
   <% if garden.photos.attached? %>
     <%= link_to garden_path(garden) do %>
@@ -11,6 +11,13 @@
   <% end %>
 </div>
   <h2><%= garden.name %></h2>
+  <% if current_user && current_user.bookmarks.pluck(:garden_id).include?(garden.id)%>
+    <% bookmark = Bookmark.find_by(garden: garden, user: current_user) %>
+    <%= link_to '<i class="fa-solid fa-heart" style="color: black;"></i>'.html_safe, "#", data: {gardenId: bookmark.id, action: 'click->bookmarks#deleteFavourited'}%>
+  <% else %>
+    <%= link_to '<i class="fa-regular fa-heart" style="color: black;"></i>'.html_safe, "#", data: {gardenId: garden.id, action: 'click->bookmarks#favourited'}%>
+  <% end %>
+
   <div class="events-atribute-list">
     <span class="event-atribute">
       <div class="svg-icons-events-attribute">
