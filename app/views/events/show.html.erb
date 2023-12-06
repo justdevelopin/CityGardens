@@ -12,10 +12,13 @@
       <div class="show-description-column mx-3 mt-3">
         <h3 class="show-event-title"><strong><%= @event.name %></strong></h3>
         <p class="event-address"><%= @event.garden.location %></p>
+        <hr>
+        <p class="show-participants"><i class="fa-solid fa-people-group" style="color: #6c9948;"></i>&nbsp&nbsp<strong>Total participants:</strong> <%= @event.bookings.sum(:attendees)%></p>
+        <p class="show-participants"><i class="fa-solid fa-check" style="color: #6c9948;"></i>&nbsp&nbsp<strong>Available spots:</strong> <%= @event.available_spots %></p>
+        <p class="show-date"><i class="fa-solid fa-calendar-days" style="color: #6c9948;"></i>&nbsp&nbsp<strong>Date & Time:</strong> <%= @event.date.strftime("%d %B  %Y %R") %></p>
+        <hr>
         <p class="show-description"><%= @event.description %></p>
-        <p class="show-participants"><strong>Total participants:</strong> <%= @event.bookings.sum(:attendees)%></p>
-        <p class="show-participants"><strong>Available spots:</strong> <%= @event.available_spots %></p>
-        <p class="show-date"><strong>Date & Time:</strong> <%= @event.date.strftime("%d %B  %Y %R") %></p>
+
       </div>
     </div>
   </section>
@@ -30,7 +33,7 @@
     <div class="event-container">
       <div class="event-booking-form mx-3">
         <% if @already_booked %>
-          <p><strong><i class="fa-solid fa-check"></i>You're already signed up!</strong></p>
+          <p><strong>You're already signed up!</strong></p>
         <% else %>
           <h2>Book now</h2>
           <%= simple_form_for [@event, @booking] do |f| %>
