@@ -8,6 +8,8 @@
   flex-direction: column;
   justify-content: flex-end;
   padding-bottom: 50px;
+
+
 }
 
 .root-background {
@@ -22,13 +24,13 @@
 }
 
 .root-gradient {
-  background-image: linear-gradient(to bottom, #34462000 10%, #1f2a13e7 45%);
-  background-size: cover;
-  height: 100%;
+  background-color: #F6F5F3;
+  height: 50%;
   width: 100%;
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
+  transform: rotate(27deg) scale(2.4) translateY(22%);
   z-index: 0;
 }
 
@@ -43,22 +45,26 @@
 
 .root-info {
   z-index: 1;
-  margin-bottom: 140px;
+  margin-bottom: 30px;
   padding-inline: 35px;
 }
 
 .primary-heading {
-  color: #d6dad2;
+  color: #1e230d;
   font-size: 35px;
   letter-spacing: 2px;
   line-height: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 70px;
   font-weight: bold;
 }
 
+.secondary-heading {
+  font-size: 28px;
+  color: #1e230d;
+}
 
 .root-des {
-  color: #ebede9;
+  color: #3c471a;
   font-size: 25px;
 }
 
