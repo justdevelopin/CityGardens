@@ -47,9 +47,10 @@ form.search-input-form {
   align-items: stretch;
   width: 100%;
   height: 40px;
+  margin-top: 10px;
 }
 form.search-input-form {
-  border-radius: 40px;
+  border-radius: 20px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.05);
   margin-left: 1.5rem;
   margin-right: 1.5rem;
@@ -67,7 +68,7 @@ input.search-input-submit-button {
   padding: 0.3rem;
   font-size: 14px;
   padding-left: 1.5rem;
-  background: #eceee3;
+  background: #f6f5f3;
 }
 .button-search-form-css {
   position: relative;
@@ -76,7 +77,7 @@ input.search-input-submit-button {
   height: 33px;
   margin-bottom: -0.4rem;
   border: none;
-  background: #344620;
+  background: #6c9948;
 }
 span.svg-icon-search {
   position: absolute;
@@ -123,6 +124,7 @@ span.svg-icon-search {
 
 .event-card-index p {
   padding-left: 0.8rem;
+  font-size: larger;
 }
 
 .event-card-index h2, .event-card-index .h2 {
@@ -135,7 +137,6 @@ span.svg-icon-search {
   opacity: .6;
 }
 
-
 .events-atribute-list {
   display: inline-flex;
   flex-wrap: nowrap;
@@ -145,7 +146,6 @@ span.svg-icon-search {
   width: calc(100% - 1.6rem);
   margin-left: 0.8rem;
 }
-
 
 span.event-atribute {
   display: flex;
@@ -168,16 +168,20 @@ span.event-atribute {
   bottom: 7.8rem;
   background: #fffc;
   padding-right: 0.8rem;
-  // width: 398px;
+  width: 398px;
   background-color: #4859366e;
   backdrop-filter: blur(10px);
-  color: #eef2ec;
-  font-weight: 100;
+  color: #ffffff;
+  font-weight: normal;
+  position: absolute;
+  bottom: 0;
+  font-size: x-large;
 
 }
 
 .events-atribute-list {
   margin-top: 0.8rem;
+  margin-bottom: -17px;
 }
 .event-card-index {
   position: relative;
@@ -185,8 +189,6 @@ span.event-atribute {
 .event-card-index {
   min-height: 507px;
 }
-
-
 
 input.search-input-submit-button {
   height: 39px;
@@ -200,6 +202,13 @@ span.svg-icon-search svg {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   font-weight: 100;
+}
+
+.title-index h1 {
+  display: flex;
+  justify-content: center;
+  font-family: serif;
+  margin-top: -10px
 }
 
 .title-inner {
