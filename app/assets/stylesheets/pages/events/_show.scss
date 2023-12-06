@@ -1,6 +1,7 @@
 .events-show {
   background-color: #F7F8F5;
-  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   background-color: #EFF3D9;
   color: #344620;
 
@@ -70,14 +71,15 @@
     .event-booking-form {
 
       i {
-        margin-left: 11%;
+        margin-right: 3px;
       }
 
       p {
         font-family: 'Montserrat';
         font-size: 20px;
         color: #436c21;
-        font-size: 25px;
+        font-size: 20px;
+        margin: 2px;
       }
     }
 

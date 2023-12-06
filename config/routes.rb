@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :bookings, only: [:show, :create, :destroy]
     resources :reviews, only: [:destory, :create ]
   end
+  
   resources :bookmarks, only: [:create, :destroy]
 
   resources :parcel_reservations, only: [:update]
