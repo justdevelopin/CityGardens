@@ -13,8 +13,6 @@ Rails.application.routes.draw do
 
   resources :bookmarks, only: [:create, :destroy]
 
-
-
   resources :gardens do
     resources :events, only: [:index, :new, :create]
     resources :reviews, only: [:destroy, :create]
