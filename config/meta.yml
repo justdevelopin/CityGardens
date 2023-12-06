@@ -1,0 +1,9 @@
+# config/meta.yml
+
+meta_product_name: “City Gardens”
+
+meta_title: “Ciry Gardens – Urban living meets green serenity”
+
+meta_description: “A unique platform where nature enthusiasts unite to nurture and celebrate urban green spaces in Barcelona. offering a unique space for plant lovers to connect, share experiences, and cultivate their own green havens.”
+
+meta_image: “logo.png” # should exist in `app/assets/images/`

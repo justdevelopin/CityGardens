@@ -20,6 +20,7 @@ gem "importmap-rails"
 # date picker
 gem 'flatpickr'
 
+gem 'meta-tags'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"

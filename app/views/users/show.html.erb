@@ -133,9 +133,6 @@
   <%= link_to "Add a new garden", new_garden_path, class: "action-button" %>
   <p>No gardens available to add events.</p>
 <% end %>
-<%#
-  <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'action-button' %>
   <%= button_to "Log out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: 'action-button', form_class: "profile-logout"%>
-
   </div>
 </div>
