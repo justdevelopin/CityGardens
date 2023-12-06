@@ -130,6 +130,7 @@
 
 #events-map {
   height: 100vh;
+
 }
 
 .info-panel {
@@ -219,6 +220,7 @@ button.mapboxgl-popup-close-button {
 .mapboxgl-canvas {
   position: absolute;
   top: 104px;
+  border-radius: 10px;
 }
 .events-container .event-card-index {
   margin-top: 1rem;

@@ -125,12 +125,16 @@
 
       </div>
     </div>
-      <% if current_user.is_admin %>
-        <%= link_to "Add a new garden", new_garden_path, class: "action-button" %>
+    <% if @gardens.present? && current_user.is_admin %>
+  <%= link_to "Add a new garden", new_garden_path, class: "action-button" %>
+  <%= link_to "Add a new event", new_garden_event_path(garden_id: @gardens.first.id), class: "action-button" %>
+  <%= link_to "Create a Parcel", new_garden_parcel_path(garden_id: @gardens.first.id), class: "action-button" %>
+  <% elsif current_user.is_admin %>
+  <%= link_to "Add a new garden", new_garden_path, class: "action-button" %>
+  <p>No gardens available to add events.</p>
+<% end %>
 
-        <%= link_to "Create a Parcel", new_garden_parcel_path(garden_id: @gardens.first.id), class: "action-button" %>
-      <% end %>
-    <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete }, class: "ation-button inset-action-button" %>
+  <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'action-button' %>
 
   </div>
 </div>

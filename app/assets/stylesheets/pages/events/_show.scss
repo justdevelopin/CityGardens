@@ -1,8 +1,8 @@
 .events-show {
-  background-color: #F7F8F5;
+  background-color: #ffffff;
   padding-top: 20px;
-  padding-bottom: 20px;
-  color: #344620;
+  padding-bottom: 25px;
+  color: black;
 
   .section-show {
     background-color: #ffffff;
@@ -25,7 +25,7 @@
       font-weight: bold;
       font-family: 'Montserrat';
       font-size: 25px;
-    }
+      }
 
     .show-description {
       font-size: 20px;
@@ -33,18 +33,21 @@
       margin-top: 50px;
       margin-bottom: 30px;
       font-family: 'Montserrat';
+      opacity: 0.7;
     }
 
     .show-participants {
       font-family: 'Montserrat';
       font-size: 20px;
       margin-bottom: 1px;
+      font-size: 18px;
     }
 
     .show-date {
       font-family: 'Montserrat';
       font-size: 20px;
-      margin-bottom: 60px;
+      margin-bottom: 30px;
+      font-size: 18px;
     }
 
     .confirm {
@@ -73,10 +76,13 @@
         margin-right: 3px;
       }
 
+      h2 {
+        color: black;
+      }
+
       p {
         font-family: 'Montserrat';
         font-size: 20px;
-        color: #436c21;
         font-size: 20px;
         margin: 2px;
       }
@@ -87,6 +93,7 @@
       font-weight: bold;
       margin-left: 0px;
       margin-top: -06px;
+      color: black;
     }
 
     .btn-primary {
@@ -94,7 +101,7 @@
       font-size: 20px;
       font-weight: bold;
       color: #ebede9;
-      background-color: #5d6b4d;
+      background-color: #208d4e;
       transition: 0.2s;
       width: 100%;
       &:hover {
