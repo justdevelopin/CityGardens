@@ -1,0 +1,128 @@
+.parcel {
+  width: 60px; /* Double the size */
+  height: 60px;
+  margin: 10px; /* Add margin for separation */
+  display: inline-block;
+  background-color: #4CAF50; /* Green for available */
+  border: 1px solid #fff; /* White border for separation */
+  transition: background-color 0.3s; /* Smooth transition for changes */
+
+}
+
+.parcel.unavailable {
+  background-color: #e0e0e0;
+}
+
+.parcel:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+@keyframes parcelChange {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.parcel.change {
+  animation: parcelChange 0.5s ease-in-out;
+}
+
+.parcel-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
+  gap: 5px;
+  padding: 10px;
+  max-width: 300px;
+  margin: auto;
+  border: #e0e0e0;
+}
+
+.parcel:hover::after {
+  content: "Parcel info";
+  position: absolute;
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border-radius: 5px;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.parcel-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 25px;
+
+}
+.parcel-image-container img {
+  width: 100%;
+  display: block;
+  margin: 0;
+  border-top-left-radius: 17px;
+  border-top-right-radius: 17px;
+}
+
+
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 85vh;
+}
+
+.form-container {
+  border: 1px solid #e0e0e0;
+  border-radius: 17px;
+  background: #fff;
+  margin: 0 auto;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px; /* Inner spacing */
+}
+
+.reservation-form .form-group {
+  margin-bottom: 15px;
+}
+
+.reservation-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+
+.reservation-form .submit-button {
+  background-color: #ffffff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.reservation-form .submit-button:hover {
+  background-color:#e0e0e0;
+}
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+  .reservation-form input[type="text"],
+  .reservation-form input[type="email"],
+  .reservation-form input[type="date"],
+  .reservation-form .submit-button {
+    width: 100%;
+  }
+}
+
+.reserve-button-container {
+  width: 100%;
+  text-align: center;
+
+}

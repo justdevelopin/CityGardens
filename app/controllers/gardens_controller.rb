@@ -23,12 +23,15 @@ class GardensController < ApplicationController
 
   def create
     @garden = Garden.new(garden_params)
+    @garden.user = current_user
+
     if @garden.save
       redirect_to @garden, notice: 'Garden was successfully created.'
     else
       render :new
     end
   end
+
 
   def update
     if @garden.update(garden_params)
@@ -46,6 +49,6 @@ class GardensController < ApplicationController
   private
 
   def garden_params
-    params.require(:garden).permit(:name, :location, :description, :latitude, :longitude)
+    params.require(:garden).permit(:name, :location, :description, :latitude, :longitude, photos: [])
   end
 end

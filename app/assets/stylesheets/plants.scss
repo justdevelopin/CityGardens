@@ -1,0 +1,166 @@
+body {
+  background: #fbe6d4;
+}
+
+.wrapper {
+  position: absolute;
+  height: 187.5px; /* Reduced from 250px */
+  width: 525px; /* Reduced from 700px */
+  margin: auto;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.container1, .container2, .container3 {
+  position: absolute;
+  display: inline-block;
+  width: 37.5px; /* Reduced from 50px */
+  height: 187.5px; /* Reduced from 250px */
+  background: #fbe6d4;
+  margin: 15px; /* Adjusted from 20px */
+  transform: scale(0.75);
+}
+
+.container2 {
+  left: 150px; /* Adjusted from 200px */
+}
+
+.container3 {
+  left: 300px; /* Adjusted from 400px */
+}
+
+.line1 {
+  width: 105px; /* Reduced from 140px */
+  height: 75px; /* Reduced from 100px */
+  background: #fbe6d4;
+  top: 30px; /* Adjusted from 40px */
+  left: 15px; /* Adjusted from 20px */
+  z-index: 1;
+  overflow: hidden;
+  transform: scale(0.75);
+}
+
+.pot2 {
+  position: relative;
+  height: 97.5px; /* Reduced from 130px */
+  width: 97.5px; /* Reduced from 130px */
+  background: linear-gradient(to right, #f6ad7b 50%, #ed9a73 50%);
+  left: 14.25px; /* Adjusted from 19px */
+  top: 15px; /* Adjusted from 20px */
+  border-radius: 50%;
+  overflow: hidden;
+  transform: scale(0.75);
+}
+
+.line2 {
+  top: 75px; /* Adjusted from 100px */
+  width: 97.5px; /* Reduced from 130px */
+  height: 15px; /* Reduced from 20px */
+  background: #fbe6d4;
+  position: relative;
+  z-index: 1;
+  transform: scale(0.75);
+}
+
+.leaf1, .leaf2, .leaf3 {
+  width: 60px; /* Reduced from 80px */
+  height: 60px; /* Reduced from 80px */
+  background: green;
+  position: relative;
+  border-radius: 112.5px 0; /* Adjusted from 150px */
+  background: linear-gradient(-45deg, #5c7658 50%, #649d66 50%);
+  transform: scale(0.75);
+}
+
+.leaf3 {
+  transform: rotate(-15deg) scale(0.75);
+  bottom: 97.5px; /* Adjusted from 130px */
+  left: 39.75px; /* Adjusted from 53px */
+}
+
+.leaf2 {
+  transform: rotate(-45deg) scale(0.75);
+  z-index: 1;
+  bottom: 48.75px; /* Adjusted from 65px */
+  left: 18.75px; /* Adjusted from 25px */
+}
+
+.leaf1 {
+  transform: rotate(-75deg) scale(0.75);
+  top: 22.5px; /* Adjusted from 30px */
+  right: 3px;
+}
+
+.line {
+  position: relative;
+  width: 90px; /* Reduced from 120px */
+  height: 15px; /* Reduced from 20px */
+  background: linear-gradient(to right, #f6ad7b 50%, #ed9a73 50%);
+  border-radius: 5px;
+  top: 30px; /* Adjusted from 40px */
+  left: 18.75px; /* Adjusted from 25px */
+  z-index: 1;
+  transform: scale(0.75);
+}
+
+.pot1, .pot3 {
+  position: relative;
+  height: 67.5px; /* Reduced from 90px */
+  width: 75px; /* Reduced from 100px */
+  top: 15px; /* Adjusted from 20px */
+  left: 25.5px; /* Adjusted from 34px */
+  background: linear-gradient(to right, #f6ad7b 50%, #ed9a73 50%);
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+  transform: scale(0.75);
+}
+
+.shadow {
+  width: 73.5px; /* Reduced from 98px */
+  height: 3.75px; /* Reduced from 5px */
+  position: relative;
+  background: #e08f62;
+  top: 15px; /* Adjusted from 20px */
+  z-index: 2;
+  transform: scale(0.75);
+}
+
+.root {
+  position: relative;
+  left: 46.5px; /* Adjusted from 62px */
+  width: 3px; /* Adjusted from 4px */
+  height: 45px; /* Reduced from 60px */
+  background: #649d66;
+  transform: scale(0.75);
+}
+
+.leaf4, .leaf5 {
+  width: 22.5px; /* Reduced from 30px */
+  height: 15px; /* Reduced from 20px */
+  background: green;
+  position: relative;
+  border-radius: 112.5px 0; /* Adjusted from 150px */
+  background: linear-gradient(-32deg, #5c7658 50%, #649d66 50%);
+  transform: scale(0.75);
+}
+
+.leaf4 {
+  left: 46.5px; /* Adjusted from 62px */
+  top: 16.5px; /* Adjusted from 22px */
+  z-index: 1;
+}
+
+.leaf5 {
+  left: 24px; /* Adjusted from 32px */
+  top: 16.5px; /* Adjusted from 22px */
+  transform: rotate(65deg) scale(0.75);
+}
+
+.line3 {
+  height: 11.25px; /* Reduced from 15px */
+  width: 97.5px; /* Reduced from 130px */
+  position: relative;
+  top: 30px; /* Adjusted from 40px */
+  background: linear-gradient(to right, #fbe6d4 50%, #feceab 50%);
+  transform: scale(0.75);
+}

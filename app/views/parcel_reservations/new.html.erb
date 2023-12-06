@@ -1,0 +1,71 @@
+<div class="form-wrapper">
+  <div class="form-container">
+    <% if @parcel.photo.attached? %>
+      <div class="parcel-image-container">
+        <%= image_tag @parcel.photo %>
+      </div>
+    <% end %>
+
+    <h3>Reserve Your Parcel</h3>
+    <form id="reservationForm" class="reservation-form">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="date">Date of Reservation:</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+    </form>
+
+    <!-- Replace the existing parcel-container with the new plant design -->
+    <div class="wrapper">
+      <div class="container1">
+        <div class="line1">
+          <div class="leaf1"></div>
+          <div class="leaf2"></div>
+          <div class="leaf3"></div>
+        </div>
+        <div class="line"></div>
+        <div class="pot1">
+          <div class="shadow"></div>
+        </div>
+      </div>
+
+      <div class="container2">
+        <div class="line1">
+          <div class="leaf1"></div>
+          <div class="leaf2"></div>
+          <div class="leaf3"></div>
+        </div>
+        <div class="pot2">
+          <div class="line3"></div>
+          <div class="line2"></div>
+        </div>
+      </div>
+
+      <div class="container3">
+        <div class="line1">
+          <div class="leaf4"></div>
+          <div class="leaf5"></div>
+          <div class="root"></div>
+        </div>
+        <div class="line"></div>
+        <div class="pot3">
+          <div class="shadow"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="reserve-button-container">
+  <button type="submit" class="action-button" form="reservationForm">Reserve</button>
+</div>
