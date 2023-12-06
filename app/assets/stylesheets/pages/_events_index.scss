@@ -172,6 +172,7 @@
 }
 
 span.event-atribute {
+
   font-size: 14px;
   color: #2a2c2c;
 }
@@ -260,3 +261,24 @@ button.mapboxgl-popup-close-button {
   border-bottom: solid 0.5px #595e5b;
   margin-bottom: 14px;
 }
+
+.fa-heart {
+  transform: translateY(-5%);
+  position: absolute;
+  right: 5%;
+  font-size: 30px;
+  transform: translateY(-15%);
+}
+
+
+// Favourite
+
+.event-name-container {
+
+}
+// .fa-heart {
+// position: absolute;
+// right: 5%;
+// font-size: 30px;
+
+// }

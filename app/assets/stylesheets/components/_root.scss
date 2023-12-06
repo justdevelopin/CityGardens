@@ -6,7 +6,8 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
+  padding-bottom: 50px;
 }
 
 .root-background {
@@ -21,7 +22,7 @@
 }
 
 .root-gradient {
-  background-image: linear-gradient(to bottom, #34462000 20%, #344620a0 60%);
+  background-image: linear-gradient(to bottom, #34462000 10%, #1f2a13e7 45%);
   background-size: cover;
   height: 100%;
   width: 100%;
@@ -40,6 +41,26 @@
   z-index: -2;
 }
 
+.root-info {
+  z-index: 1;
+  margin-bottom: 140px;
+  padding-inline: 35px;
+}
+
+.primary-heading {
+  color: #d6dad2;
+  font-size: 35px;
+  letter-spacing: 2px;
+  line-height: 50px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+
+.root-des {
+  color: #ebede9;
+  font-size: 25px;
+}
 
 
 .root-links {
@@ -55,4 +76,5 @@
   z-index: 1;
   letter-spacing: 2px;
   font-weight: bold;
+  font-size: 22px;
 }

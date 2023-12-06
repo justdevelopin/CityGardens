@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     resources :bookmarks, only: [:create, :destroy]
   end
 
+  resources :bookmarks, only: [:create, :destroy]
+
 
 
   resources :gardens do

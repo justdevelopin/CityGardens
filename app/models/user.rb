@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :gardens, dependent: :destroy
   has_many :bookings, dependent: :destroy
+  has_many :bookmarks, dependent: :destroy
   has_many :events, through: :gardens
   has_many :parcels
   has_many :parcel_reservations

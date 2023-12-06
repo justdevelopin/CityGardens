@@ -8,6 +8,8 @@ class UsersController < ApplicationController
 
 
     @gardens = @user.gardens
+    @favourited_gardens = @user.bookmarks
+    @favourites = @user.bookmarks
     @attending_events = @user.attending_events
     @events = @user.events
     @parcels = Parcel.where(garden_id: @gardens.pluck(:id))
