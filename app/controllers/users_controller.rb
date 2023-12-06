@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     end
 
     @gardens = @user.gardens
+    @favourited_gardens = @user.bookmarks
     @favourites = @user.bookmarks
     @attending_events = @user.attending_events
     @events = @user.events

@@ -76,15 +76,15 @@
           <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
             <div class="accordion-body">
               <% if current_user.is_admin %>
-                <div class="events-dynamic-container">
+                <% if @favourited_gardens.any? %>
                   <div class="event-list">
-                    <div class="events-container">
-                      <% @gardens.each do |garden| %>
-                        <%= render "shared/gardens", garden: garden %>
+                      <% @favourited_gardens.each do |bookmark| %>
+                        <%= render "gardens/garden_card", garden: bookmark.garden%>
                       <% end %>
-                    </div>
                   </div>
-                </div>
+                <% else %>
+                  <p class="no-events">You have no favourite gardens...</p>
+                <% end %>
               <% end %>
             </div>
           </div>
