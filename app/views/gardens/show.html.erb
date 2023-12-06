@@ -1,34 +1,21 @@
-<div class="garden-show">
-  <div class="garden-image">
-    <% if @garden.photos.attached? %>
-      <%= image_tag(@garden.photos.first, alt: @garden.name, class: "garden-show-image") %>
-    <% else %>
-      <%= image_tag('logo.png', alt: 'No image available', class: "garden-show-image") %>
-    <% end %>
-  </div>
-  <h1><%= @garden.name %></h1>
-  <p><%= @garden.description %></p>
-
-  <section class="event-card">
-    <div class="event-card-info">
-      <h3 class="text-center">Available Parcels</h3>
-      <div class="event-card-infos">
-        <% @garden.parcels.each do |parcel| %>
-          <div class="event-card-info">
-            <h4><%= parcel.name %></h4>
-            <% unless current_user == @garden.user %>
-              <%= link_to 'Reserve this Parcel', new_parcel_parcel_reservation_path(parcel), class: 'reserve-parcel-button' %>
-            <% end %>
-          </div>
+<div class="events-show">
+  <section class="section-show mx-2">
+    <div class="show-container">
+      <div class="show-photo-column">
+        <% if @garden.photos.attached? %>
+          <%= image_tag(@garden.photos.first, alt: @garden.name, class: "garden-show-image") %>
+        <% else %>
+          <%= image_tag('logo.png', alt: 'No image available', class: "garden-show-image") %>
         <% end %>
       </div>
-  </div>
-</section>
 
-<section class="event-card">
-  <div class="event-card-info">
-    <h2>REVIEWS</h2>
-    <p>Add a review</>
+      <div class="show-description-column mx-3 mt-3">
+        <h3 class="show-event-title"><strong><%= @garden.name %></strong></h3>
+        <p class="show-description"><%= @garden.description %></p>
+
+      </div>
+    </div>
+
 
     <%= simple_form_for [@garden, @review] do |f| %>
       <%= f.input :rating, collection: (1..5) %>
@@ -36,35 +23,33 @@
       <%= f.submit "Submit", class: "action-button" %>
     <% end %>
 
-  <% @garden_reviews.each do |review| %>
-    <div class= "review-top-card">
-      <%= image_tag "logo.png" %>
-      <p class= "review-first-name"><%= review.user.first_name %></p>
-    </div>
-
-    <div class= "review-date">
-      <p> <%= review.created_at.strftime("%d %B  %Y %R") %></p>
-    </div>
 
 
+    <% @garden_reviews.each do |review| %>
+      <div class= "review-top-card">
+        <%= image_tag "logo.png" %>
+        <p class= "review-first-name"><%= review.user.first_name %></p>
+      </div>
 
-    <div class= "review-text">
-      <p><%= review.content %></p>
-    </div>
+      <div class= "review-date">
+        <p> <%= review.created_at.strftime("%d %B  %Y %R") %></p>
+      </div>
 
-    <div class= "d-flex mb-3">
-      <% review.rating.times do %>
-        <span class="fa fa-star checked"></span>
-      <% end %>
-      <% (5 - review.rating).times do %>
-       <span class="fa fa-star unchecked"></span>
-      <% end %>
-    </div>
+
+
+      <div class= "review-text">
+        <p><%= review.content %></p>
+      </div>
+
+      <div class= "d-flex mb-3">
+          <% review.rating.times do %>
+            <span class="fa fa-star checked"></span>
+          <% end %>
+          <% (5 - review.rating).times do %>
+          <span class="fa fa-star unchecked"></span>
+          <% end %>
+      </div>
 
   <% end %>
-
-
-
-
-  </div>
-</section>
+  </section>
+</div>
