@@ -129,10 +129,12 @@
   <%= link_to "Add a new garden", new_garden_path, class: "action-button" %>
   <%= link_to "Add a new event", new_garden_event_path(garden_id: @gardens.first.id), class: "action-button" %>
   <%= link_to "Create a Parcel", new_garden_parcel_path(garden_id: @gardens.first.id), class: "action-button" %>
-<% elsif current_user.is_admin %>
+  <% elsif current_user.is_admin %>
   <%= link_to "Add a new garden", new_garden_path, class: "action-button" %>
   <p>No gardens available to add events.</p>
 <% end %>
+
+  <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'action-button' %>
 
   </div>
 </div>
