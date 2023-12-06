@@ -17,7 +17,7 @@
           <div class="event-card-info">
             <h4><%= parcel.name %></h4>
             <% unless current_user == @garden.user %>
-              <%= link_to 'Reserve this Parcel', new_parcel_parcel_reservation_path(@garden, parcel), class: 'reserve-parcel-button' %>
+              <%= link_to 'Reserve this Parcel', new_parcel_parcel_reservation_path(parcel), class: 'reserve-parcel-button' %>
             <% end %>
           </div>
         <% end %>

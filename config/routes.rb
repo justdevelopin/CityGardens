@@ -17,16 +17,13 @@ Rails.application.routes.draw do
     resources :events, only: [:index, :new, :create]
     resources :reviews, only: [:destroy, :create]
     resources :parcels, only: [:new, :create, :index, :show]
-    resources :parcel_reservations, only: [ :new, :create, :update]# Nested within gardens
+
   end
 
 
-resources :parcels do
-  collection do
-    get 'new', to: 'parcels#new', as: 'new', defaults: { garden_id: nil }
+  resources :parcels do
+    resources :parcel_reservations, only: [:new, :create, :update]
   end
-  resources :parcel_reservations, only: [:new, :create, :update]
-end
 
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
