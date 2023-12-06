@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get '/profile', to: 'users#show', as: :user_profile
   get 'gardens/search', to: 'gardens#search', as: 'search_gardens'
-  get 'users/:id' => 'users#show'
+  # get 'users/:id' => 'users#show'
 
   resources :events, only: [:index, :show] do
     resources :bookings, only: [:show, :create, :destroy]

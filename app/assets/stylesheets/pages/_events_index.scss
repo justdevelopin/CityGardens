@@ -29,17 +29,17 @@
   margin: 0;
 }
 
-.events-container .event-card-index:first-child {
-  margin-top: 60px;
+.events-container .event-card-link-wrapper:first-child {
+  margin-top: 100px;
 }
 
-.events-container .event-card-index:last-child {
+.events-container .event-card-link-wrapper:last-child {
   margin-bottom: 109px;
 }
 
 .toggle-button-container {
   position: fixed;
-  bottom: 64px;
+  bottom: 78px;
   padding: 0.1618rem;
   z-index: 99999;
   left: 0;
@@ -108,11 +108,11 @@
 
 .view-details-button {
   font-family: Montserrat;
-  color: #232e15;
+  color: #fff;
   font-weight: bold;
   letter-spacing: 2px;
   padding: 8px 13px;
-  background-color: #97B140;
+  background-color: #6c9948;
   border: none;
   border-radius: 10px;
   text-align: center;
@@ -153,7 +153,7 @@
 .mapboxgl-popup-content {
   text-align: center;
   font-family: "Open Sans", sans-serif;
-  margin-bottom: 21px;
+  margin-bottom: 25px;
   background-color: #F7F8F5;
 }
 
@@ -164,11 +164,6 @@
   right: 0;
   width: 100vw;
   z-index: 999999;
-}
-
-.event-card-index:hover {
-  background: #cccccc4d;
-  transition: background-color 0.5s ease;
 }
 
 span.event-atribute {
@@ -184,14 +179,14 @@ span.event-atribute {
 }
 
 button.mapboxgl-popup-close-button {
-  background: #c4d3bf;
-  border-radius: 100%;
-  width: 32px;
+  width: 33px;
   height: 32px;
   margin-top: 8px;
   margin-right: 8px;
   font-size: 18px;
-  color: #000;
+  color: #393939;
+  font-weight: bold;
+  font-size: xx-large;
 }
 
 .index-wrapper {
@@ -233,6 +228,7 @@ button.mapboxgl-popup-close-button {
 
 .events-container {
   width: 100%;
+  background: #f6f5f3;
 }
 .fixed-popup.mapboxgl-popup.mapboxgl-popup-anchor-bottom {
   height: 97vh;
@@ -243,7 +239,6 @@ button.mapboxgl-popup-close-button {
   margin-bottom: 1.5rem;
   border: solid 1px #ccc;
 }
-
 
 .custom-marker {
   border-radius: 100%;
@@ -256,30 +251,9 @@ button.mapboxgl-popup-close-button {
   align-content: center;
   justify-content: space-around;
   align-items: stretch;
-  width: calc(100% - 1.6rem);
+  width: calc(100% - -7.4rem);
   margin-left: -7.2rem;
   flex-direction: column;
   border-bottom: solid 0.5px #595e5b;
   margin-bottom: 14px;
 }
-
-.fa-heart {
-  transform: translateY(-5%);
-  position: absolute;
-  right: 5%;
-  font-size: 30px;
-  transform: translateY(-15%);
-}
-
-
-// Favourite
-
-.event-name-container {
-
-}
-// .fa-heart {
-// position: absolute;
-// right: 5%;
-// font-size: 30px;
-
-// }

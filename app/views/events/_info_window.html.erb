@@ -1,5 +1,9 @@
 <div class="info-window">
-  <%= image_tag "photo1.jpg", class:"d-block w-100" %>
+  <% if event.photo.attached? %>
+    <%= cl_image_tag event.photo.key, class: "d-block w-100" %>
+  <% else %>
+    <%= image_tag "logo.png", alt: "default image", class: 'd-block w-100' %>
+  <% end %>
   <h3><%= event.name %></h3>
   <div class="events-atribute-list">
                 <span class="event-atribute">
@@ -162,9 +166,8 @@
                   </defs>
                 </svg>
               </div>
-    <p><%= event.date.strftime("%d %B  %Y %R") %></p>
-  <p><%= "Max. Attendees: #{event.max_attendees}" %></p>
-  </div>
+              <p><%= event.date.strftime("%d %B  %Y %R") %></p>
+    </div>
   <p><%= event.description.split(/(?<=\.)\s+|$/).first %></p>
   <%= link_to 'View Details', event_path(event), class: 'view-details-button' %>
 </div>
