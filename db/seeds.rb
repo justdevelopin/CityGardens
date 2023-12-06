@@ -49,7 +49,7 @@ garden_descriptions = [
 ]
 
 # User 1
-User.create(
+user1 = User.create(
   email: 'user1@example.com',
   password: 'password1',
   password_confirmation: 'password1',
@@ -58,9 +58,14 @@ User.create(
   bio: 'Enthusiast of urban gardening and sustainable living.',
   is_admin: true
 )
+image1_path = Rails.root.join('lib', 'assets', 'seeds', 'images', 'Avatar1.png')
+image1 = File.open(image1_path)
+user1.photo.attach(io: image1, filename: 'Avatar1.png', content_type: 'image/png')
+user1.save
+
 
 # User 2
-User.create(
+user2 = User.create(
   email: 'user2@example.com',
   password: 'password2',
   password_confirmation: 'password2',
@@ -69,9 +74,14 @@ User.create(
   bio: 'Passionate about community building and green spaces.',
   is_admin: true
 )
+image2_path = Rails.root.join('lib', 'assets', 'seeds', 'images', 'avatar2.jpeg')
+image2 = File.open(image2_path)
+user2.photo.attach(io: image2, filename: 'avatar2.jpeg', content_type: 'image/jpeg')
+user2.save
+
 
 # User 3
-User.create(
+user3 = User.create(
   email: 'user3@example.com',
   password: 'password3',
   password_confirmation: 'password3',
@@ -80,9 +90,13 @@ User.create(
   bio: 'Dedicated to nurturing community connections through gardening.',
   is_admin: true
 )
+image4_path = Rails.root.join('lib', 'assets', 'seeds', 'images', 'avatar4.png')
+image4 = File.open(image4_path)
+user3.photo.attach(io: image4, filename: 'avatar4.png', content_type: 'image/png')
+user3.save
 
 # User 4
-User.create(
+user4 = User.create(
   email: 'user4@example.com',
   password: 'password4',
   password_confirmation: 'password4',
@@ -91,9 +105,13 @@ User.create(
   bio: 'Exploring the intersection of art and nature in urban spaces.',
   is_admin: true
 )
+image11_path = Rails.root.join('lib', 'assets', 'seeds', 'images', 'avatar11.jpeg')
+image11 = File.open(image11_path)
+user4.photo.attach(io: image11, filename: 'avatar5.jpeg', content_type: 'image/jpeg')
+user4.save
 
 # User 5
-User.create(
+user5 = User.create(
   email: 'user5@example.com',
   password: 'password5',
   password_confirmation: 'password5',
@@ -102,9 +120,13 @@ User.create(
   bio: 'Advocate for sustainable living and organic food cultures.',
   is_admin: true
 )
+image5_path = Rails.root.join('lib', 'assets', 'seeds', 'images', 'avatar5.jpeg')
+image5 = File.open(image5_path)
+user5.photo.attach(io: image5, filename: 'avatar5.jpeg', content_type: 'image/jpeg')
+user5.save
 
 # User 6
-User.create(
+user6 = User.create(
   email: 'user6@example.com',
   password: 'password6',
   password_confirmation: 'password6',
@@ -113,9 +135,13 @@ User.create(
   bio: 'Gardening enthusiast and community volunteer coordinator.',
   is_admin: true
 )
+image6_path = Rails.root.join('lib', 'assets', 'seeds', 'images', 'avatar6.jpeg')
+image6 = File.open(image6_path)
+user6.photo.attach(io: image6, filename: 'avatar6.jpeg', content_type: 'image/jpeg')
+user6.save
 
 # User 7
-User.create(
+user7 = User.create(
   email: 'user7@example.com',
   password: 'password7',
   password_confirmation: 'password7',
@@ -124,9 +150,13 @@ User.create(
   bio: 'Focused on creating educational programs in urban gardening.',
   is_admin: true
 )
+image7_path = Rails.root.join('lib', 'assets', 'seeds', 'images', 'avatar7.jpeg')
+image7 = File.open(image7_path)
+user7.photo.attach(io: image7, filename: 'avatar7.jpeg', content_type: 'image/jpeg')
+user7.save
 
 # User 8
-User.create(
+user8 = User.create(
   email: 'user8@example.com',
   password: 'password8',
   password_confirmation: 'password8',
@@ -135,9 +165,13 @@ User.create(
   bio: 'Passionate about permaculture and biodiversity in city landscapes.',
   is_admin: true
 )
+image8_path = Rails.root.join('lib', 'assets', 'seeds', 'images', 'avatar8.jpeg')
+image8 = File.open(image8_path)
+user8.photo.attach(io: image8, filename: 'avatar8.jpeg', content_type: 'image/jpeg')
+user8.save
 
 # User 9
-User.create(
+user9 = User.create(
   email: 'user9@example.com',
   password: 'password9',
   password_confirmation: 'password9',
@@ -146,9 +180,13 @@ User.create(
   bio: 'Engaged in community outreach and green urban development.',
   is_admin: true
 )
+image9_path = Rails.root.join('lib', 'assets', 'seeds', 'images', 'avatar9.jpeg')
+image9 = File.open(image9_path)
+user9.photo.attach(io: image9, filename: 'avatar9.jpeg', content_type: 'image/jpeg')
+user9.save
 
 # User 10
-User.create(
+user10 = User.create(
   email: 'user10@example.com',
   password: 'password10',
   password_confirmation: 'password10',
@@ -157,6 +195,10 @@ User.create(
   bio: 'Lover of nature and advocate for environmental education.',
   is_admin: true
 )
+image10_path = Rails.root.join('lib', 'assets', 'seeds', 'images', 'avatar10.png')
+image10 = File.open(image10_path)
+user10.photo.attach(io: image10, filename: 'avatar10.png', content_type: 'image/png')
+user10.save
 
 10.times do |i|
   user = User.find_by(email: "user#{i + 1}@example.com")

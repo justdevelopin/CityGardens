@@ -70,7 +70,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_06_104627) do
     t.integer "max_attendees"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image_url"
     t.index ["garden_id"], name: "index_events_on_garden_id"
   end
 
