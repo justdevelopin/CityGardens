@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_04_103454) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_06_104627) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -70,6 +70,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_04_103454) do
     t.integer "max_attendees"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_url"
     t.index ["garden_id"], name: "index_events_on_garden_id"
   end
 
@@ -91,6 +92,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_04_103454) do
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "duration_in_months", default: 1
     t.index ["parcel_id"], name: "index_parcel_reservations_on_parcel_id"
     t.index ["user_id"], name: "index_parcel_reservations_on_user_id"
   end
@@ -101,6 +103,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_04_103454) do
     t.bigint "garden_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_url"
     t.index ["garden_id"], name: "index_parcels_on_garden_id"
   end
 

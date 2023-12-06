@@ -1,0 +1,20 @@
+<div class="form-wrapper">
+  <div class="form-container">
+    <% if @parcel.photo.attached? %>
+      <div class="parcel-image-container">
+        <%= image_tag @parcel.photo %>
+      </div>
+    <% end %>
+
+    <h3>Reserve Your Parcel</h3>
+    <%= simple_form_for [@parcel, @parcel_reservation] do |f| %>
+      <%= f.input :duration_in_months, collection: (1..12) %>
+      <%= f.submit "Send reservation request", class: "action-button" %>
+    <% end %>
+
+
+    <!-- Replace the existing parcel-container with the new plant design -->
+
+
+  </div>
+</div>

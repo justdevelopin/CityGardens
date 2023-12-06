@@ -6,11 +6,13 @@ class UsersController < ApplicationController
       @user = current_user
     end
 
+
     @gardens = @user.gardens
     @favourited_gardens = @user.bookmarks
     @favourites = @user.bookmarks
     @attending_events = @user.attending_events
     @events = @user.events
-    # @events = Event.joins(:garden).where()
+    @parcels = Parcel.where(garden_id: @gardens.pluck(:id))
+    @parcel_reservations = @user.parcel_reservations.includes(:parcel)
   end
 end

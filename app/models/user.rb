@@ -5,6 +5,9 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
   has_many :events, through: :gardens
+  has_many :parcels
+  has_many :parcel_reservations
+  has_many :reserved_parcels, through: :parcel_reservations, source: :parcel
 
   has_many :attending_events, through: :bookings, source: :event
 

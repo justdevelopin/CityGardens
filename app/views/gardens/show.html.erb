@@ -6,44 +6,22 @@
       <%= image_tag('logo.png', alt: 'No image available', class: "garden-show-image") %>
     <% end %>
   </div>
-
   <h1><%= @garden.name %></h1>
   <p><%= @garden.description %></p>
 
-  <div class="rent-parcel-form">
-    <h2>Rent a Parcel</h2>
-    <%= form_with(model: [ @garden, @garden.events.build ]) do |form| %>
-      <div class="field">
-        <%= form.label :date_and_time, "Date and Time for Visit" %>
-        <%= form.datetime_select :date_and_time %>
-      </div>
-
-      <div class="field">
-        <%= form.label :number_of_guests, "Number of Guests (if applicable)" %>
-        <%= form.number_field :number_of_guests, in: 1..100 %>
-      </div>
-
-      <div class="actions">
-        <%= form.submit "Confirm Booking" %>
-      </div>
-    <% end %>
-  </div>
-</div>
-
-<section class="event-card">
-  <div class="event-card-info">
-    <h3 class="text-center">Events</h3>
-    <% @garden.events.each do |event| %>
-      <% Rails.logger.debug "Event: #{event.inspect}" %>
-
-      <div class="event-detail">
-        <p>Event name: <%= event.name %></p>
-        <p>Date and time: <%= event.date ? event.date.strftime("%d %b %Y") : "Not specified" %></p>
-        <% if event.persisted? %>
-          <%= link_to "Book", event_path(event), class: "action-button" %>
+  <section class="event-card">
+    <div class="event-card-info">
+      <h3 class="text-center">Available Parcels</h3>
+      <div class="event-card-infos">
+        <% @garden.parcels.each do |parcel| %>
+          <div class="event-card-info">
+            <h4><%= parcel.name %></h4>
+            <% unless current_user == @garden.user %>
+              <%= link_to 'Reserve this Parcel', new_parcel_parcel_reservation_path(parcel), class: 'reserve-parcel-button' %>
+            <% end %>
+          </div>
         <% end %>
       </div>
-    <% end %>
   </div>
 </section>
 
@@ -59,29 +37,29 @@
     <% end %>
 
   <% @garden_reviews.each do |review| %>
-  <div class= "review-top-card">
-    <%= image_tag "logo.png" %>
-    <p class= "review-first-name"><%= review.user.first_name %></p>
-  </div>
+    <div class= "review-top-card">
+      <%= image_tag "logo.png" %>
+      <p class= "review-first-name"><%= review.user.first_name %></p>
+    </div>
 
-  <div class= "review-date">
-    <p> <%= review.created_at.strftime("%d %B  %Y %R") %></p>
-  </div>
+    <div class= "review-date">
+      <p> <%= review.created_at.strftime("%d %B  %Y %R") %></p>
+    </div>
 
 
 
-  <div class= "review-text">
-    <p><%= review.content %></p>
-  </div>
+    <div class= "review-text">
+      <p><%= review.content %></p>
+    </div>
 
-  <div class= "d-flex mb-3">
-    <% review.rating.times do %>
-      <span class="fa fa-star checked"></span>
-    <% end %>
-    <% (5 - review.rating).times do %>
-    <span class="fa fa-star unchecked"></span>
-    <% end %>
-  </div>
+    <div class= "d-flex mb-3">
+      <% review.rating.times do %>
+        <span class="fa fa-star checked"></span>
+      <% end %>
+      <% (5 - review.rating).times do %>
+       <span class="fa fa-star unchecked"></span>
+      <% end %>
+    </div>
 
   <% end %>
 

@@ -1,5 +1,5 @@
 class GardensController < ApplicationController
-  before_action :set_garden, only: [:show, :edit, :update, :destroy]
+  before_action :set_garden, only: [:show, :update, :destroy]
 
   def show
     @garden = Garden.find(params[:id])
@@ -28,12 +28,15 @@ class GardensController < ApplicationController
 
   def create
     @garden = Garden.new(garden_params)
+    @garden.user = current_user
+
     if @garden.save
       redirect_to @garden, notice: 'Garden was successfully created.'
     else
       render :new
     end
   end
+
 
   def update
     if @garden.update(garden_params)
@@ -56,6 +59,6 @@ class GardensController < ApplicationController
 
 
   def garden_params
-    params.require(:garden).permit(:name, :location, :description, :latitude, :longitude)
+    params.require(:garden).permit(:name, :location, :description, :latitude, :longitude, photos: [])
   end
 end
