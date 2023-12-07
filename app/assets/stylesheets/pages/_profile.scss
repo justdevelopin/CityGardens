@@ -37,6 +37,7 @@
       border-radius: 50%;
       box-shadow: 0 0 10px 0 #2f3f1dae;
       margin-bottom: 20px;
+      object-fit: none;
     }
 
     .user-name-container {
@@ -63,11 +64,11 @@
   }
 
   .action-button {
-    color: #ebede9 !important;
-    background: linear-gradient(to right, #5b6a26 50%, #6a7c2d);
+    color: white !important;
+    background: linear-gradient(to right, #618a41, #1d7f46);
 
       &:hover {
-        background: linear-gradient(to right, #6a7c2d 50%, #798e33);
+        background: linear-gradient(to right, #567a3a, #1a713e);
       }
   }
 
@@ -118,15 +119,15 @@
       font-size: 18px;
       font-weight: 700;
       letter-spacing: 1.5px;
-      background-image: linear-gradient(to right, #5b6a26 50%, #6a7c2d);
-      color: #ebede9;
+      background: linear-gradient(to right, #618a41, #1d7f46);
+      color: white;
       border-radius: 10px !important;
       margin-bottom: 10px;
       transition: 0.5s;
 
       &:hover {
         background-color: #485936;
-        background-image: linear-gradient(to right, #6a7c2d 50%, #798e33);
+        background: linear-gradient(to right, #567a3a, #1a713e);
       }
     }
     .accordion-button:after {

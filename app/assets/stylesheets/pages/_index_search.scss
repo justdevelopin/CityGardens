@@ -1,3 +1,7 @@
+.form-control-search.search-query-input-new::placeholder {
+  color: black; /* Or you can use #000000 for black */
+}
+
 .search-row {
   margin-top: 30px;
   margin-bottom: 30px;
@@ -134,7 +138,7 @@ span.svg-icon-search {
 .svg-icons-events-attribute svg {
   width: 18px;
   height: 18px;
-  opacity: .6;
+  opacity: 1.6;
 }
 
 .events-atribute-list {
@@ -194,7 +198,7 @@ input.search-input-submit-button {
   height: 39px;
 }
 span.svg-icon-search svg {
-  color: #fff;
+  color: #ffffff;
 }
 
 .title-index {
