@@ -3,4 +3,5 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import "@popperjs/core"
 import "bootstrap"
-import "text_animation"
+// ? Importing empty file ?
+// import "text_animation"
