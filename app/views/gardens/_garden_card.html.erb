@@ -3,7 +3,7 @@
     <div class="img-container">
       <% if garden.photos.any? %>
         <%= link_to garden_path(garden) do %>
-          <%= image_tag garden.photos.first, alt: garden.name, class: 'd-block w-100' %>
+          <%= cl_image_tag garden.photos.first.key, alt: garden.name, class: 'd-block w-100' %>
         <% end %>
       <% else %>
         <%= link_to garden_path(garden) do %>
