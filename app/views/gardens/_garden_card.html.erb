@@ -1,4 +1,5 @@
-<div class="event-card-index" data-controller="bookmarks">
+<div class="items-list">
+  <div class="event-card-index" data-controller="bookmarks">
 <div class="img-container">
   <% if garden.photos.any? %>
     <%= link_to garden_path(garden) do %>
@@ -9,8 +10,9 @@
       <%= image_tag "logo.png", alt: "default image", class: 'd-block w-100' %>
     <% end %>
   <% end %>
-</div>
   <h2><%= garden.name %></h2>
+</div>
+
 
 
   <div class="events-atribute-list">
@@ -27,12 +29,14 @@
         <% bookmark = Bookmark.find_by(garden: garden, user: current_user) %>
         <%= link_to '<i class="fa-solid fa-heart" style="color: #0a0e06;"></i>'.html_safe, "#", data: {gardenId: bookmark.id, action: 'click->bookmarks#deleteFavourited'}%>
       <% else %>
-        <%= link_to '<i class="fa-regular fa-heart" style="color: #0a0e06;"></i>'.html_safe, "#", data: {gardenId: garden.id, action: 'click->bookmarks#favourited'}%>
+        <span class="click-favorite">
+          <%= link_to '<i class="fa-regular fa-heart" style="color: #0a0e06;"></i>'.html_safe, "#", data: {gardenId: garden.id, action: 'click->bookmarks#favourited'}%>
+        </span>
       <% end %>
-    <span class="event-atribute">
-    </span>
   </div>
   <div class="card-description">
     <p><%= garden.description.split(/(?<=\.)\s+|$/).first %></p>
   </div>
+</div>
+
 </div>

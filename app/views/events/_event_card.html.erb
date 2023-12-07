@@ -1,4 +1,5 @@
-<%= link_to event_path(event), class: "even-card-link-wrapper" do %>
+<div class="items-list">
+  <%= link_to event_path(event), class: "even-card-link-wrapper" do %>
   <div class="event-card-index">
     <div class="img-container">
       <% if event.photo.attached? %>
@@ -33,3 +34,5 @@
     </div>
   </div>
 <% end %>
+
+</div>

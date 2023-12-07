@@ -5,8 +5,6 @@
   overflow: scroll;
   top: 0;
   height: 100vh;
-
-  gap: 40px;
   transition: 0.6s all ease;
   z-index: 9;
   border-radius: 0.8rem;
@@ -29,9 +27,6 @@
   margin: 0;
 }
 
-.events-container .event-card-link-wrapper:first-child {
-  margin-top: 100px;
-}
 
 .events-container .event-card-link-wrapper:last-child {
   margin-bottom: 109px;
@@ -153,7 +148,7 @@
 .mapboxgl-popup-content {
   text-align: center;
   font-family: "Open Sans", sans-serif;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   background-color: #F7F8F5;
 }
 
@@ -168,7 +163,7 @@
 
 span.event-atribute {
 
-  font-size: 14px;
+  font-size: 15px;
   color: #2a2c2c;
 }
 .svg-icons-events-attribute {
@@ -176,6 +171,7 @@ span.event-atribute {
 }
 .event-card-index p {
   color: #3d413f;
+  font-size: 15px;
 }
 
 button.mapboxgl-popup-close-button {
@@ -222,9 +218,6 @@ button.mapboxgl-popup-close-button {
   top: 104px;
   border-radius: 10px;
 }
-.events-container .event-card-index {
-  margin-top: 1rem;
-}
 
 .events-container {
   width: 100%;
@@ -256,4 +249,91 @@ button.mapboxgl-popup-close-button {
   flex-direction: column;
   border-bottom: solid 0.5px #595e5b;
   margin-bottom: 14px;
+}
+
+.events-container a:first-child {
+  margin-top: 3.8rem;
+}
+
+.events-container a:last-child {
+  margin-bottom: 6.5rem;
+}
+.event-card-index {
+  height: fit-content;
+}
+
+.events-container {
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+
+.items-list {
+  padding-top: 1.5rem;
+}
+.events-container {
+  margin-top: 2.5rem;
+}
+.events-container .items-list:last-child {
+  margin-bottom: 7.5rem;
+}
+
+.events-atribute-list {
+  overflow: hidden;
+}
+.click-favorite {
+  max-height: 39px;
+}
+
+
+.mapboxgl-popup-content {
+  margin-left: 0.8rem;
+  margin-right: 0.8rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  border-radius: 1.6rem;
+  bottom: -20px;
+}
+
+.bottom-navbar {
+  z-index: 9999999;
+}
+.info-window img {
+  border-radius: 1.6rem;
+}
+
+
+
+.image-placeholder {
+  height: 380px;
+  position: relative;
+}
+
+.info-window .image-placeholder img {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.info-window .image-placeholder {
+  margin-bottom: 1.5rem;
+}
+
+
+button.mapboxgl-popup-close-button {
+  background: #6c9948;
+  border-radius: 100%;
+  color: #fff;
+  font-size: 23px;
+  margin-top: 18px;
+  margin-right: 22px;
 }

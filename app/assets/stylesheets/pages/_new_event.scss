@@ -3,51 +3,38 @@
   margin-top: 86px;
     margin-bottom: 47px;
   border-radius: 10px;
-  background-color: #ebede9;
 }
 
 .tirtuary-h {
-  color: #485936;
+  color: #000000;
 }
 
 .action-button {
   color: #485936;
 }
-
+.new-container-head h3 {
+  padding-top: 1.5rem;
+  position: relative;
+}
 .form-container {
   padding: 10px;
-  background-color: #ebede9;
+  background-color: #f6f5f3;
   border-radius: 10px;
   box-shadow: 0 5px 10px 0 rgba(5, 7, 3, 0.206);
-  border: 2px solid #717e635f;
+  border: 2px solid #545c4b4a;
   width: 395px;
   height: 80vh;
   margin-top: 100px;
   margin-left: 18px;
   display: flex;
-  flex-direction: column; /* Stack children vertically */
-  align-items: center;    /* Center children horizontally */
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
 
   .new-container {
     margin-top: -91px;
   }
 
-  .container-logo {
-    width: 150px;       /* Adjust as needed */
-    height: 150px;      /* Adjust as needed */
-    border-radius: 50%; /* Make it round */   /* Ensures no overflow if image is too big */
-    margin: auto;       /* Centers the container horizontally */
-    display: flex;      /* Use flexbox to center the image inside */
-    align-items: center;
-    justify-content: center;
-  }
-
-  .logo-image {
-    width: 100%;
-    height: auto;
-    margin-top: -100px;
-  }
 
   form {
     color: #2F3F1D;
@@ -62,14 +49,28 @@
     }
 
     .btn {
-      color: #ebede9;
-      background-color: #5d6b4d;
+      color: #ffffff;
+      background-color: #208d4e;
       transition: 0.2s;
       width: 100%;
       margin-top: 5px;
       &:hover {
-        background-color: #485936;
+        background-color: #208d4e;
       }
     }
   }
+}
+
+.form-control {
+  background-color: #f6f5f3;
+}
+
+.events-add-new {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+.events-add-new .container-logo img {
+  width: 120px;
 }

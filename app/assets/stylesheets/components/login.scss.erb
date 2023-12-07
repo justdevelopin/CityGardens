@@ -1,3 +1,35 @@
+/* ADD NEW EVENT CSS */
+.events-add-new {
+    position: relative;
+}
+.events-add-new {
+  background-image: url(<%= asset_path('login.jpg') %>);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height:100vh;
+}
+.events-add-new .container-logo:after {
+  content: '';
+  background-image: url(<%= asset_path('logo.png') %>);
+  filter: brightness(0) invert(.89);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 130px;
+  height: 163px;
+  position: absolute;
+  top: 8px;
+}
+/* END CSS FOR ADD NEW EVENT */
 .sing-in-wrapper {
   background-image: url(<%= asset_path('login.jpg') %>);
   background-position: center;
@@ -7,14 +39,13 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  height:100vh;
 }
 .sing-in-wrapper {
-    height: calc(100vh - 52px);
     position: absolute;
     left: 0px;
     right: 0px;
 }
-
 .form-inputs input {
     padding: 10px 0 10px 15px;
     font-size: 17px;
@@ -22,7 +53,7 @@
     /* color: #ddd!important; */
     letter-spacing: 1px;
     border: none;
-    background: #ffffff2e;
+    background: #0000007a;
     box-sizing: border-box;
     /* font-family: 'Mukta', sans-serif; */
     width: calc(100% - 3rem);
@@ -34,17 +65,6 @@
     margin-left: 1.5rem;
     margin-right: 1.5rem;
 }
-.form-inputs input:active, .form-inputs input:focus {
-    background: #ffffffa3;
-    border: solid 1px #316d09;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6);
-    outline: 0 none;
-}
-
-.form-inputs input::placeholder {
-    /* font-size: 20px; */
-    color: #ffffffe8;
-}
 .shared-links-singup {
     width: calc(100% - 3rem);
     background: #97b14000;
@@ -53,14 +73,12 @@
     text-align: center;
     margin-left: 1.5rem;
     margin-right: 1.5rem;
-    color: #2f3f1d;
+    color: #fff;
     text-decoration: none;
 }
-
 .shared-links-singup a {
-      color: #e0e4da;
+      color: #fff;
 }
-
 .form-title {
     width: calc(100% - 3rem);
     margin-left: 1.5rem;
@@ -70,17 +88,15 @@
     margin-bottom: -9.5rem;
     color: #fff;
 }
-
 .shared-links-forgot-password {
     width: calc(100% - 3rem);
     margin-left: 1.5rem;
     margin-right: 1.5rem;
     text-align: center;
     margin-top: 0.5rem;
-    color: #dfd9d9;
+    color: #fff;
     font-size: 14px;
 }
-
 .registry-form-submit input {
     width: calc(100% - 3rem);
     margin-left: 1.5rem;
@@ -89,7 +105,7 @@
     background: #fff;
     border-radius: 10px;
     padding: 0.8rem;
-    background: #97B140;
+    background: #208d4e;
 }
 .registry-input-remember .form-check {
     width: calc(100% - 3rem);
@@ -101,33 +117,66 @@
     padding-bottom: 1.5rem;
     padding-top: 0.6rem;
 }
-
 .form-container-registry .simple_form {
-    margin-top: 50%;
+    margin-top: 63%;
 }
-
 a {
   text-decoration: none;
   color: #2f3f1d;
 }
-
 .shared-links-forgot-password a {
-  color: #d2dcd3;
+  color: #fff;
   font-size: 16px;
 }
-
 label.form-check-label.boolean.optional {
     color: #cfcfcf;
 }
 
-img.login-logo-image {
-    width: 48vw;
-    margin-bottom: -227px;
-    margin-top: 57px;
-    margin-left: 108px;
+.form-title {
+    top: 60px;
+    position: relative;
 }
-
-.login-container-logo {
-    width: 100vw;
-    padding-bottom: 54px;
+.form-title h2 {
+    color: #fff;
+    font-size: 28px;
+}
+.form-inputs input{
+  font-weight: 600;
+}
+.form-inputs input:focus::placeholder {
+  color:#000!important;
+}
+.form-inputs input:active, .form-inputs input:focus {
+    background: #fff;
+    border: solid 1px #316d09;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6);
+    outline: 0 none;
+    color:#000!important;
+}
+.form-inputs input::placeholder {
+    color: #fff;
+}
+input::-webkit-input-placeholder {
+    color: #fff;
+}
+input:focus::-webkit-input-placeholder {
+    color: #fff;
+}
+input:-moz-placeholder {
+    color: #fff;
+}
+input:focus:-moz-placeholder {
+    color: #fff;
+}
+input::-moz-placeholder {
+    color: #fff;
+}
+input:focus::-moz-placeholder {
+    color: #fff;
+}
+input:-ms-input-placeholder {
+    color: #fff;
+}
+input:focus:-ms-input-placeholder {
+    color: #fff;
 }
