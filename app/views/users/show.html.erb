@@ -51,7 +51,7 @@
             </div>
           </div>
 
-                 <%# Events Im attending %>
+        <%# Events Im attending %>
         <div class="accordion-item">
           <h2 class="accordion-header" id="myEventsAccordion">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#myEventsContent" aria-expanded="false" aria-controls="myEventsContent">
@@ -60,7 +60,7 @@
           </h2>
           <div id="myEventsContent" class="accordion-collapse collapse" aria-labelledby="myEventsAccordion" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-               <div class="event-list">
+              <div class="event-list">
                 <div class="events">
                   <% if @events.any? %>
                     <% @events.each do |event| %>
@@ -149,7 +149,9 @@
       </div>
     </div>
     <% if @gardens.present? && current_user.is_admin %>
-  <%= link_to "Add garden", new_garden_path, class: "action-button" %>
+
+  <%= link_to 'Add garden', new_garden_path, class: "action-button" %>
+
   <%= link_to "Add event", new_garden_event_path(garden_id: @gardens.first.id), class: "action-button" %>
   <%= link_to "Add parcel", new_garden_parcel_path(garden_id: @gardens.first.id), class: "action-button" %>
   <% elsif current_user.is_admin %>

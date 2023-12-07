@@ -73,9 +73,9 @@
   }
 
   .inset-action-button {
-    box-shadow: inset 0 0 0 4px #6a7c2d;
-    color: #6a7c2d;
-    padding-block: 10px;
+    box-shadow: inset 0 0 0 4px #1d7f46;
+    color: #1d7f46;
+    padding-block: 15px;
 
 
     &:hover {
@@ -114,6 +114,10 @@
       .fa-solid {
         margin-left: 10px;
       }
+    }
+
+    .items-list {
+      padding-top: 0;
     }
 
     .accordion-button {
