@@ -295,7 +295,7 @@ button.mapboxgl-popup-close-button {
   padding-left: 0.8rem;
   padding-right: 0.8rem;
   border-radius: 1.6rem;
-  bottom: -20px;
+  margin-bottom: 40px;
 }
 
 .bottom-navbar {
@@ -336,4 +336,8 @@ button.mapboxgl-popup-close-button {
   font-size: 23px;
   margin-top: 18px;
   margin-right: 22px;
+}
+
+button.toggle-button {
+  margin-left: 5px;
 }
