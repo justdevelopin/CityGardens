@@ -1,9 +1,12 @@
 # Clear existing users to avoid duplication
 require "open-uri"
-
+Parcel.destroy_all
+Bookmark.destroy_all
+Review.destroy_all
 User.destroy_all
 Event.destroy_all
 Garden.destroy_all
+
 
 
 garden_image_urls = [
@@ -199,6 +202,7 @@ image10_path = Rails.root.join('lib', 'assets', 'seeds', 'images', 'avatar10.png
 image10 = File.open(image10_path)
 user10.photo.attach(io: image10, filename: 'avatar10.png', content_type: 'image/png')
 user10.save
+puts "Created #{User.count} users"
 
 10.times do |i|
   user = User.find_by(email: "user#{i + 1}@example.com")
@@ -213,6 +217,7 @@ user10.save
   downloaded_image = URI.open(image_url)
   garden.photos.attach(io: downloaded_image, filename: "garden_#{i + 1}.jpg")
 end
+puts "Created #{Garden.count} gardens"
 
 # Gardening Workshops at Garden 1 (Urban Oasis)
 event1 = Event.create!(
