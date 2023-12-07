@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
     if @booking.save
       respond_to do |format|
         format.json { render json: { status: :created, booking: @booking } }
-        format.html { redirect_to @booking.event, notice: "Your booking has been confirmed!" }
+        format.html { redirect_to event_path(@booking.event), notice: "Your booking has been confirmed!" }
       end
     else
       respond_to do |format|
