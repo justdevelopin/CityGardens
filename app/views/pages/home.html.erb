@@ -28,7 +28,7 @@
   </div>
   <div class="root-links">
     <% if user_signed_in? %>
-      <%= link_to "Discover", events_path , id: "root-btn" ,class: "action-button" %>
+      <%= link_to "Discover events", events_path , id: "root-btn" ,class: "action-button" %>
       <%= button_to "Log out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, id: "root-btn" , class: "inset-action-button"%>
     <% else %>
       <%= link_to "Login", user_session_path , id: "root-btn" ,class: "action-button" %>
