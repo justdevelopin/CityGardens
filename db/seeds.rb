@@ -198,11 +198,27 @@ user10 = User.create(
   bio: 'Lover of nature and advocate for environmental education.',
   is_admin: true
 )
+
 image10_path = Rails.root.join('lib', 'assets', 'seeds', 'images', 'avatar10.png')
 image10 = File.open(image10_path)
 user10.photo.attach(io: image10, filename: 'avatar10.png', content_type: 'image/png')
 user10.save
+
+user11 = User.create(
+  email: 'am@email.com',
+  password: '123456',
+  password_confirmation: '123456',
+  first_name: 'Abir',
+  last_name: 'Malek',
+  bio: 'Lover of nature!',
+  is_admin: false
+)
+
+
+
 puts "Created #{User.count} users"
+
+
 
 10.times do |i|
   user = User.find_by(email: "user#{i + 1}@example.com")
