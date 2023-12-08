@@ -6,7 +6,7 @@
         <div class="img-container">
           <% if @garden.photos.attached? %>
             <%= link_to garden_path(@garden) do %>
-              <%= image_tag @garden.photos.first, alt: @garden.name, class: 'img-fluid rounded d-block w-100' %>
+              <%= cl_image_tag @garden.photos.first.key, alt: @garden.name, class: 'img-fluid rounded d-block w-100' %>
             <% end %>
           <% else %>
             <%= link_to garden_path(@garden) do %>
