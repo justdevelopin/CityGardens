@@ -1,11 +1,9 @@
-<div class="profile-banner">
+<div class='profile-top-section'>
+  <div class="profile-banner">
   <%= video_tag('animatedprofile.mp4', id: 'profile-background', autoplay: true, loop: true, muted: true) %>
 </div>
 
-<div class="container">
-  <div class="profile-card">
-
-    <div class="user-info">
+<div class="user-info">
         <% if current_user.photo.attached? %>
           <%= cl_image_tag current_user.photo.key, class: "user-image-container" %>
         <% else %>
@@ -21,6 +19,10 @@
         <p class="user-type">Plant enthusiast</p>
       <% end %>
     </div>
+</div>
+
+<div class="container">
+  <div class="profile-card">
 
     <div class="user-info-bottom">
       <div class="accordion" id="accordionExample">

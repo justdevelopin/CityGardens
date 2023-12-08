@@ -15,4 +15,5 @@ class UsersController < ApplicationController
     @parcels = Parcel.where(garden_id: @gardens.pluck(:id))
     @parcel_reservations = @user.parcel_reservations.includes(:parcel)
   end
+
 end
